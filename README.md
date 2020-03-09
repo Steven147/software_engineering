@@ -2,6 +2,6 @@
 
 repo for software_engineering course
 
-成员：林绍钦 刘承轩
+成员：林绍钦 刘承轩  夏子超
 
 
