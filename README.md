@@ -2,8 +2,6 @@
 
 repo for software_engineering course
 
-change1
-
-change 2
+成员：林绍钦 刘承轩
 
 
