@@ -6,6 +6,12 @@ repo for software_engineering course
 
 I am feeling happy with you.
 
+## 资源与参考
+
+[软件工程](https://oc.sjtu.edu.cn/courses/17210)
+
+[w3school 在线教程](https://www.w3school.com.cn/)
+
 ## fq过程
 
 [KOPCLOUD加速器 最新地址发布](https://kopcloud-com.oss-cn-hongkong.aliyuncs.com/)
