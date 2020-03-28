@@ -1,13 +1,44 @@
-<!DOCTYPE html>
+<!doctype html> <!--在文档的首行声明文档类型-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .para{
+            background-color:yellowgreen; 
+            font-family:arial; 
+            font-size:15px;
+        }
+    </style>
 </head>
-<body>
-    <h1>软件工程16组</h1>
-    <p>组员：</p>
+    <body>
+        
+    <h1 align="center">软件工程16组</h1> 
+    <!-- 标题设置（位置、内容） -->
+    <p style="font-size: 20px;">组员：</p>
     <p>林绍钦 刘承轩 夏里宾 夏子超 陈婷如 陆千禧 白皓名 范云龙</p>
-</body>
+    <hr /> <!-- 分割线 -->
+        
+    <p class = "para"> 
+    <!--段落格式自定义设置-->
+        <a href="https://www.w3school.com.cn/">教程网站（W3school）</a>
+        <br /> <!--不产生新段落的情况下进行换行break-->
+        <a href="https://www.w3school.com.cn/tags/index.asp">参考手册</a>
+    </p>
+
+    <p><code>Computer code example</code></p>
+    
+    <p id="demo">原始段落1</p>
+    <p id="demo2">原始段落2</p>
+
+    <button type="button" onclick="myFunction()">试一试更改段落</button>
+    <button type="button" onclick="myFunction2()">再试一试更改段落</button>
+    <script> 
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "1段落已被更改。";
+        }
+    </script>
+    <script src="myScript.js"></script>
+    </body>
 </html>

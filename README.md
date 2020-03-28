@@ -2,9 +2,15 @@
 
 repo for software_engineering course
 
-成员：林绍钦 刘承轩 夏里宾 夏子超 陈婷如 陆千禧 白皓名
+成员：林绍钦 刘承轩 夏里宾 夏子超 陈婷如 陆千禧 白皓名 范云龙
 
-I am feeling happy with you.
+    I am feeling happy with you.
+
+## 资源与参考
+
+[软件工程](https://oc.sjtu.edu.cn/courses/17210)
+
+[w3school 在线教程](https://www.w3school.com.cn/)
 
 ## fq过程
 
