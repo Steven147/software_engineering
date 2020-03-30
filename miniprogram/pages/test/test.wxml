@@ -1,0 +1,10 @@
+<!--pages/test/test.wxml-->
+<text selectable>{{msg}}</text>
+<text selectable>{{msg1}}</text>
+<text selectable>{{msg2}}</text>
+<text selectable>{{msg3}}</text>
+<text selectable>{{msg4}}</text>
+<button bindtap="ranking">
+finish learning
+</button>
+<button bindtap="getWords"> getWords </button>
