@@ -35,6 +35,9 @@ Page({
       }
     })
 
+    wx.redirectTo({
+      url: '../tst/tst',
+    })
   },
 
 
