@@ -15,12 +15,13 @@
 		"scopeDataCheck": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.3",
-	"appid": "touristappid",
-	"projectname": "miniprogram-2",
+	"libVersion": "2.10.4",
+	"appid": "wx9f9d02eb897a3597",
+	"projectname": "miniprogram-6",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
+	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {

@@ -1,0 +1,9 @@
+<!--pages/word2/word2.wxml-->
+<view class='container'>
+<text class='word'> coin</text>
+<text class='IPA'> 英[ˈaɪkɒn]  美[ˈaɪkɑːn]</text>
+<text class='detail'> n.	(一枚) 硬币; 金属货币; (统称) 硬币;</text>
+<text class='detail'> v.	创造(新词语); (用金属)铸(币)，造(硬币);</text>
+<text class='detail'> 例句  Jaron Lanier coined the term 'virtual reality' and pioneered its early development</text>
+</view>
+<button type="primary" bindtap="goIndex">下一个</button>

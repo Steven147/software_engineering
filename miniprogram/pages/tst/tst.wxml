@@ -1,0 +1,19 @@
+<!--pages/tst/tst.wxml-->
+
+<view class="first_title">
+  <text >review test</text>
+</view>
+<view class='container'>
+    {{word}}
+</view>
+<radio-group>
+  <radio>abandon</radio><view>\n</view>
+  <radio>architect</radio><view>\n</view>
+  <radio>arch</radio><view>\n</view>
+  <radio>icon</radio><view>\n</view>
+  <radio>coin</radio><view>\n</view>
+</radio-group>
+<button class=".btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+    disabled="{{disabled}}" bindtap="goindex"> 
+        next
+ </button>

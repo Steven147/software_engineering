@@ -1,0 +1,25 @@
+<!--pages/infoget/infoget.wxml-->
+<view class="first_title"><text >兴趣选择</text></view>
+<view class="choice">
+  <view bindtap="storeindatabase"><checkbox>小学</checkbox></view>
+  <view bindtap="storeindatabase"><checkbox>初中</checkbox></view>
+  <view bindtap="storeindatabase"><checkbox>高中</checkbox></view>
+  <view bindtap="storeindatabase"><checkbox>四级</checkbox></view>
+  <view bindtap="storeindatabase"><checkbox>六级</checkbox></view>
+  <view bindtap="storeindatabase"><checkbox>托福</checkbox></view>
+  <view bindtap="storeindatabase"><checkbox>雅思</checkbox></view>
+   <view bindtap="storeindatabase"><checkbox>GRE</checkbox></view>
+  
+</view>
+
+<view class="userdefine">
+  <view class="secondtitle"><text>计划制定</text></view>
+  <view class="thechoicebox">
+    
+    <text>每天记忆</text>
+    <input  value="{{ input }}" bindtap="storeindatabase" placeholder="an interger" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"></input><text>个单词       </text>
+  </view>
+   <button class='btn1' type="primary" size="{{defaultSize}}"  loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}"  hover-class="other-button-hover" bindtap="jumptowordlist">next</button>
+
+</view>

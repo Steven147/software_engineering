@@ -1,0 +1,6 @@
+/* pages/tst/tstend.wxss */
+.normal
+{ 
+width:100%; 
+color:green; 
+} 

@@ -1,0 +1,11 @@
+<!--pages/selectwords/selectwords.wxml-->
+<text class='title'>选择以删去熟记的单词</text>
+<!--<view class='list'>-->
+<view class='container'>
+<checkbox-group>
+<checkbox class='list' style="display:block" wx:for="{{wordList}}" wx:key="wordName">
+{{item.wordName}}</checkbox>
+</checkbox-group>
+<!--</view>-->
+</view>
+<button type="primary" bindtap="goWord">开始背诵</button>

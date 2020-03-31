@@ -1,0 +1,24 @@
+/* pages/tst/tst.wxss */
+.first_title{
+  color: rgb(16, 209, 145);
+  border-bottom: 1rpx solid rgb(159, 159, 189);
+ border-radius: 2rpx;
+  margin: 2rpx;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 100%;
+   text-align: center;
+   vertical-align: center;
+   display: -webkit-inline-flex;
+   font-weight: 400;
+}
+.btn 
+{ 
+width:100%; 
+color:green; 
+position:fixed; 
+bottom:0; 
+} 

@@ -1,0 +1,10 @@
+<!--pages/tst/tstend.wxml-->
+<view class='container'>
+    Thank you for using
+</view>
+<view class='container'>
+<button class=".normal" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+    disabled="{{disabled}}" bindtap="goindex"> 
+        Back to the main page
+ </button>
+ </view>
