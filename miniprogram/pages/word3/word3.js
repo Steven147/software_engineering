@@ -46,11 +46,7 @@ Page({
   },
 
   //进入数据处理界面
-  goDataprocessing() {
-    wx.navigateTo({
-      url: '../getData/getData',
-    })
-  },
+
 
 
   //获取单词数据

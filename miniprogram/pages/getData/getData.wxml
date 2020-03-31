@@ -24,3 +24,4 @@ could
 <button type="default" bindtap="clear">
 清除
 </button>
+<button type="primary" bindtap="goIndex">下一个</button>

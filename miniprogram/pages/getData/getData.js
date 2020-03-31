@@ -58,6 +58,11 @@ Page({
     this.setData({ overallWordList: this.data.overallWordList })
     }
   },
+  goIndex() {
+    wx.navigateTo({
+      url: '../word3/word3',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

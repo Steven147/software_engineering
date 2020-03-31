@@ -6,4 +6,4 @@
 <text class='detail'> v.	创造(新词语); (用金属)铸(币)，造(硬币);</text>
 <text class='detail'> 例句  Jaron Lanier coined the term 'virtual reality' and pioneered its early development</text>
 </view>
-<button type="primary" bindtap="goIndex">下一个</button>
+<button type="primary" bindtap="goDataprocessing">下一个</button>

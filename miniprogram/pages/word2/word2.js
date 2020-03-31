@@ -8,11 +8,13 @@ Page({
 
   },
 
-goIndex(){
-  wx.navigateTo({
-    url: '../word3/word3',
-  })
-},
+  goDataprocessing() {
+    wx.navigateTo({
+      url: '../getData/getData',
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
