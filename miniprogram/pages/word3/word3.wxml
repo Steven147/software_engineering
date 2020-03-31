@@ -14,5 +14,5 @@
 <input placeholder='待修改id' bindinput='updid'></input>
 <input placeholder='待修改memory_num' bindinput='updm_n'></input>
 
-<button bindtap='updData' type='primary'>修改记忆指数</button>
-<button type="primary" bindtap="goDataprocessing">下一个</button>
+<button bindtap='updData' type='primary'>进入测试</button>
+
