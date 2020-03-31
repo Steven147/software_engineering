@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/infoget/infoget"
+    "pages/infoget/infoget",
+    "pages/word3/word3"
   ],
   "window": {
     "backgroundTextStyle": "light",

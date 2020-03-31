@@ -1,0 +1,17 @@
+<!-- 获取单词数据 -->
+<button bindtap='getlist' type='primary'>获取单词数据</button>
+
+<!-- 展示获取的单词 -->
+<view wx:for="{{datalist}}">
+  <view>{{item.word}}</view>
+  <view>{{item.yinbiao}}</view>
+  <view>{{item.yisi}}</view>
+  <view>{{item.memory_num}}</view>
+</view>
+
+
+<!-- 修改记忆指数 -->
+<input placeholder='待修改id' bindinput='updid'></input>
+<input placeholder='待修改memory_num' bindinput='updm_n'></input>
+
+<button bindtap='updData' type='primary'>修改记忆指数</button>

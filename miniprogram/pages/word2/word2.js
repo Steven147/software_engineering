@@ -10,7 +10,7 @@ Page({
 
 goIndex(){
   wx.navigateTo({
-    url: '../tst/tst',
+    url: '../word3/word3',
   })
 },
   /**
