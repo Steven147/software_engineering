@@ -22,7 +22,7 @@ Page({
   listenerRadioGroup: function (e) {
     console.log('点击的是第' + e.detail.value + '个radio')
     this.setData({
-      test2: e.detail.value == '5' ? 'true' : 'false'
+      test2: e.detail.value == '4' ? 'true' : 'false'
     })
     
   },
