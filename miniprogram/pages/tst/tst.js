@@ -12,7 +12,8 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    test1:''
+    test1:'',
+    test2:''
   },
   goindex(e){
     
@@ -23,11 +24,15 @@ Page({
   },
   //判断并获取用户选择
   listenerRadioGroup: function (e) {
+    var app = getApp()     // 取得全局App
     console.log('点击的是第' + e.detail.value + '个radio')
     this.setData({
-      test1: e.detail.value == '5' ? 'true' : 'false'
+      test1: e.detail.value == '5' ? 1 : 0
     })
-    
+    app.overallWordList[1].testresult = this.data.test1
+    // this.setData({
+    //   test2: app.overallWordList[1].testresult
+    // })    
   },
   /**
    * 生命周期函数--监听页面加载
