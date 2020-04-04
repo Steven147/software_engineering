@@ -1,9 +1,16 @@
 <!--pages/word1/word1.wxml-->
 <view class='container'>
 <text class='word'> icon</text>
-<text class='IPA'> 英[ˈaɪkɒn]  美[ˈaɪkɑːn]</text>
+<view class='IPA'>
+<text> 英[ˈaɪkɒn]  美[ˈaɪkɑːn]</text>
+<button class='button1' plain="true" bindtap="sound">
+<image class='icon' src="icon.jpg"></image></button>
+</view>
 <text class='detail'> n.	图标; 图符; 崇拜对象; 偶像; 圣像;</text>
 <text class='detail'> 例句     Only Marilyn has proved as enduring a fashion icon.</text>
 </view>
-<button type="primary" bindtap="goWord">下一个</button>
-
+<view >
+<button type="primary"  class="button2" bindtap="goWord0">太简单</button>
+<button type="primary" class="button2" bindtap="goWord1">下一个</button>
+<button type="primary"  class="button2" bindtap="goWord2">仍需记忆</button>
+</view>

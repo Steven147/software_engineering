@@ -8,11 +8,29 @@ Page({
 
   },
 
-goWord(){
+goWord0(){
+  console.log(0);
   wx.navigateTo({
     url: '../word2/word2',
   })
 },
+  goWord1() {
+    console.log(1);
+    wx.navigateTo({
+      url: '../word2/word2',
+    })
+  },
+  goWord2() {
+    console.log(2);
+    wx.navigateTo({
+      url: '../word2/word2',
+    })
+  },
+  sound() {
+    console.log(1);
+  },
+
+  
   /**
    * 生命周期函数--监听页面加载
    */

@@ -8,12 +8,27 @@ Page({
 
   },
 
-  goDataprocessing() {
+  goDataprocessing0() {
+    console.log(0);
     wx.navigateTo({
       url: '../getData/getData',
     })
   },
-
+  goDataprocessing1() {
+    console.log(1);
+    wx.navigateTo({
+      url: '../getData/getData',
+    })
+  },
+  goDataprocessing2() {
+    console.log(2);
+    wx.navigateTo({
+      url: '../getData/getData',
+    })
+  },
+  sound() {
+    console.log(1);
+  },
 
   /**
    * 生命周期函数--监听页面加载
