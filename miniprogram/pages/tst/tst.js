@@ -11,7 +11,8 @@ Page({
     warnSize: 'default',
     disabled: false,
     plain: false,
-    loading: false
+    loading: false,
+    test1:''
   },
   goindex(e){
     
@@ -26,6 +27,7 @@ Page({
     this.setData({
       test1: e.detail.value == '5' ? 'true' : 'false'
     })
+    
   },
   /**
    * 生命周期函数--监听页面加载

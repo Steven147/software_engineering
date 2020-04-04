@@ -11,7 +11,8 @@ Page({
     warnSize: 'default',
     disabled: false,
     plain: false,
-    loading: false
+    loading: false,
+    test2:''
   },
   goindex(){
     wx.navigateTo({
@@ -21,8 +22,9 @@ Page({
   listenerRadioGroup: function (e) {
     console.log('点击的是第' + e.detail.value + '个radio')
     this.setData({
-      test1: e.detail.value == '5' ? 'true' : 'false'
+      test2: e.detail.value == '5' ? 'true' : 'false'
     })
+    
   },
   /**
    * 生命周期函数--监听页面加载

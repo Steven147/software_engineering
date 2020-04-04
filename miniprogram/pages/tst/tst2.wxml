@@ -11,6 +11,7 @@
   <radio value="3">arch</radio><view>\n</view>
   <radio value="4">icon</radio><view>\n</view>
   <radio value="5">coin</radio><view>\n</view>
+  <text>{{test2}}</text>
 </radio-group>
 <button class=".btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
     disabled="{{disabled}}" bindtap="goindex"> 
