@@ -6,13 +6,14 @@
 <view class='container'>
     {{word}}
 </view>
-<radio-group>
-  <radio>abandon</radio><view>\n</view>
-  <radio>architect</radio><view>\n</view>
-  <radio>arch</radio><view>\n</view>
-  <radio>icon</radio><view>\n</view>
-  <radio>coin</radio><view>\n</view>
+<radio-group bindchange = "listenerRadioGroup">
+  <radio value="1">abandon</radio><view>\n</view>
+  <radio value="2">architect</radio><view>\n</view>
+  <radio value="3">arch</radio><view>\n</view>
+  <radio value="4">icon</radio><view>\n</view>
+  <radio value="5">coin</radio><view>\n</view>
 </radio-group>
+<text>{{test1}}</text>
 <button class=".btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
     disabled="{{disabled}}" bindtap="goindex"> 
         next

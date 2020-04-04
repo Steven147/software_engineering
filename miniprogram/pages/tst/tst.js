@@ -13,9 +13,18 @@ Page({
     plain: false,
     loading: false
   },
-  goindex(){
-    wx.navigateTo({
+  goindex(e){
+    
+    wx.redirectTo({
       url: '../tst/tst2',
+    })
+    
+  },
+  //判断并获取用户选择
+  listenerRadioGroup: function (e) {
+    console.log('点击的是第' + e.detail.value + '个radio')
+    this.setData({
+      test1: e.detail.value == '5' ? 'true' : 'false'
     })
   },
   /**

@@ -15,7 +15,7 @@ Page({
     ],
   },
   goWord() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../word1/word1',
     })
   },
