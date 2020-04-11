@@ -48,5 +48,6 @@ App({
     { content: 'and', index: 4, studyresult: 0, studytime: 7800, testresult: 1, testtime: 6600, rank: 0 },
     { content: 'because', index: 5, studyresult: 0, studytime: 0, testresult: 0, testtime: 10, rank: 0 },
     { content: 'could', index: 6, studyresult: 0, studytime: 0, testresult: 0, testtime: 10, rank: 0 }
+    
   ]
 })

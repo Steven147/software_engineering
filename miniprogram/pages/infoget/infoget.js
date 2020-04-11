@@ -13,6 +13,26 @@ Page({
     loading: false
   },
 
+  getlist() {
+    var app = getApp() 
+    let that = this
+
+    wx.cloud.database().collection("list").get({
+
+      success(res) {
+        console.log("获取成功", res)
+
+          app.overallWordList = res.data
+
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+
+    })
+
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -78,6 +98,7 @@ Page({
     console.log('333')
   },
   jumptowordlist:function(){
+    this.getlist(),
     wx.redirectTo({
       url: '../selectwords/selectwords'
       
