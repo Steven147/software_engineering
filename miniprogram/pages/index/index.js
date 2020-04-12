@@ -13,7 +13,7 @@ Page({
   bindViewTap: function() {
     wx.redirectTo({
     
-      url: '../infoget/infoget'
+      url: '../infomationGet/infomationGet'
     })
   },
   onLoad: function () {

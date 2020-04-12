@@ -1,4 +1,7 @@
 //app.js
+
+
+
 App({
   onLaunch: function () {
     wx.cloud.init({
@@ -36,17 +39,14 @@ App({
         }
       }
     })
+    
+  
   },
-  globalData: {
-    userInfo: null,
-  },
-  overallWordList: [
-    { content: 'a', index: 0, studyresult: 1, studytime: 2000, testresult: 1, testtime: 2000, rank: 0 },
-    { content: 'about', index: 1, studyresult: 0, studytime: 12000, testresult: 1, testtime: 5600, rank: 0 },
-    { content: 'as', index: 2, studyresult: 1, studytime: 2500, testresult: 0, testtime: 2400, rank: 0 },
-    { content: 'also', index: 3, studyresult: 1, studytime: 6400, testresult: 1, testtime: 7500, rank: 0 },
-    { content: 'and', index: 4, studyresult: 0, studytime: 7800, testresult: 1, testtime: 6600, rank: 0 },
-    { content: 'because', index: 5, studyresult: 0, studytime: 0, testresult: 0, testtime: 10, rank: 0 },
-    { content: 'could', index: 6, studyresult: 0, studytime: 0, testresult: 0, testtime: 10, rank: 0 }
-  ]
+    globalData: {
+      userInfo: null,
+      overallWordList :null,
+      localWordList:null
+    }
+    
+
 })

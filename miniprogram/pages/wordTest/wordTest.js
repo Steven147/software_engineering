@@ -1,4 +1,4 @@
-// pages/selectwords/selectwords.js
+// pages/wordTest/wordTest.js
 Page({
 
   /**
@@ -6,19 +6,8 @@ Page({
    */
   data: {
 
-    wordList: [
-      { wordName: "abandon" },
-      { wordName: "architect"},
-      { wordName: "arch"},
-      { wordName: "coin"},
-      { wordName: "icon"}
-    ],
   },
-  goWord() {
-    wx.redirectTo({
-      url: '../word1/word1',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */

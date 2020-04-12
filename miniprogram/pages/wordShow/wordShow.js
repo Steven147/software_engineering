@@ -1,18 +1,17 @@
-// pages/infoget/infoget.js
+// pages/wordShow/wordShow.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    defaultSize: 'default',
-    primarySize: 'default',
-    warnSize: 'default',
-    disabled: false,
-    plain:false,
-    loading: false
-  },
 
+  },
+  goTest(){
+    wx.redirectTo({
+      url: '../wordTest/wordTest',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -67,21 +66,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  storeindatabase:function(){
-    
-  },
-  inputChangeHandle:function(e){
-    console.log(e)
-  },
-  addTodoHandle: function () {
-    console.log('333')
-  },
-  jumptowordlist:function(){
-    wx.redirectTo({
-      url: '../selectwords/selectwords'
-      
-    })
-    console.log(456)
   }
 })

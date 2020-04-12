@@ -1,0 +1,7 @@
+
+<text class='title'>选择以删去熟记的单词</text>
+<checkbox-group>
+<checkbox class='list' style="display:block" wx:for="{{word}}" wx:key="wordName">
+{{item.word}}{{item.yinbiao}}</checkbox>
+</checkbox-group>
+<button type="primary" bindtap="goWord">开始背诵</button>

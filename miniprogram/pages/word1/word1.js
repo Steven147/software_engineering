@@ -1,11 +1,12 @@
 // pages/word1/word1.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    word: {}
   },
 
 goWord0(){
@@ -35,7 +36,9 @@ goWord0(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      word: app.globalData.overallWordList
+    })
   },
 
   /**

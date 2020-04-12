@@ -2,9 +2,11 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/infoget/infoget",
-    "pages/word3/word3",
-    "pages/getData/getData"    
+    "pages/infomationGet/infomationGet",
+    "pages/remeberList/remeberList",
+    "pages/wordShow/wordShow",
+    "pages/wordTest/wordTest"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

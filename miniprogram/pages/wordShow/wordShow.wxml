@@ -1,0 +1,3 @@
+<!--pages/wordShow/wordShow.wxml-->
+<text>pages/wordShow/wordShow.wxml</text>
+<button bindtap="goTest">进入测试</button>
