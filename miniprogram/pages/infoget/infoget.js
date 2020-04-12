@@ -17,7 +17,7 @@ Page({
     var app = getApp() 
     let that = this
 
-    wx.cloud.database().collection("list").get({
+    wx.cloud.database().collection("vocabulary").get({
 
       success(res) {
         console.log("获取成功", res)

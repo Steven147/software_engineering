@@ -11,7 +11,7 @@ exports.main = async (event, context) => {
   let id = event._id;
   let memory_num = event._memory_num;
   try {
-    return await db.collection("list").doc(id).update({
+    return await db.collection("vocabulary").doc(id).update({
       data: {
         memory_num: memory_num
       }

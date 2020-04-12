@@ -1,4 +1,4 @@
-const DB = wx.cloud.database().collection("list")
+const DB = wx.cloud.database().collection("vocabulary")
 //let name=""
 //let age=""
 let id = ""
@@ -54,7 +54,7 @@ Page({
 
     let that = this
 
-    wx.cloud.database().collection("list").get({
+    wx.cloud.database().collection("vocabulary").get({
 
       success(res) {
         console.log("获取成功", res)
