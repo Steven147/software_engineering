@@ -19,7 +19,15 @@ Page({
   sound() {
     console.log(1);
   },
-  getToll(a, b) {
+
+  onLoad: function (options) {
+    this.setData({
+      word: app.globalData.overallWordList,
+
+    }),
+    this.addPropertyInList(this.data.word, this.data.numclick)
+  },
+  addPropertyInList(a, b) {
     var word = a
     var numclick = b
     var that = this
@@ -39,8 +47,6 @@ Page({
       })
     console.log(app.globalData.overallWordList)
   },
-  onLoad: function (options) {
-    this.getToll(this.data.word, this.data.numclick)
-  },
-  
+
+
 })
