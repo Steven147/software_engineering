@@ -1,3 +1,21 @@
 <!--pages/wordShow/wordShow.wxml-->
-<text>pages/wordShow/wordShow.wxml</text>
-<button bindtap="goTest">进入测试</button>
+<!--pages/word1/word1.wxml-->
+<view wx:for='{{word}}' wx:key="word">
+<view wx:if="{{item.isSelected==0}}">
+<view class='container'>
+<text class='word'> {{item.word}}</text>
+<view class='IPA'>
+<text> {{item.yinbiao}}</text>
+<button class='button1' plain="true" bindtap="sound" data-index="{{index}}">
+<image class='icon' src="icon.jpg"></image></button>
+</view>
+<text class='detail'> {{item.yisi}}</text>
+<view >
+<button type="primary"  class="button2" bindtap="goWord0">太简单</button>
+<button type="primary" class="button2" bindtap="goWord1">下一个</button>
+<button type="primary"  class="button2" bindtap="goWord2">仍需记忆</button>
+</view>
+</view>
+</view>
+
+</view>
