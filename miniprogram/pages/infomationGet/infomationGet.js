@@ -30,6 +30,7 @@ Page({
       success: res => {
         console.log("获取成功", res)
         app.globalData.overallWordList = res.data
+        app.globalData.localWordList=res.data
       },
       fail(res) {
         console.log("获取失败", res)
@@ -38,17 +39,17 @@ Page({
 
   },
   inputChangeHandle: function (e) {
-    console.log(this.data.nee)
+    
 
   },
 
   addTodoHandle: function () {
-    this.getlist()
+   
     this.setData({
       nee: app.globalData.overallWordList
     })
     console.log(app.globalData.overallWordList)
-    console.log((app.globalData.overallWordList[0]))
+    console.log(app.globalData.localWordList)
     console.log('333')
 
 

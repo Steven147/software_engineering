@@ -45,15 +45,23 @@ App({
 
     globalData: {
       userInfo: null,
-      overallWordList :[{
-        word:"",
-        yinbiao:"",
-        yisi:"",
-        numclick:"",
+     
+      localWordList: [{
+        _id: "2",
+        memory_num: "100",
+        
+        word: "",
+        yinbiao: "[,misʌndə'stænd]",
+        yisi: "",
+        
+       
+        numclick: 18,
+        
         
 
+
+
       }]
-      
     },
     
 

@@ -7,45 +7,67 @@ Page({
    */
   data: {
     word: {},
-    click:{},
-    numclick:''
+    isSelectedList:[],
+    
   },
   goWord() {
+    this.addPropertyInList(this.data.word, this.data.isSelected,this.data.isSelectedList)
     console.log(2);
     wx.navigateTo({
       url: '../wordShow/wordShow',
+    
     })
   },
-  sound() {
-    console.log(1);
+  checkIsSelected(e) {
+    this.setData({
+      isSelectedList : e.detail.value
+    })
+    
   },
 
   onLoad: function (options) {
     this.setData({
       word: app.globalData.overallWordList,
 
-    }),
-    this.addPropertyInList(this.data.word, this.data.numclick)
+    })
+   
   },
-  addPropertyInList(a, b) {
+
+  addPropertyInList(a, b,c) {
     var word = a
-    var numclick = b
+    var isSelected=b
+    var isSelectedValue=c
     var that = this
     this.setData({
       word: app.globalData.overallWordList,
 
-    }),
+    })
+    that.data.word.forEach(function (item, index) {
+     
+        var isSelected = "word[" + index + "].isSelected";
 
-      that.data.word.forEach(function (item, index) {
-
-        var numclick = "word[" + index + "].numclick";
         that.setData({
-          [numclick]: 18
+          [isSelected]: 0
         })
+    })
+    for (let value of this.data.isSelectedList) {
+    
+      that.data.word.forEach(function (item, index) {
+        if (value === item._id) {
+          var isSelected = "word[" + index + "].isSelected";
 
-        app.globalData.overallWordList = that.data.word
+          that.setData({
+            [isSelected]: 1
+          })
+        }
+        
       })
-    console.log(app.globalData.overallWordList)
+
+    }
+
+    
+      app.globalData.overallWordList = that.data.word
+     console.log(app.globalData.overallWordList)
   },
 
 
