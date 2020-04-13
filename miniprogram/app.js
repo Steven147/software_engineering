@@ -63,7 +63,18 @@ App({
 
       }]
     },
+
     
+    calc_memory_num: function(){
+      var list=this.globalData.localWordList;
+      console.log('**************');
+      console.log(list);
+      for(var i=0;i<list.length;++i){
+       if (list[i].isSelected===1) list[i].memory_num=1000;
+      }
+      console.log(list);
+      console.log('**************');
+    }  
 
   
 })

@@ -8,9 +8,12 @@ Page({
 
   },
   goTest(){
+    var app = getApp();
+    app.calc_memory_num();
     wx.redirectTo({
       url: '../wordTest/wordTest',
-    })
+    });
+
   },
   /**
    * 生命周期函数--监听页面加载
