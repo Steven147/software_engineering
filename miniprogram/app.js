@@ -42,11 +42,20 @@ App({
     
   
   },
+
     globalData: {
       userInfo: null,
-      overallWordList :null,
-      localWordList:null
-    }
+      overallWordList :[{
+        word:"",
+        yinbiao:"",
+        yisi:"",
+        numclick:"",
+        
+
+      }]
+      
+    },
     
 
+  
 })
