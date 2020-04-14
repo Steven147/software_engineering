@@ -63,9 +63,13 @@ App({
 
       }],
     },
-
-    
-    calc_memory_num: function(){
+    //记忆指数初次确定函数
+    //k1:音频点击次数权值（负相关）
+    //k2:单词熟悉程度权值（太简单：0,下一个：1,仍需记忆：2）(负相关)
+    //k3:单词选择正确尝试次数（1,2,3,4）(负相关)
+    //k4:学习阶段停留时间(负相关)
+    //k5:测试阶段停留时间(负相关)
+    calc_memory_num: function(k1,k2,k3,k4,k5){
       var list=this.globalData.localWordList;
       console.log('**************');
       console.log(list);
@@ -74,7 +78,58 @@ App({
       }
       console.log(list);
       console.log('**************');
-    }  
+      //记忆指数加权计算
+      var p1,p2,p3,p4,p5 //分别对应同下标权值的分值
+      for (var i = 0; i < list.length; ++i) {
+        p1 = 100 * Math.exp(-list[i].radioClickNum)
+        
+        if (list[i].primaryPoint == 0) p2 = 70
+        if (list[i].primaryPoint == 1) p2 = 30
+        if (list[i].primaryPoint == 2) p2 = 0
+        
+        if (list[i].tryNum == 1) p2 = 80
+        if (list[i].tryNum == 2) p2 = 50
+        if (list[i].tryNum == 3) p2 = 20
+        if (list[i].tryNum == 4) p2 = 0
 
-  
+        p4 = 100 * Math.exp(-list[i].learnTime)
+        p5 = 100 * Math.exp(-list[i].testTime)
+
+        list[i].memory_num = k1*p1 + k2*p2 + k3*p3 + k4*p4 + k5*p5
+      }
+    },
+    //记忆指数修正函数
+    recalc_memory_num: function (k1, k2, k3, k4, k5) {
+      var list = this.globalData.localWordList;
+      console.log('**************');
+      console.log(list);
+      for (var i = 0; i < list.length; ++i) {
+        if (list[i].isSelected === 1) list[i].memory_num = 1000;
+      }
+      console.log(list);
+      console.log('**************');
+      //记忆指数加权计算
+      var p1, p2, p3, p4, p5 //分别对应同下标权值的修正
+      for (var i = 0; i < list.length; ++i) {
+        p1 = 100 * (Math.exp(-list[i].radioClickNum)-0.5)
+
+        if (list[i].primaryPoint == 0) p2 = 20
+        if (list[i].primaryPoint == 1) p2 = 0
+        if (list[i].primaryPoint == 2) p2 = -20
+
+        if (list[i].tryNum == 1) p2 = 30
+        if (list[i].tryNum == 2) p2 = 10
+        if (list[i].tryNum == 3) p2 = -10
+        if (list[i].tryNum == 4) p2 = -30
+
+        p4 = 100 * (Math.exp(list[i].learnTime) - 0.5)
+        p5 = 100 * (Math.exp(list[i].testTime) - 0.5)
+
+        list[i].memory_num += k1 * p1 + k2 * p2 + k3 * p3 + k4 * p4 + k5 * p5
+        //边值确定
+        if (list[i].memory_num > 100) list[i].memory_num = 100
+        if (list[i].memory_num < 0) list[i].memory_num = 0
+    }
+  },
+ 
 })

@@ -32,7 +32,7 @@ Page({
     app.overallWordList[1].testresult = this.data.test1
     // this.setData({
     //   test2: app.overallWordList[1].testresult
-    // })    
+    // })
   },
   /**
    * 生命周期函数--监听页面加载
