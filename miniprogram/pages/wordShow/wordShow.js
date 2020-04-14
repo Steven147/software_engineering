@@ -9,21 +9,18 @@ Page({
     numclick: ''
   },
   goTest0() {
-    app.calc_memory_num();
     console.log(0);
     wx.navigateTo({
       url: '../wordTest/wordTest',
     })
   },
   goTest1() {
-    app.calc_memory_num();
     console.log(1);
     wx.navigateTo({
       url: '../ wordTest / wordTest',
     })
   },
   goTest2() {
-    app.calc_memory_num();
     console.log(2);
     wx.navigateTo({
       url: '../wordTest/wordTest',

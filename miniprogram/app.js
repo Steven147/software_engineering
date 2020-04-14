@@ -74,7 +74,7 @@ App({
       console.log('**************');
       console.log(list);
       for(var i=0;i<list.length;++i){
-       if (list[i].isSelected===1) list[i].memory_num=1000;
+       if (list[i].isSelected===1) list[i].memory_num=100;
       }
       console.log(list);
       console.log('**************');
