@@ -19,3 +19,7 @@
 </view>
 
 </view>
+<button class=".btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+    disabled="{{disabled}}" bindtap="goindex"> 
+        next
+ </button>

@@ -8,6 +8,11 @@ Page({
     word: {},
     numclick: ''
   },
+  goindex(){
+    wx.navigateTo({
+      url: '../wordTest/wordTest',
+    })
+  },
   goTest0() {
     console.log(0);
     wx.navigateTo({

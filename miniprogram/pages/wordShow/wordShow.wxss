@@ -51,3 +51,10 @@
   width: 20vh;
   display: inline-block
 }
+.btn 
+{ 
+width:100%; 
+color:green; 
+position:fixed; 
+bottom:0; 
+} 
