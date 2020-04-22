@@ -6,23 +6,23 @@ Page({
    */
   data: {
     word: {},
-    numclick: ''
-  },
-  
-  true(){
-    wx.navigateTo({
-      url: '../wordTest/wordTest',
-    })
+    numclick: '',
+    id:1
   },
 
-  wrong(){
-    wx.showToast({
-      title:'错误',
-      icon:'none',
-      duration:1000
-    })
+  true(){
+    var idm=this.data.id;
+    if (idm<20) {
+      console.log(this.data.id);
+      this.setData({
+          id:idm+1
+        })
+    } else {
+      wx.navigateTo({
+        url: '../wordTest/tstend',
+      })
+    }
   },
-  
   addPropertyInList(a, b) {
     var word = a
     var numclick = b
