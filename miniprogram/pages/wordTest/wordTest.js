@@ -36,6 +36,17 @@ Page({
         })
     } else {
       app.globalData.overallWordList = this.data.word
+      var idm = this.data.id;
+      if (idm == 20) {
+        var timestamp = Date.parse(new Date());
+        timestamp = timestamp / 1000;
+        console.log("此时时间戳为：" + timestamp);
+        var timeResult = this.getTimeforUse(timestamp);
+        app.globalData.timeEnd= timeResult;
+
+      } 
+      app.globalData.timeOnTest = app.globalData.timeEnd - app.globalData.timeBegin;
+      console.log("时间是", app.globalData.timeOnTest, app.globalData.timeEnd, app.globalData.timeBegin)
       wx.navigateTo({
         url: '../wordTest/tstend',
       })
@@ -62,12 +73,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var idm = this.data.id;
+    if (idm == 1) {
+      var timestamp = Date.parse(new Date());
+      timestamp = timestamp / 1000;
+      console.log("当前时间戳为：" + timestamp);
+      var timeResult = this.getTimeforUse(timestamp);
+      app.globalData.timeBegin = timeResult;
+
+    } 
     this.setData({
       word: app.globalData.overallWordList,
     }),
       this.addPropertyInList(this.data.word, this.data.numOfWrongClick)
   },
-
+  getTimeforUse( timestamp){
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    //年
+    var Y = date.getFullYear();
+    //月
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    //日
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    //时
+    var h = date.getHours();
+    //分
+    var m = date.getMinutes();
+    //秒
+    var s = date.getSeconds();
+    console.log("当前时间：" + Y + M + D + h + ":" + m + ":" + s);
+    return (m*60+s);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -48,6 +48,8 @@ App({
       overallWordList: [{
 
       }],
+      timeBegin:"",
+      timeEnd:""
     },
   //拉取单词
   getlist() {
