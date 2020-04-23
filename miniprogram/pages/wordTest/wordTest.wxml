@@ -4,7 +4,7 @@
 <text class='word'> {{item.yisi}}</text>
 <view>
   <button catchtap="true" bindtap="test.right">{{item.word}}</button>
-  <button catchtap="wrong" bindtap="test.right">wrong</button>
+  <button catchtap="wrong" bindtap="test.right" >wrong</button>
   <button catchtap="wrong" bindtap="test.right">wrong</button>
   <button catchtap="wrong" bindtap="test.right">wrong</button>
 </view>

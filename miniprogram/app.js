@@ -1,6 +1,6 @@
 //app.js
 
-
+var app = getApp()
 
 App({
   onLaunch: function () {
@@ -47,22 +47,23 @@ App({
       userInfo: null,
       overallWordList: [{
 
-
-        localWordList: [{
-          _id: "2",
-          memory_num: "100",
-
-          word: "",
-          yinbiao: "[,misʌndə'stænd]",
-          yisi: "",
-
-
-          numclick: 18,
-
-        }]
-
       }],
     },
+  //拉取单词
+  getlist() {
+    var that = this 
+    wx.cloud.database().collection("list").get({
+      success: res => {
+        console.log("获取成功", res)
+        that.globalData.overallWordList = res.data
+        console.log("yes",that.globalData.overallWordList)
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+    })
+
+  },
     //记忆指数初次确定函数
     //k1:音频点击次数权值（负相关）
     //k2:单词熟悉程度权值（太简单：0,下一个：1,仍需记忆：2）(负相关)

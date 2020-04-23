@@ -6,21 +6,18 @@ Page({
    */
   data: {
     word: {},
-    numclick: ''
+    numclick: '',
+   
   },
   
   true(){
-    wx.navigateTo({
-      url: '../wordTest/wordTest',
-    })
+    var index=e.currentTarget.dataset.index;
+    ++this.data.word[index].numclick;
   },
 
   wrong(){
-    wx.showToast({
-      title:'错误',
-      icon:'none',
-      duration:1000
-    })
+    var index = e.currentTarget.dataset.index;
+    ++this.data.word[index].numclick;
   },
   
   addPropertyInList(a, b) {

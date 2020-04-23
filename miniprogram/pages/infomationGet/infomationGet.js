@@ -18,42 +18,48 @@ Page({
   },
 
   onLoad: function (options) {
-    this.getlist()
+    app.getlist()
   },
   onReady: function (options) {
-    this.getlist()
+   
   },
-
-  getlist() {
-    let that = this
-    wx.cloud.database().collection("list").get({
-      success: res => {
-        console.log("获取成功", res)
-        app.globalData.overallWordList = res.data
-        app.globalData.localWordList=res.data
-      },
-      fail(res) {
-        console.log("获取失败", res)
-      }
-    })
-
-  },
+  
+  
+  
   inputChangeHandle: function (e) {
     
 
   },
 
   addTodoHandle: function () {
+    var that=this
    
-    this.setData({
-      nee: app.globalData.overallWordList
-    })
-    console.log(app.globalData.overallWordList)
-    console.log(app.globalData.localWordList)
-    console.log('333')
+    app.getlist();
+    var timer = setInterval(function () {
+      console.log("循环定时器等待循环请求结束")
+     
+      if (app.globalData.overallWordList !=undefined ) {
+      
+        
+        that.setData({
+          nee: app.globalData.overallWordList
 
+        })
+        console.log(app.globalData.overallWordList)
+
+        console.log('333')
+        clearInterval(timer);
+      }
+    }, 500)
+    
+    
+    
+    
+    
+    
 
   },
+
   jumptowordlist: function () {
 
 

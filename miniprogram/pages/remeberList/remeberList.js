@@ -26,6 +26,7 @@ Page({
   },
 
   onLoad: function (options) {
+    setInterval
     this.setData({
       word: app.globalData.overallWordList,
 
