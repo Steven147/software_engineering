@@ -5,7 +5,7 @@
 <text class='word'> {{item.yisi}}</text>
 <view >
 
-  <button bindtap="true" >{{item.word}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
   <button bindtap="wrong"data-index='{{index}}' >wrong</button>
   <button bindtap="wrong" data-index='{{index}}'>wrong</button>
   <button bindtap="wrong" data-index='{{index}}'>wrong</button>

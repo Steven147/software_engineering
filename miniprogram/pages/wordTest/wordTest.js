@@ -7,7 +7,8 @@ Page({
   data: {
     word: {},
     
-
+    timeBegin :"",
+    timeEnd:"",
     id:1
   },
   
@@ -27,30 +28,79 @@ Page({
    
   },
 
-  true(){
-    var idm=this.data.id;
-    if (idm<20) {
-      console.log(this.data.id);
-      this.setData({
-          id:idm+1
-        })
-    } else {
-      app.globalData.overallWordList = this.data.word
-      var idm = this.data.id;
-      if (idm == 20) {
-        var timestamp = Date.parse(new Date());
-        timestamp = timestamp / 1000;
-        console.log("此时时间戳为：" + timestamp);
-        var timeResult = this.getTimeforUse(timestamp);
-        app.globalData.timeEnd= timeResult;
-
-      } 
-      app.globalData.timeOnTest = app.globalData.timeEnd - app.globalData.timeBegin;
-      console.log("时间是", app.globalData.timeOnTest, app.globalData.timeEnd, app.globalData.timeBegin)
-      wx.navigateTo({
-        url: '../wordTest/tstend',
+  true(e){
+    var that=this;
+    var idm=that.data.id;
+    if (idm < 20) {
+      console.log(that.data.id);
+      var timestamp = Date.parse(new Date());
+     
+      console.log("此时时间戳为：" + timestamp);
+      var timeResult = that.getTimeforUse(timestamp);
+      that.setData({
+        timeEnd: timeResult
       })
+      //that.data.timeEnd = function formatTime(time) {
+      //  return moment.unix(time).format('YYYY/MM/DD HH:mm:ss:SSS')
+      //}
+      var b = that.data.timeEnd-this.data.timeBegin;
+      console.log(
+        "e", e.currentTarget.dataset.index,"b",b)
+      that.data.word.forEach(function (item, index) {
+        if(index==e.currentTarget.dataset.index){
+          var timeOnTest = "word[" + index + "].timeOnTest";
+          that.setData({
+            [timeOnTest]: b
+          })
+        }
+        
+
+       
+      })
+      that.setData({
+        timeBegin: that.data.timeEnd
+      })
+    
+      
+      
+      console.log(
+        "时间是", app.globalData.overallWordList)
+      console.log(
+        "时刻是", app.globalData.overallWordList)
+      that.setData({
+        id: idm + 1
+      })
+      
     }
+    
+    else {
+      
+      var timestamp = Date.parse(new Date());
+
+      console.log("此时时间戳为：" + timestamp);
+      var timeResult = that.getTimeforUse(timestamp);
+      that.setData({
+        timeEnd: timeResult
+      })
+      
+      var b = that.data.timeEnd - this.data.timeBegin;
+      
+      that.data.word.forEach(function (item, index) {
+        if (index == e.currentTarget.dataset.index) {
+          var timeOnTest = "word[" + index + "].timeOnTest";
+          that.setData({
+            [timeOnTest]: b
+          })
+        }
+      })
+      app.globalData.overallWordList = this.data.word;
+      console.log(app.globalData.overallWordList)
+      
+      wx.navigateTo({
+          url: '../wordTest/tstend',
+        })
+      
+    } 
 
   },
   
@@ -76,11 +126,16 @@ Page({
     var idm = this.data.id;
     if (idm == 1) {
       var timestamp = Date.parse(new Date());
-      timestamp = timestamp / 1000;
+      timestamp = timestamp;
       console.log("当前时间戳为：" + timestamp);
       var timeResult = this.getTimeforUse(timestamp);
-      app.globalData.timeBegin = timeResult;
-
+      this.setData({
+        timeBegin: timeResult
+      })
+     
+      //this.data.timeBegin = function formatTime(time) {
+      //  return moment.unix(time).format('YYYY/MM/DD HH:mm:ss:SSS')
+      //}
     } 
     this.setData({
       word: app.globalData.overallWordList,
@@ -88,8 +143,8 @@ Page({
       this.addPropertyInList(this.data.word, this.data.numOfWrongClick)
   },
   getTimeforUse( timestamp){
-    var n = timestamp * 1000;
-    var date = new Date(n);
+   
+    var date = new Date(timestamp);
     //年
     var Y = date.getFullYear();
     //月
@@ -102,7 +157,8 @@ Page({
     var m = date.getMinutes();
     //秒
     var s = date.getSeconds();
-    console.log("当前时间：" + Y + M + D + h + ":" + m + ":" + s);
+    var Millisecond = Math.floor(date.getMilliseconds() / 10);
+    console.log("当前时间：" + Y + M + D + h + ":" + m + ":" + s + Millisecond);
     return (m*60+s);
   },
   /**
