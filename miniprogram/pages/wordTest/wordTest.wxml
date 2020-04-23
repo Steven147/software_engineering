@@ -1,12 +1,16 @@
 <!--pages/wordTest/wordTest.wxml-->
-<view wx:for='{{word}}' wx:key="word">
-<view class='container'>
+
+<view wx:for="{{word}}" wx:key="word" wx:for-index="index">
+<view class='container' wx:if="{{item._id==id}}">
 <text class='word'> {{item.yisi}}</text>
-<view>
-  <button catchtap="true" bindtap="test.right">{{item.word}}</button>
-  <button catchtap="wrong" bindtap="test.right" >wrong</button>
-  <button catchtap="wrong" bindtap="test.right">wrong</button>
-  <button catchtap="wrong" bindtap="test.right">wrong</button>
+<view >
+
+  <button bindtap="true" >{{item.word}}</button>
+  <button bindtap="wrong"data-index='{{index}}' >wrong</button>
+  <button bindtap="wrong" data-index='{{index}}'>wrong</button>
+  <button bindtap="wrong" data-index='{{index}}'>wrong</button>
+
 </view>
 </view>
 </view>
+

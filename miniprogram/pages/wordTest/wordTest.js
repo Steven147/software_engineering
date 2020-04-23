@@ -6,39 +6,57 @@ Page({
    */
   data: {
     word: {},
-    numclick: '',
-   
+    
+
+    id:1
   },
   
-  true(){
-    var index=e.currentTarget.dataset.index;
-    ++this.data.word[index].numclick;
+  
+
+  wrong(e) {
+    
+    console.log(this.data.word[e.currentTarget.dataset.index].numOfWrongClick)
+    
+    var a= this.data.word[e.currentTarget.dataset.index];
+    a.numOfWrongClick = a.numOfWrongClick+1;
+    
+    this.setData({
+      [this.data.word[e.currentTarget.dataset.index].numOfWrongClick]: a
+    })
+
+   
   },
 
-  wrong(){
-    var index = e.currentTarget.dataset.index;
-    ++this.data.word[index].numclick;
+  true(){
+    var idm=this.data.id;
+    if (idm<20) {
+      console.log(this.data.id);
+      this.setData({
+          id:idm+1
+        })
+    } else {
+      app.globalData.overallWordList = this.data.word
+      wx.navigateTo({
+        url: '../wordTest/tstend',
+      })
+    }
+
   },
   
   addPropertyInList(a, b) {
     var word = a
-    var numclick = b
+    
     var that = this
-    this.setData({
-      word: app.globalData.overallWordList,
+    that.data.word.forEach(function (item, index) {
 
-    }),
-
-      that.data.word.forEach(function (item, index) {
-
-        var numclick = "word[" + index + "].numclick";
+      var numOfWrongClick = "word[" + index + "].numOfWrongClick";
         that.setData({
-          [numclick]: 0
+          [numOfWrongClick]: 0
         })
 
         app.globalData.overallWordList = that.data.word
-      })
-    console.log(app.globalData.overallWordList)
+    })
+    console.log(that.data.word[1].numOfWrongClick)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -47,7 +65,7 @@ Page({
     this.setData({
       word: app.globalData.overallWordList,
     }),
-      this.addPropertyInList(this.data.word, this.data.numclick)
+      this.addPropertyInList(this.data.word, this.data.numOfWrongClick)
   },
 
   /**
