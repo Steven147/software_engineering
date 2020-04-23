@@ -10,9 +10,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#889",
     "navigationBarTitleText": "magic_word",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   
   "sitemapLocation": "sitemap.json"
