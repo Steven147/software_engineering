@@ -73,7 +73,8 @@ App({
     //k4:学习阶段停留时间(负相关)
     //k5:测试阶段停留时间(负相关)
     calc_memory_num: function(k1,k2,k3,k4,k5){
-      var list=this.globalData.localWordList;
+      var app = getApp()
+      var list = app.globalData.overallWordList;
       console.log('**************');
       console.log(list);
       for(var i=0;i<list.length;++i){
@@ -103,7 +104,8 @@ App({
     },
     //记忆指数修正函数
     recalc_memory_num: function (k1, k2, k3, k4, k5) {
-      var list = this.globalData.localWordList;
+      var app = getApp()
+      var list = app.globalData.overallWordList;
       console.log('**************');
       console.log(list);
       for (var i = 0; i < list.length; ++i) {
@@ -134,5 +136,15 @@ App({
         if (list[i].memory_num < 0) list[i].memory_num = 0
     }
   },
+  //遗忘函数(以天为单位)
+  forgettingCurve:function(){
+    var app = getApp()
+    var list = app.globalData.overallWordList;
+    for (var i = 0; i < list.length; ++i) {
+      if (list[i].memory_num < 90 && list[i].memory_num >= 60) list[i].memory_num *= 0.6
+      if (list[i].memory_num < 60 && list[i].memory_num >= 30) list[i].memory_num *= 0.4
+      if (list[i].memory_num < 30 && list[i].memory_num >= 0) list[i].memory_num *= 0.2
+    }
+  }
  
 })
