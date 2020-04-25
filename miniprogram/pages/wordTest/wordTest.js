@@ -11,9 +11,7 @@ Page({
     timeEnd:"",
     id:1
   },
-  
-  
-
+ 
   wrong(e) {
     
     console.log(this.data.word[e.currentTarget.dataset.index].numOfWrongClick)
@@ -53,16 +51,12 @@ Page({
             [timeOnTest]: b
           })
         }
-        
-
-       
+      
       })
       that.setData({
         timeBegin: that.data.timeEnd
       })
     
-      
-      
       console.log(
         "时间是", app.globalData.overallWordList)
       console.log(
@@ -73,7 +67,8 @@ Page({
       
     }
     
-    else {
+    if (that.data.id == 20) {
+      console.log("bushuchu")
       
       var timestamp = Date.parse(new Date());
 
@@ -83,7 +78,7 @@ Page({
         timeEnd: timeResult
       })
       
-      var b = that.data.timeEnd - this.data.timeBegin;
+      var b = that.data.timeEnd - that.data.timeBegin;
       
       that.data.word.forEach(function (item, index) {
         if (index == e.currentTarget.dataset.index) {
@@ -93,13 +88,13 @@ Page({
           })
         }
       })
-      app.globalData.overallWordList = this.data.word;
+      app.globalData.overallWordList = that.data.word;
       console.log(app.globalData.overallWordList)
-      app.recalc_memory_num(0.1,0.1,0.1,0.1,0.6);
+      
       wx.navigateTo({
           url: '../wordTest/tstend',
         })
-      console.log(app.globalData.overallWordList)
+      
     } 
 
   },
@@ -132,7 +127,10 @@ Page({
       this.setData({
         timeBegin: timeResult
       })
-    
+     
+      //this.data.timeBegin = function formatTime(time) {
+      //  return moment.unix(time).format('YYYY/MM/DD HH:mm:ss:SSS')
+      //}
     } 
     this.setData({
       word: app.globalData.overallWordList,
