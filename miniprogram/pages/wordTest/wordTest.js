@@ -95,11 +95,11 @@ Page({
       })
       app.globalData.overallWordList = this.data.word;
       console.log(app.globalData.overallWordList)
-      
+      app.recalc_memory_num(0.1,0.1,0.1,0.1,0.6);
       wx.navigateTo({
           url: '../wordTest/tstend',
         })
-      
+      console.log(app.globalData.overallWordList)
     } 
 
   },
@@ -132,10 +132,7 @@ Page({
       this.setData({
         timeBegin: timeResult
       })
-     
-      //this.data.timeBegin = function formatTime(time) {
-      //  return moment.unix(time).format('YYYY/MM/DD HH:mm:ss:SSS')
-      //}
+    
     } 
     this.setData({
       word: app.globalData.overallWordList,

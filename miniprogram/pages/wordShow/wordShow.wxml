@@ -10,7 +10,7 @@
           </button>
         </view>
         <text class='detail'> {{item.yisi}}</text>
-        <view>
+        <view bindtap="timecalculate"data-index="{{index}}">
           <button type="primary" class="button2" bindtap="goTest0" data-index="{{index}}">太简单</button>
           <button type="primary" class="button2" bindtap="goTest1"data-index="{{index}}">下一个</button>
           <button type="primary" class="button2" bindtap="goTest2"data-index="{{index}}">仍需记忆</button>

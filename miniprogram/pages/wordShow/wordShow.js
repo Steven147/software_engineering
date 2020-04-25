@@ -9,6 +9,8 @@ Page({
     numclick: '',
     //copylist: {},
     id: 1,
+    timeBegin:"",
+    timeEnd:""
   },
 
   //setcopylist(a, b) {
@@ -33,6 +35,31 @@ Page({
       url: '../wordTest/wordTest',
     })
   },
+  timecalculate:function(e){
+    var that=this
+    var timestamp = Date.parse(new Date());
+    console.log("当前时间戳为：" + timestamp);
+    var timeResult = app.getTimeforUse(timestamp);
+    that.setData({
+      timeEnd: timeResult
+    })
+    var b = ((that.data.timeEnd - that.data.timeBegin) > 60) ? 60 : (that.data.timeEnd - that.data.timeBegin)
+    that.setData({
+      timeBegin: timeResult
+    })
+    that.data.word.forEach(function (item, index) {
+      if (index == e.currentTarget.dataset.index) {
+        var learnTime = "word[" + index + "].learnTime";
+        that.setData({
+          [learnTime]: b
+        })
+      }
+    })
+    app.globalData.overallWordList = that.data.word;
+    console.log(app.globalData.overallWordList)
+
+  },
+
   goTest0(e) {
     var index = e.currentTarget.dataset.index;
     var theDifficultyByUser = 'word[' + index + '].theDifficultyByUser';
@@ -140,18 +167,29 @@ Page({
 
       app.globalData.overallWordList = that.data.word
     })
-    console.log(app.globalData.overallWordList)
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
     this.setData({
         word: app.globalData.overallWordList,
       }),
       this.addPropertyInList(this.data.word, this.data.numclick)
     this.addPropertyInList(this.data.word, this.data.theDifficultyByUser)
     this.addPropertyInList(this.data.word, this.data.id2)
+    if (this.data.word.id2 == 1) {
+      var timestamp = Date.parse(new Date());
+      console.log("当前时间戳为：" + timestamp);
+      var timeResult = app.getTimeforUse(timestamp);
+      this.setData({
+        timeBegin: timeResult
+      })
+
+    } 
+    
     //this.setcopylist(this.data.word, this.data.copylist)
   },
 
