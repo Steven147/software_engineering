@@ -1,27 +1,29 @@
 <!--pages/wordShow/wordShow.wxml-->
-  <view wx:for="{{word}}" wx:key="word">
-    <view wx:if="{{item.id2==id}}">
-      <view class='container'>
-        <text class='word'> {{item.word}}</text>
-        <view class='IPA'>
-          <text> {{item.yinbiao}}</text>
-          <button class='button1' plain="true" bindtap="sound" data-index="{{index}}">
-            <image class='icon' src="icon.jpg"></image>
-          </button>
-        </view>
-        <text class='detail'> {{item.yisi}}</text>
-        <view bindtap="timecalculate"data-index="{{index}}">
-          <button type="primary" class="button2" bindtap="goTest0" data-index="{{index}}">太简单</button>
-          <button type="primary" class="button2" bindtap="goTest1"data-index="{{index}}">下一个</button>
-          <button type="primary" class="button2" bindtap="goTest2"data-index="{{index}}">仍需记忆</button>
-        </view>
-
+<view wx:for="{{word}}" wx:key="word">
+  <view wx:if="{{item.id2==id}}">
+    <view class='container'>
+      <text class='word'> {{item.word}}</text>
+      <view class='IPA'>
+        <text decode="{{true}}"> 美&nbsp;&nbsp;{{item.yinbiao_AE}}&nbsp;&nbsp;&nbsp;英&nbsp;&nbsp;{{item.yinbiao_BE}}</text>
+        <button class='button1' plain="true" bindtap="sound_AE" data-index="{{index}}">
+          <image class='icon' src="icon.jpg"></image>
+        </button>
+        <button class='button1' plain="true" bindtap="sound_BE" data-index="{{index}}">
+          <image class='icon' src="icon.jpg"></image>
+        </button>
+      </view>
+    
+      <text class='detail' decode="{{true}}">释义&nbsp;&nbsp;&nbsp;&nbsp;{{item.yisi}}</text>
+      <text class='detail' decode="{{true}}"> 例句&nbsp;&nbsp;&nbsp;&nbsp;{{item.liju_e}}</text>
+      <text class='detail' decode="{{true}}"> 翻译&nbsp;&nbsp;&nbsp;&nbsp;{{item.liju_cn}}</text>
+      <view bindtap="timecalculate" data-index="{{index}}">
+        <button type="primary" class="button2" bindtap="goTest0" data-index="{{index}}">太简单</button>
+        <button type="primary" class="button2" bindtap="goTest1" data-index="{{index}}">下一个</button>
+        <button type="primary" class="button2" bindtap="goTest2" data-index="{{index}}">仍需记忆</button>
       </view>
 
-
     </view>
-  </view>
 
-<button class=".btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="goindex">
-  next
-</button>
+
+  </view>
+</view>
