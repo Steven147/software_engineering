@@ -102,7 +102,7 @@ Page({
   },
 
   sound_AE(e) {
-    console.log(3);
+    console.log(1);
     var index = e.currentTarget.dataset.index;
     ++this.data.word[index].numclick;
     innerAudioContext.src = "cloud://cloud-14ij5.636c-cloud-14ij5-1301705689/" + this.data.word[index].word + "_AE.mp3";
