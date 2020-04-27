@@ -104,7 +104,6 @@ Page({
   sound(e) {
     console.log(3);
     console.log('播放成功');
-    innerAudioContext.src = "cloud://cloud-14ij5.636c-cloud-14ij5-1301705689/celestial_BE.mp3";
     innerAudioContext.play();
     var index = e.currentTarget.dataset.index;
     ++this.data.word[index].numclick;
