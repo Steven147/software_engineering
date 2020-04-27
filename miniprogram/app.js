@@ -54,7 +54,6 @@ App({
   //拉取单词
   getlist() {
     var that = this 
-    wx.cloud.database().collection("list").get({
       success: res => {
         console.log("获取成功", res)
         that.globalData.overallWordList = res.data
