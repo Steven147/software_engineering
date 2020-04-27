@@ -1,6 +1,5 @@
 var app = getApp()
 const innerAudioContext = wx.createInnerAudioContext();
-
 Page({
 
   /**
@@ -11,30 +10,41 @@ Page({
     numclick: '',
     //copylist: {},
     id: 1,
+    timeBegin: "",
+    timeEnd: ""
   },
 
-  //setcopylist(a, b) {
-  //var word = a;
-  //var copylist = b;
-  // this.setData({
-  //   word: app.globalData.overallWordList,
-
-  // });
-  // var j = 0;
-  // for (let i = 0; i < 20; ++i) {
-  //  if (this.data.word[i].isSelected == 0) {
-  //    copylist[j] = this.data.word[i]._id;
-  //    ++j;
-  //   }
-  //  };
-  // console.log(copylist);
-  //},
 
   goindex() {
     wx.navigateTo({
       url: '../wordTest/wordTest',
     })
   },
+  timecalculate: function (e) {
+    var that = this
+    var timestamp = Date.parse(new Date());
+    console.log("当前时间戳为：" + timestamp);
+    var timeResult = app.getTimeforUse(timestamp);
+    that.setData({
+      timeEnd: timeResult
+    })
+    var b = ((that.data.timeEnd - that.data.timeBegin) > 60) ? 60 : (that.data.timeEnd - that.data.timeBegin)
+    that.setData({
+      timeBegin: timeResult
+    })
+    that.data.word.forEach(function (item, index) {
+      if (index == e.currentTarget.dataset.index) {
+        var learnTime = "word[" + index + "].learnTime";
+        that.setData({
+          [learnTime]: b
+        })
+      }
+    })
+    app.globalData.overallWordList = that.data.word;
+    console.log(app.globalData.overallWordList)
+
+  },
+
   goTest0(e) {
     var index = e.currentTarget.dataset.index;
     var theDifficultyByUser = 'word[' + index + '].theDifficultyByUser';
@@ -98,6 +108,23 @@ Page({
     innerAudioContext.play();
     var index = e.currentTarget.dataset.index;
     ++this.data.word[index].numclick;
+    innerAudioContext.src ="cloud://cloud-14ij5.636c-cloud-14ij5-1301705689/"+this.data.word[index].word+"_AE.mp3";
+    
+    setTimeout(function () {
+      innerAudioContext.play();
+    }.bind(this), 300)
+  
+  },
+  sound_BE(e) {
+    console.log(2);
+    var index = e.currentTarget.dataset.index;
+    ++this.data.word[index].numclick;
+    innerAudioContext.src = "cloud://cloud-14ij5.636c-cloud-14ij5-1301705689/" + this.data.word[index].word + "_BE.mp3";
+    
+setTimeout(function () {
+  innerAudioContext.play();
+}.bind(this), 300)
+
   },
 
   addPropertyInList(a, b) {
@@ -105,11 +132,11 @@ Page({
     var numclick = b
     var that = this
     this.setData({
-        word: app.globalData.overallWordList,
+      word: app.globalData.overallWordList,
 
-      }),
+    }),
 
-      that.data.word.forEach(function(item, index) {
+      that.data.word.forEach(function (item, index) {
 
         var numclick = "word[" + index + "].numclick";
         that.setData({
@@ -118,7 +145,7 @@ Page({
 
         app.globalData.overallWordList = that.data.word
       })
-    that.data.word.forEach(function(item, index) {
+    that.data.word.forEach(function (item, index) {
 
       var theDifficultyByUser = "word[" + index + "].theDifficultyByUser";
       that.setData({
@@ -127,7 +154,7 @@ Page({
 
       app.globalData.overallWordList = that.data.word
     })
-    that.data.word.forEach(function(item, index) {
+    that.data.word.forEach(function (item, index) {
 
       var id2 = "word[" + index + "].id2";
       that.setData({
@@ -137,75 +164,86 @@ Page({
         if (that.data.word[i].isSelected == 0) {
           var id2 = "word[" + i + "].id2";
           that.setData({
-              [id2]: j
-            })
-            ++j;
+            [id2]: j
+          })
+          ++j;
         }
       };
 
       app.globalData.overallWordList = that.data.word
     })
-    console.log(app.globalData.overallWordList)
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
+
     this.setData({
-        word: app.globalData.overallWordList,
-      }),
+      word: app.globalData.overallWordList,
+    }),
       this.addPropertyInList(this.data.word, this.data.numclick)
     this.addPropertyInList(this.data.word, this.data.theDifficultyByUser)
     this.addPropertyInList(this.data.word, this.data.id2)
+    if (this.data.word.id2 == 1) {
+      var timestamp = Date.parse(new Date());
+      console.log("当前时间戳为：" + timestamp);
+      var timeResult = app.getTimeforUse(timestamp);
+      this.setData({
+        timeBegin: timeResult
+      })
+
+    }
+
     //this.setcopylist(this.data.word, this.data.copylist)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

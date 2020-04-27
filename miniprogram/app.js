@@ -54,6 +54,7 @@ App({
   //拉取单词
   getlist() {
     var that = this 
+    wx.cloud.database().collection("super").get({
       success: res => {
         console.log("获取成功", res)
         that.globalData.overallWordList = res.data
@@ -85,18 +86,17 @@ App({
       var p1,p2,p3,p4,p5 //分别对应同下标权值的分值
       for (var i = 0; i < list.length; ++i) {
         p1 = 100 * Math.exp(-list[i].radioClickNum)
+        p1 = 100 * Math.exp(-list[i].numclick)
         
-        if (list[i].primaryPoint == 0) p2 = 70
-        if (list[i].primaryPoint == 1) p2 = 30
-        if (list[i].primaryPoint == 2) p2 = 0
         
-        if (list[i].tryNum == 1) p2 = 80
-        if (list[i].tryNum == 2) p2 = 50
-        if (list[i].tryNum == 3) p2 = 20
         if (list[i].tryNum == 4) p2 = 0
+        if (list[i].numOfWrongClick == 1) p2 = 80
+        if (list[i].numOfWrongClick== 2) p2 = 50
+        if (list[i].numOfWrongClick== 3) p2 = 20
+        if (list[i].numOfWrongClick == 4) p2 = 0
 
         p4 = 100 * Math.exp(-list[i].learnTime)
-        p5 = 100 * Math.exp(-list[i].testTime)
+        p5 = 100 * Math.exp(-list[i].timeOnTest)
 
         list[i].memory_num = k1*p1 + k2*p2 + k3*p3 + k4*p4 + k5*p5
       }
@@ -116,15 +116,13 @@ App({
       var p1, p2, p3, p4, p5 //分别对应同下标权值的修正
       for (var i = 0; i < list.length; ++i) {
         p1 = 100 * (Math.exp(-list[i].radioClickNum)-0.5)
+        p1 = 100 * (Math.exp(-list[i].numclick)-0.5)
 
-        if (list[i].primaryPoint == 0) p2 = 20
-        if (list[i].primaryPoint == 1) p2 = 0
-        if (list[i].primaryPoint == 2) p2 = -20
 
-        if (list[i].tryNum == 1) p2 = 30
-        if (list[i].tryNum == 2) p2 = 10
-        if (list[i].tryNum == 3) p2 = -10
-        if (list[i].tryNum == 4) p2 = -30
+        if (list[i].numOfWrongClick == 1) p2 = 30
+        if (list[i].numOfWrongClick == 2) p2 = 10
+        if (list[i].numOfWrongClick == 3) p2 = -10
+        if (list[i].numOfWrongClick == 4) p2 = -30
 
         p4 = 100 * (Math.exp(list[i].learnTime) - 0.5)
         p5 = 100 * (Math.exp(list[i].testTime) - 0.5)
@@ -144,6 +142,27 @@ App({
       if (list[i].memory_num < 60 && list[i].memory_num >= 30) list[i].memory_num *= 0.4
       if (list[i].memory_num < 30 && list[i].memory_num >= 0) list[i].memory_num *= 0.2
     }
+  },
+  getTimeforUse(timestamp) {
+
+    var date = new Date(timestamp);
+    //年
+    var Y = date.getFullYear();
+    //月
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    //日
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    //时
+    var h = date.getHours();
+    //分
+    var m = date.getMinutes();
+    //秒
+    var s = date.getSeconds();
+    var Millisecond = Math.floor(date.getMilliseconds() / 10);
+    console.log("当前时间：" + Y + M + D + h + ":" + m + ":" + s + Millisecond);
+  
+    return ( m*60 + s);
   }
+  
  
 })
