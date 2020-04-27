@@ -85,11 +85,12 @@ App({
       //记忆指数加权计算
       var p1,p2,p3,p4,p5 //分别对应同下标权值的分值
       for (var i = 0; i < list.length; ++i) {
-        p1 = 100 * Math.exp(-list[i].radioClickNum)
         p1 = 100 * Math.exp(-list[i].numclick)
         
+        if (list[i].theDifficultyByUser == 0) p2 = 70
+        if (list[i].theDifficultyByUser == 1) p2 = 30
+        if (list[i].theDifficultyByUser == 2) p2 = 0
         
-        if (list[i].tryNum == 4) p2 = 0
         if (list[i].numOfWrongClick == 1) p2 = 80
         if (list[i].numOfWrongClick== 2) p2 = 50
         if (list[i].numOfWrongClick== 3) p2 = 20
@@ -115,9 +116,11 @@ App({
       //记忆指数加权计算
       var p1, p2, p3, p4, p5 //分别对应同下标权值的修正
       for (var i = 0; i < list.length; ++i) {
-        p1 = 100 * (Math.exp(-list[i].radioClickNum)-0.5)
         p1 = 100 * (Math.exp(-list[i].numclick)-0.5)
 
+        if (list[i].theDifficultyByUser== 0) p2 = 20
+        if (list[i].theDifficultyByUser == 1) p2 = 0
+        if (list[i].theDifficultyByUser == 2) p2 = -20
 
         if (list[i].numOfWrongClick == 1) p2 = 30
         if (list[i].numOfWrongClick == 2) p2 = 10
