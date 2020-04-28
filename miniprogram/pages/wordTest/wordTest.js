@@ -90,7 +90,7 @@ Page({
       })
       app.globalData.overallWordList = that.data.word;
       console.log(app.globalData.overallWordList)
-      
+      app.calc_memory_num(0.2,0.3,0.1,0.1,0.3)
       wx.navigateTo({
           url: '../wordTest/tstend',
         })

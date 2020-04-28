@@ -46,7 +46,7 @@ App({
     globalData: {
       userInfo: null,
       overallWordList: [{
-
+        
       }],
       timeBegin:"",
       timeEnd:""
@@ -75,32 +75,78 @@ App({
     calc_memory_num: function(k1,k2,k3,k4,k5){
       var app = getApp()
       var list = app.globalData.overallWordList;
+      var timer = setInterval(function () {
+        console.log("循环定时器等待循环请求结束")
+
+        if (app.globalData.overallWordList != undefined) {
+
+          console.log(list)
+
+          console.log('333')
+          clearInterval(timer);
+        }
+      }, 500)
       console.log('**************');
       console.log(list);
       for(var i=0;i<list.length;++i){
-       if (list[i].isSelected===1) list[i].memory_num=100;
+       if (list[i].isSelected==1) list[i].memory_num=100;
       }
-      console.log(list);
-      console.log('**************');
       //记忆指数加权计算
       var p1,p2,p3,p4,p5 //分别对应同下标权值的分值
+      
       for (var i = 0; i < list.length; ++i) {
-        p1 = 100 * Math.exp(-list[i].numclick)
-        
-        if (list[i].theDifficultyByUser == 0) p2 = 70
-        if (list[i].theDifficultyByUser == 1) p2 = 30
-        if (list[i].theDifficultyByUser == 2) p2 = 0
-        
-        if (list[i].numOfWrongClick == 1) p2 = 80
-        if (list[i].numOfWrongClick== 2) p2 = 50
-        if (list[i].numOfWrongClick== 3) p2 = 20
-        if (list[i].numOfWrongClick == 4) p2 = 0
+        if (list[i].memory_num <= 100 && list[i].memory_num >= 0){
+          if (list[i].isSelected == 0) {
+            p1 = 100 * (Math.exp(-list[i].numclick) - 0.5)
 
-        p4 = 100 * Math.exp(-list[i].learnTime)
-        p5 = 100 * Math.exp(-list[i].timeOnTest)
+            if (list[i].theDifficultyByUser == 0) p2 = 20
+            if (list[i].theDifficultyByUser == 1) p2 = 0
+            if (list[i].theDifficultyByUser == 2) p2 = -20
 
-        list[i].memory_num = k1*p1 + k2*p2 + k3*p3 + k4*p4 + k5*p5
+            if (list[i].numOfWrongClick == 1) p3 = 30
+            if (list[i].numOfWrongClick == 2) p3 = 10
+            if (list[i].numOfWrongClick == 3) p3 = -10
+            if (list[i].numOfWrongClick == 4) p3 = -30
+
+            p4 = 100 * (Math.exp(list[i].learnTime) - 0.5)
+            p5 = 100 * (Math.exp(list[i].testTime) - 0.5)
+
+            list[i].memory_num += k1 * p1 + k2 * p2 + k3 * p3 + k4 * p4 + k5 * p5
+            //边值确定
+            if (list[i].memory_num > 100) list[i].memory_num = 100
+            if (list[i].memory_num < 0) list[i].memory_num = 0
+          
+          console.log(i, p4, list[i].learnTime, p5, list[i].timeOnTest)
+                    
+          console.log(i, list[i].memory_num)
+          console.log('修改赋值')
+        }}
+        else{
+            if (list[i].isSelected == 0) {
+              p1 = 100 * Math.exp(-list[i].numclick / 5)
+
+              if (list[i].theDifficultyByUser == 0) p2 = 70
+              if (list[i].theDifficultyByUser == 1) p2 = 30
+              if (list[i].theDifficultyByUser == 2) p2 = 0
+
+              if (list[i].numOfWrongClick == 0) p3 = 80
+              if (list[i].numOfWrongClick == 1) p3 = 50
+              if (list[i].numOfWrongClick == 2) p3 = 20
+              if (list[i].numOfWrongClick == 3) p3 = 0
+
+              p4 = 100 * Math.exp(-list[i].learnTime / 10)
+              p5 = 100 * Math.exp(-list[i].timeOnTest / 10)
+
+              console.log(i, p4, list[i].learnTime, p5, list[i].timeOnTest)
+
+              list[i].memory_num = k1 * p1 + k2 * p2 + k3 * p3 + k4 * p4 + k5 * p5
+              console.log(i, list[i].memory_num)
+              console.log('初次赋值')
+        }}
       }
+      
+      console.log(list);
+      console.log('运行完成');
     },
     //记忆指数修正函数
     recalc_memory_num: function (k1, k2, k3, k4, k5) {
@@ -109,7 +155,7 @@ App({
       console.log('**************');
       console.log(list);
       for (var i = 0; i < list.length; ++i) {
-        if (list[i].isSelected === 1) list[i].memory_num = 1000;
+        if (list[i].isSelected === 1) list[i].memory_num = 100;
       }
       console.log(list);
       console.log('**************');
@@ -122,10 +168,10 @@ App({
         if (list[i].theDifficultyByUser == 1) p2 = 0
         if (list[i].theDifficultyByUser == 2) p2 = -20
 
-        if (list[i].numOfWrongClick == 1) p2 = 30
-        if (list[i].numOfWrongClick == 2) p2 = 10
-        if (list[i].numOfWrongClick == 3) p2 = -10
-        if (list[i].numOfWrongClick == 4) p2 = -30
+        if (list[i].numOfWrongClick == 1) p3 = 30
+        if (list[i].numOfWrongClick == 2) p3 = 10
+        if (list[i].numOfWrongClick == 3) p3 = -10
+        if (list[i].numOfWrongClick == 4) p3 = -30
 
         p4 = 100 * (Math.exp(list[i].learnTime) - 0.5)
         p5 = 100 * (Math.exp(list[i].testTime) - 0.5)
