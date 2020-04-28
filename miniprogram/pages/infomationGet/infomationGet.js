@@ -18,7 +18,7 @@ Page({
   },
 
   onLoad: function (options) {
-    app.getlist()
+    app.yun()
   },
   onReady: function (options) {
    
@@ -34,7 +34,7 @@ Page({
   addTodoHandle: function () {
     var that=this
    
-    app.getlist();
+    app.yun();
     var timer = setInterval(function () {
       console.log("循环定时器等待循环请求结束")
      

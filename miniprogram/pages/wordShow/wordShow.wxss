@@ -10,17 +10,18 @@
   color: black;
   background-color: rgba(0, 0, 0, 0.11);
   width: 80%;
+  padding: 10rpx;
 }
 
 .detail {
-  line-height: 10vh;
+  line-height: 8vh;
   width: 80%;
   margin: 10rpx;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: 20px;
   background-color: rgba(0, 0, 0, 0.11);
+  padding: 10rpx;
 }
 
 .IPA {
@@ -32,6 +33,7 @@
   color: black;
   background-color: rgba(0, 0, 0, 0.11);
   width: 80%;
+  padding: 10rpx;
 }
 
 .icon {
@@ -48,13 +50,7 @@
   height: 70rpx;
 }
 .button2{
-  width: 20vh;
-  display: inline-block
+  width: 80%;
+  display: inline-block;
+  align-items: center;
 }
-.btn 
-{ 
-width:100%; 
-color:green; 
-position:fixed; 
-bottom:0; 
-} 
