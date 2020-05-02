@@ -3,7 +3,7 @@
   <view wx:if="{{item.id2==id}}">
     <view class='container'>
       <text class='word'> {{item.word}}</text>
-      <view class='IPA'>
+      <view class='IPA' >
         <text decode="{{true}}"> 美&nbsp;&nbsp;{{item.yinbiao_AE}}</text>
         <button class='button1' plain="true" bindtap="sound_AE" data-index="{{index}}">
           <image class='icon' src="icon.jpg"></image>

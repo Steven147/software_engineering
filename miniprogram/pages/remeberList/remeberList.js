@@ -39,27 +39,16 @@ Page({
     var isSelected=b
     var isSelectedValue=c
     var that = this
-    this.setData({
-      word: app.globalData.overallWordList,
-
-    })
+    
     that.data.word.forEach(function (item, index) {
      
-        var isSelected = "word[" + index + "].isSelected";
-
-        that.setData({
-          [isSelected]: 0
-        })
+      app.globalData.overallWordList[index].isSelected=0
     })
     for (let value of this.data.isSelectedList) {
     
       that.data.word.forEach(function (item, index) {
         if (value === item._id) {
-          var isSelected = "word[" + index + "].isSelected";
-
-          that.setData({
-            [isSelected]: 1
-          })
+          app.globalData.overallWordList[index].isSelected=1
         }
         
       })
@@ -67,8 +56,8 @@ Page({
     }
 
     
-      app.globalData.overallWordList = that.data.word
-     console.log(app.globalData.overallWordList)
+      
+      console.log(app.globalData.overallWordList)
   },
 
 

@@ -14,7 +14,7 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    nee: []
+    numOfPlan:''
   },
 
   onLoad: function (options) {
@@ -27,13 +27,17 @@ Page({
   
   
   inputChangeHandle: function (e) {
-    
-
+    this.setData({
+     numOfPlan:e.detail.value
+    })
+   
   },
 
   addTodoHandle: function () {
     var that=this
-   
+    that.setData({
+      munOfPlan:e.detail.value
+     })
     app.yun();
     var timer = setInterval(function () {
       console.log("循环定时器等待循环请求结束")
@@ -41,13 +45,10 @@ Page({
       if (app.globalData.overallWordList !=undefined ) {
       
         
-        that.setData({
-          nee: app.globalData.overallWordList
-
-        })
+       
         console.log(app.globalData.overallWordList)
 
-        console.log('333')
+        console.log('轮询已完成')
         clearInterval(timer);
       }
     }, 500)
@@ -62,7 +63,7 @@ Page({
 
   jumptowordlist: function () {
 
-
+    app.globalData.overallWordList= app.globalData.overallWordList.splice(0,this.data.numOfPlan)
     wx.redirectTo({
       url: '../remeberList/remeberList'
 

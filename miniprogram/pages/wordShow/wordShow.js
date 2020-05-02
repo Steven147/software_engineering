@@ -1,3 +1,4 @@
+//setdata使用数据通道消耗资源，为避免对不在ml文件中显示的数据不断设置，将本地属性word中仅存放id2,其余存在在data以外的变量wordOutData中
 var app = getApp()
 const innerAudioContext = wx.createInnerAudioContext();
 Page({
@@ -5,13 +6,12 @@ Page({
   /**
    * 页面的初始数据
    */
+  timeBegin: "",
+  timeEnd: "",
   data: {
-    word: {},
-    numclick: '',
-    //copylist: {},
+    word: {},  
     id: 1,
-    timeBegin: "",
-    timeEnd: ""
+    
   },
 
 
@@ -23,34 +23,27 @@ Page({
   timecalculate: function (e) {
     var that = this
     var timestamp = Date.parse(new Date());
-    console.log("当前时间戳为：" + timestamp);
+    
     var timeResult = app.getTimeforUse(timestamp);
-    that.setData({
-      timeEnd: timeResult
-    })
-    var b = ((that.data.timeEnd - that.data.timeBegin) > 60) ? 60 : (that.data.timeEnd - that.data.timeBegin)
-    that.setData({
-      timeBegin: timeResult
-    })
+    
+    that.timeEnd=timeResult
+    console.log("timeEnd", that.timeEnd)
+    console.log("timebegin", that.timeBegin)
+    var b = ((that.timeEnd - that.timeBegin) > 60) ? 60 : (that.timeEnd - that.timeBegin)
+   console.log("b",b)
+    that.timeBegin=timeResult
+    
     that.data.word.forEach(function (item, index) {
-      if (index == e.currentTarget.dataset.index) {
-        var learnTime = "word[" + index + "].learnTime";
-        that.setData({
-          [learnTime]: b
-        })
-      }
+      app.globalData.overallWordList[index].learnTime=b
     })
-    app.globalData.overallWordList = that.data.word;
-    console.log(app.globalData.overallWordList)
+   
+    
 
   },
 
   goTest0(e) {
     var index = e.currentTarget.dataset.index;
-    var theDifficultyByUser = 'word[' + index + '].theDifficultyByUser';
-    this.setData({
-      [theDifficultyByUser]: 0
-    })
+    app.globalData.overallWordList[index].theDifficultyByUser=0
     var idm = this.data.id;
     if (idm < 20) {
       console.log(this.data.id);
@@ -66,10 +59,7 @@ Page({
 
   goTest1(e) {
     var index = e.currentTarget.dataset.index;
-    var theDifficultyByUser = 'word[' + index + '].theDifficultyByUser';
-    this.setData({
-      [theDifficultyByUser]: 1
-    })
+    app.globalData.overallWordList[index].theDifficultyByUser=1
     var idm = this.data.id;
     if (idm < 20) {
       console.log(this.data.id);
@@ -84,10 +74,7 @@ Page({
   },
   goTest2(e) {
     var index = e.currentTarget.dataset.index;
-    var theDifficultyByUser = 'word[' + index + '].theDifficultyByUser';
-    this.setData({
-      [theDifficultyByUser]: 2
-    })
+    app.globalData.overallWordList[index].theDifficultyByUser=2
     var idm = this.data.id;
     if (idm < 20) {
       console.log(this.data.id);
@@ -107,9 +94,9 @@ Page({
     ++this.data.word[index].numclick;
     innerAudioContext.src = "cloud://cloud-14ij5.636c-cloud-14ij5-1301705689/" + this.data.word[index].word + "_AE.mp3";
     
-setTimeout(function () {
-  innerAudioContext.play();
-}.bind(this), 300)
+  setTimeout(function () {
+    innerAudioContext.play();
+  }.bind(this), 300)
 
   },
   sound_BE(e) {
@@ -118,94 +105,83 @@ setTimeout(function () {
     ++this.data.word[index].numclick;
     innerAudioContext.src = "cloud://cloud-14ij5.636c-cloud-14ij5-1301705689/" + this.data.word[index].word + "_BE.mp3";
     
-setTimeout(function () {
-  innerAudioContext.play();
-}.bind(this), 300)
+  setTimeout(function () {
+    innerAudioContext.play();
+  }.bind(this), 300)
 
   },
 
-  addPropertyInList(a, b) {
+  addPropertyInListLocally(a) {
     var word = a
-    var numclick = b
     var that = this
-    this.setData({
-      word: app.globalData.overallWordList,
-
-    }),
-
+    
+   
+    if (app.globalData.overallWordList[0].theDifficultyByUser == undefined) {
       that.data.word.forEach(function (item, index) {
 
-        var numclick = "word[" + index + "].numclick";
+        app.globalData.overallWordList[index].theDifficultyByUser=-1
+
+      })
+      
+    }
+    if (that.data.word[0].id2  == undefined) {
+      that.data.word.forEach(function (item, index) {
+
+        var id2 = "word[" + index + "].id2";
         that.setData({
-          [numclick]: 0
+          [id2]: index+1
         })
 
-        app.globalData.overallWordList = that.data.word
-      })
-    that.data.word.forEach(function (item, index) {
+        
+     })
+ 
+   
+    
+    }
+    if (app.globalData.overallWordList[0].numclick == undefined) {
+      that.data.word.forEach(function (item, index) {
 
-      var theDifficultyByUser = "word[" + index + "].theDifficultyByUser";
-      that.setData({
-        [theDifficultyByUser]: -1
-      })
-
-      app.globalData.overallWordList = that.data.word
-    })
-    that.data.word.forEach(function (item, index) {
-
-      var id2 = "word[" + index + "].id2";
-      that.setData({
-        [id2]: -1
-      })
-      for (let i = 0, j = 1; i < 20; ++i) {
-        if (that.data.word[i].isSelected == 0) {
-          var id2 = "word[" + i + "].id2";
-          that.setData({
-            [id2]: j
-          })
-          ++j;
-        }
-      };
-
-      app.globalData.overallWordList = that.data.word
-    })
-
+        app.globalData.overallWordList[index].numclick=0
+ 
+     })
+    
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     this.setData({
       word: app.globalData.overallWordList,
-    }),
-      this.addPropertyInList(this.data.word, this.data.numclick)
-    this.addPropertyInList(this.data.word, this.data.theDifficultyByUser)
-    this.addPropertyInList(this.data.word, this.data.id2)
-    if (this.data.word.id2 == 1) {
+    })
+    this.addPropertyInListLocally(this.data.word)
+    if (this.data.word[0].id2 == 1) {
       var timestamp = Date.parse(new Date());
       console.log("当前时间戳为：" + timestamp);
       var timeResult = app.getTimeforUse(timestamp);
-      this.setData({
-        timeBegin: timeResult
-      })
+     
+       this.timeBegin=timeResult
+      
 
     }
-
-    //this.setcopylist(this.data.word, this.data.copylist)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
+    
+   
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   
+
+    
 
   },
 
@@ -243,4 +219,4 @@ setTimeout(function () {
   onShareAppMessage: function () {
 
   }
-})
+})                    
