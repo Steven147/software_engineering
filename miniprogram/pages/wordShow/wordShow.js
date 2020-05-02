@@ -45,7 +45,7 @@ Page({
     var index = e.currentTarget.dataset.index;
     app.globalData.overallWordList[index].theDifficultyByUser=0
     var idm = this.data.id;
-    if (idm < 20) {
+    if (idm < app.globalData.overallWordList.length) {
       console.log(this.data.id);
       this.setData({
         id: idm + 1
@@ -61,7 +61,7 @@ Page({
     var index = e.currentTarget.dataset.index;
     app.globalData.overallWordList[index].theDifficultyByUser=1
     var idm = this.data.id;
-    if (idm < 20) {
+    if (idm < app.globalData.overallWordList.length) {
       console.log(this.data.id);
       this.setData({
         id: idm + 1
@@ -76,7 +76,7 @@ Page({
     var index = e.currentTarget.dataset.index;
     app.globalData.overallWordList[index].theDifficultyByUser=2
     var idm = this.data.id;
-    if (idm < 20) {
+    if (idm < app.globalData.overallWordList.length) {
       console.log(this.data.id);
       this.setData({
         id: idm + 1

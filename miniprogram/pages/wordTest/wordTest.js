@@ -29,7 +29,7 @@ Page({
   true(e){
     var that=this;
     var idm=that.data.id;
-    if (idm < 20) {
+    if (idm < app.globalData.overallWordList.length) {
       console.log(that.data.id);
       var timestamp = Date.parse(new Date());
      
@@ -67,7 +67,7 @@ Page({
       
     }
     
-    if (that.data.id == 20) {
+    if (idm==app.globalData.overallWordList.length) {
       console.log("bushuchu")
       
       var timestamp = Date.parse(new Date());

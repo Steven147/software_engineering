@@ -14,7 +14,7 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    numOfPlan:''
+    numOfPlan:50
   },
 
   onLoad: function (options) {
