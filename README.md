@@ -18,6 +18,13 @@ repo for software_engineering course
 
     I am feeling happy with you.
 
+## 数据处理
+
+核心功能：
+
+- 利用小程序收集的数据计算出记忆指数，将该记忆指数作为标签
+- 利用单词本身的数据对所有单词做一个记忆指数评估
+
 ## 资源与参考
 
 [软件工程](https://oc.sjtu.edu.cn/courses/17210)
