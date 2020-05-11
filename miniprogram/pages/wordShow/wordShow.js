@@ -14,15 +14,16 @@ Page({
   data: {
     word: {},
     id: 1,
-    ani: '',
-    list: ['太简单', '下一个', '仍需记忆']
+    list: ['太简单', '难度适中', '仍需记忆'],
+    flag:0
   },
 
   click: function(e) {
     var index = e.currentTarget.dataset.index;
     app.globalData.overallWordList[index].theDifficultyByUser = index;
     this.setData({
-      selectedindex: index
+      flag:1,
+      selectedindex:index
     });
   },
 
@@ -56,9 +57,12 @@ Page({
 
     setTimeout(function() {
       innerAudioContext.play();
-    }.bind(this), 300)
+    }.bind(this), 1000)
 
   },
+
+
+
   sound_BE(e) {
     console.log(2);
     var index = e.currentTarget.dataset.index;
@@ -67,7 +71,7 @@ Page({
 
     setTimeout(function() {
       innerAudioContext.play();
-    }.bind(this), 300)
+    }.bind(this), 1000)
 
   },
 
@@ -179,7 +183,7 @@ Page({
   //向左滑动操作
 
   move2left() {
-
+    if (this.data.flag==1){
     var that = this;
 
     if (this.data.id == app.globalData.overallWordList.length) {
@@ -188,37 +192,34 @@ Page({
 
     }
 
-    var animation = wx.createAnimation({
-
-      duration: 1000,
-
-      timingFunction: 'ease',
-
-      delay: 100
-
-    });
-
-    animation.opacity(0.2).translate(-500, 0).step()
-
-    this.setData({
-
-      ani: animation.export(),
-      selectedindex: -1
-    })
-
     var idm = that.data.id;
     if (idm < app.globalData.overallWordList.length) {
       console.log(that.data.id);
       that.setData({
+        flag:0,
+        selectedindex:-1,
         id: idm + 1
       })
-    } else {
-      wx.navigateTo({
-        url: '../wordTest/wordTest',
-      })
     }
+    } else {
+      wx.showToast({
+        title: '还未选择难度',
+        icon: 'none',
+        duration: 1500
+      })
+}
 
   },
+
+  endShow() {
+    /*this.setData({
+      id:1
+    })*/
+    wx.navigateTo({
+      url: '../endShow/endShow',
+    })
+  },
+
 
   //向右滑动操作
 
@@ -232,23 +233,7 @@ Page({
 
     }
 
-    var animation = wx.createAnimation({
-
-      duration: 1000,
-
-      timingFunction: 'ease',
-
-      delay: 100
-
-    });
-
-    animation.opacity(0.2).translate(500, 0).step()
-
-    this.setData({
-
-      ani: animation.export(),
-      selectedindex: -1
-    })
+    
 
     var idm = that.data.id;
     if (idm > 1) {

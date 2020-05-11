@@ -1,0 +1,8 @@
+<!--pages/endShow/endShow.wxml-->
+<view class="container">
+<text>你已完成所有单词背诵</text>
+</view>
+
+<button class="button" type="primary" bindtap="goIndex">结束学习</button>
+<button class="button" type="primary" bindtap="goTest">开始测试</button>
+<button class="button" type="primary" bindtap="gowordShow">重新学习</button>

@@ -1,44 +1,35 @@
-// pages/word1/word1.js
-var app = getApp()
+// pages/endShow/endShow.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    word: {}
+
   },
 
-goWord0(){
-  console.log(0);
+goIndex(){
   wx.navigateTo({
-    url: '../word2/word2',
+    url: '../index/index',
   })
 },
-  goWord1() {
-    console.log(1);
+goTest() {
     wx.navigateTo({
-      url: '../word2/word2',
+      url: '../wordTest/wordTest',
     })
   },
-  goWord2() {
-    console.log(2);
+  gowordShow() {
     wx.navigateTo({
-      url: '../word2/word2',
+      url: '../wordShow/wordShow',
     })
-  },
-  sound() {
-    console.log(1);
   },
 
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      word: app.globalData.overallWordList
-    })
+
   },
 
   /**

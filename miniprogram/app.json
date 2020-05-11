@@ -5,7 +5,8 @@
     "pages/infomationGet/infomationGet",
     "pages/remeberList/remeberList",
     "pages/wordShow/wordShow",
-    "pages/wordTest/wordTest"
+    "pages/wordTest/wordTest",
+    "pages/endShow/endShow"
    
   ],
   "window": {

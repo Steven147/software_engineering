@@ -17,12 +17,14 @@
       <text class='detail' decode="{{true}}">释义:&nbsp;&nbsp;&nbsp;&nbsp;{{item.yisi}}</text>
       <text class='detail' decode="{{true}}"> 例句:&nbsp;&nbsp;&nbsp;&nbsp;{{item.liju_e}}</text>
       <text class='detail' decode="{{true}}"> 翻译:&nbsp;&nbsp;&nbsp;&nbsp;{{item.liju_cn}}</text>
+
       <view bindtap="timecalculate" data-index="{{index}}">
         <view wx:for="{{list}}" wx:key="item" bindtap="click" data-index="{{index}}">
           <button wx:if="{{index==selectedindex}}" type="primary"> {{item}}</button>
           <button wx:else type="default"> {{item}}</button>
         </view>
       </view>
+      <button wx:if="{{id==50}}" type="primary" bindtap="endShow">完成学习</button>
     </view>
   </view>
 </view>
