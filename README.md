@@ -50,3 +50,5 @@ repo for software_engineering course
     - 自动发货-价值$2.99的苹果美区Shadowrocket小火箭兑换码
     - 通过App Store兑换渠道兑换
   - 填入[订阅地址](https://www.kopcloud.com/user)，自动同步
+  
+  云数据库可以为多用户呈现不同的数据库 单词以记忆指数升序排列 没有背过的单词记忆指数为空 首先列出来

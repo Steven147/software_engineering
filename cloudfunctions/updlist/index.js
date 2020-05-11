@@ -6,14 +6,18 @@ cloud.init({
 })
 
 const db = cloud.database()
+const _=db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
   let id = event._id;
   let memory_num = event._memory_num;
   try {
-    return await db.collection("vocabulary").doc(id).update({
+    return await db.collection("super").doc(id).update({
       data: {
-        memory_num: memory_num
+        memory_num: 
+        {
+          user1:memory_num
+        }
       }
     })
   } catch (e) {

@@ -7,14 +7,12 @@ cloud.init({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return cloud.database().collection("super").where({
-    memory_num: "100"
-  }).get({
+  return cloud.database().collection("super").orderBy("memory_num.user1", 'asc').get(/*{
     success(res){
       return res
     },
     fail(err){
       return err
     }
-  })
+  }*/)
 }

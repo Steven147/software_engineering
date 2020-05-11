@@ -49,7 +49,9 @@ App({
         
       }],
       timeBegin:"",
-      timeEnd:""
+      timeEnd:"",
+      db_id:"",
+      db_m_n:0
     },
   //拉取单词
   getlist() {
@@ -62,6 +64,23 @@ App({
       },
       fail(res) {
         console.log("获取失败", res)
+      }
+    })
+
+  },
+  //修改记忆指数
+  updData() {
+    wx.cloud.callFunction({
+      name: "updlist",
+      data: {
+        _id: db_id,
+        _memory_num: db_m_n
+      },
+      success(res) {
+        console.log("修改成功", res)
+      },
+      fail(res) {
+        console.log("修改失败", res)
       }
     })
 
