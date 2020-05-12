@@ -1,14 +1,197 @@
 <!--pages/wordTest/wordTest.wxml-->
-
 <view wx:for="{{word}}" wx:key="word" wx:for-index="index">
 <view class='container' wx:if="{{item._id==id}}">
 <text class='word'> {{item.yisi}}</text>
-<view >
+<view wx:if="{{ap<100}}">
 
   <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button bindtap="wrong"data-index='{{index}}' >wrong</button>
-  <button bindtap="wrong" data-index='{{index}}'>wrong</button>
-  <button bindtap="wrong" data-index='{{index}}'>wrong</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+</view>
+<view wx:if="{{ap>99&&ap<200}}">
+
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+</view>
+<view wx:if="{{ap>199&&ap<300}}">
+
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+</view>
+<view wx:if="{{ap>299&&ap<400}}">
+
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+</view>
+<view wx:if="{{ap>399&&ap<500}}">
+
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+</view>
+<view wx:if="{{ap>499&&ap<600}}">
+
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+</view>
+<view wx:if="{{ap>599&&ap<700}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+</view>
+<view wx:if="{{ap>699&&ap<800}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+</view>
+<view wx:if="{{ap>799&&ap<900}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+</view>
+<view wx:if="{{ap>899&&ap<1000}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+</view>
+<view wx:if="{{ap>999&&ap<1100}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+</view>
+<view wx:if="{{ap>1099&&ap<1200}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+</view>
+<view wx:if="{{ap>1199&&ap<1300}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+</view>
+<view wx:if="{{ap>1299&&ap<1400}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+</view>
+<view wx:if="{{ap>1399&&ap<1500}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+</view>
+<view wx:if="{{ap>1499&&ap<1600}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+</view>
+<view wx:if="{{ap>1599&&ap<1700}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+</view>
+<view wx:if="{{ap>1699&&ap<1800}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+</view>
+<view wx:if="{{ap>1799&&ap<1900}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+</view>
+<view wx:if="{{ap>1899&&ap<2000}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+</view>
+<view wx:if="{{ap>1999&&ap<2100}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+</view>
+<view wx:if="{{ap>2099&&ap<2200}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+</view>
+<view wx:if="{{ap>2199&&ap<2300}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+</view>
+<view wx:if="{{ap>2299}}">
+
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+  <button bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+  <button bindtap="true" data-index='{{index}}'>{{item.word}}</button>
 
 </view>
 </view>

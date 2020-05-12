@@ -4,12 +4,15 @@ Page({
   /**
    * 页面的初始数据
    */
+  arr:[],
+
   data: {
     word: {},
-    
     timeBegin :"",
     timeEnd:"",
-    id:1
+    id:2,
+    newid:[6],
+    ap:Math.floor(Math.random() * 2400)+1
   },
  
   wrong(e) {
@@ -27,6 +30,9 @@ Page({
   },
 
   true(e){
+    this.setData({
+      ap:Math.floor(Math.random() * 2400) + 1,
+    })
     var that=this;
     var idm=that.data.id;
     if (idm < app.globalData.overallWordList.length) {
@@ -98,11 +104,30 @@ Page({
     } 
 
   },
-  
+//  (newid){
+    // for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
+      // this.arr[i] = i
+  // }
+      // var len = this.arr.length;
+      // for(var i=0;i<len;i++) {
+      // var index = Math.floor(Math.random()*(len-i));
+      // var tem = this.arr[index];
+      // this.arr[index] = this.arr[len-i-1];
+      // this.arr[len-i-1] = tem;}
+        // console.log(this.arr);//乱序函数
+
+    // for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
+      // this.data.newid[i]=this.arr[i]
+    //  }
+    //  console.log(this.data.newid);
+
+  // },
   addPropertyInList(a, b) {
+
     var word = a
     
     var that = this
+
     that.data.word.forEach(function (item, index) {
 
       var numOfWrongClick = "word[" + index + "].numOfWrongClick";
@@ -118,6 +143,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     var idm = this.data.id;
     if (idm == 1) {
       var timestamp = Date.parse(new Date());
@@ -136,6 +162,7 @@ Page({
       word: app.globalData.overallWordList,
     }),
       this.addPropertyInList(this.data.word, this.data.numOfWrongClick)
+
   },
   getTimeforUse( timestamp){
    
@@ -167,7 +194,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
+      this.arr[i] = i
+  }
+      var len = this.arr.length;
+      for(var i=0;i<len;i++) {
+      var index = Math.floor(Math.random()*(len-i));
+      var tem = this.arr[index];
+      this.arr[index] = this.arr[len-i-1];
+      this.arr[len-i-1] = tem;}
+        console.log(this.arr);//乱序函数
 
+    for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
+      this.data.newid[i]=this.arr[i]
+     }
+     console.log(this.data.newid);
   },
 
   /**
