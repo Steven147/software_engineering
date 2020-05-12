@@ -88,13 +88,16 @@ Page({
       })
 
     }
+    var ai=1
     if (that.data.word[0].id2 == undefined) {
       that.data.word.forEach(function(item, index) {
-
-        var id2 = "word[" + index + "].id2";
+        if (that.data.word[index].isSelected==0)
+        { var id2 = "word[" + index + "].id2";
         that.setData({
-          [id2]: index + 1
-        })
+          [id2]: ai
+        }) 
+        ai=ai+1
+      }
 
 
       })

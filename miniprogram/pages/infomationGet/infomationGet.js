@@ -33,7 +33,7 @@ Page({
    
   },
 
-  addTodoHandle: function () {
+  addTodoHandle: function (e) {
     var that=this
     that.setData({
       munOfPlan:e.detail.value
@@ -60,7 +60,26 @@ Page({
     
 
   },
+  choiceBook1: function () {
 
+    
+    console.log(1)
+  },
+  choiceBook2: function () {
+
+    
+    console.log(2)
+  },
+  choiceBook3: function () {
+
+    
+    console.log(3)
+  },
+  choiceBook4: function () {
+
+    
+    console.log(4)
+  },
   jumptowordlist: function () {
 
     app.globalData.overallWordList= app.globalData.overallWordList.splice(0,this.data.numOfPlan)

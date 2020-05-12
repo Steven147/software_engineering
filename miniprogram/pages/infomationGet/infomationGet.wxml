@@ -1,16 +1,31 @@
 <!--pages/infoget/infoget.wxml-->
 <view class="first_title"><text >兴趣选择</text></view>
-<view class="choice">
-  <view bindtap="storeindatabase"><checkbox>小学</checkbox></view>
-  <view bindtap="storeindatabase"><checkbox>初中</checkbox></view>
-  <view bindtap="storeindatabase"><checkbox>高中</checkbox></view>
-  <view bindtap="storeindatabase"><checkbox>四级</checkbox></view>
-  <view bindtap="storeindatabase"><checkbox>六级</checkbox></view>
-  <view bindtap="storeindatabase"><checkbox>托福</checkbox></view>
-  <view bindtap="storeindatabase"><checkbox>雅思</checkbox></view>
-   <view bindtap="storeindatabase"><checkbox>GRE</checkbox></view>
-  
-</view>
+
+ 
+  <view class="tui-table-view">
+    <view class="tui-col-3" bindtap="choiceBook1">
+     
+    <image src="../../images/gaokao.png" class="swiper_head" mode="aspectFit" > </image>
+      <view>高考</view>
+    </view>
+    <view class="tui-col-3" bindtap="choiceBook2">
+      <image src="../../images/cet6.png" class="swiper_head" mode="aspectFit"></image>
+      <view>六级</view>
+    </view>
+    <view class="tui-col-3" bindtap="choiceBook3">
+      <image src="../../images/gre.png" class="swiper_head" mode="aspectFit"></image>
+      <view>托福</view>
+    </view>
+    <view class="tui-col-3" bindtap="choiceBook4">
+      <image src="../../images/tuf.png" class="swiper_head" mode="aspectFit"></image>
+      <view>GRE</view>
+    </view>
+   
+    
+  </view>
+
+
+
 
 <view class="userdefine">
   <view class="secondtitle"><text>计划制定</text></view>
