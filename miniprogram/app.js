@@ -51,7 +51,9 @@ App({
       timeBegin:"",
       timeEnd:"",
       db_id:"",
-      db_m_n:0
+      db_m_n:0,
+      db_userx:"",
+      wordfetch:[]
     },
   //拉取单词
   getlist() {
@@ -68,7 +70,9 @@ App({
     })
 
   },
-  //修改记忆指数
+
+  //*********************修改单词记忆指数****************************
+  //修改记忆指数super
   updData() {
     wx.cloud.callFunction({
       name: "updlist",
@@ -85,6 +89,172 @@ App({
     })
 
   },
+
+  
+  //修改单词库6级的记忆指数
+  updData6() {
+    wx.cloud.callFunction({
+      name: "upd_6",
+      data: {
+        _id: db_id,
+        _memory_num: db_m_n,
+        _userx: db_userx
+
+      },
+      success(res) {
+        console.log("修改成功", res)
+      },
+      fail(res) {
+        console.log("修改失败", res)
+      }
+    })
+
+  },
+
+  //修改单词库gaokao的记忆指数
+  updDatagaokao() {
+    wx.cloud.callFunction({
+      name: "upd_gaokao",
+      data: {
+        _id: db_id,
+        _memory_num: db_m_n,
+        _userx: db_userx
+
+      },
+      success(res) {
+        console.log("修改成功", res)
+      },
+      fail(res) {
+        console.log("修改失败", res)
+      }
+    })
+
+  },
+
+  //修改单词库gre的记忆指数
+  updDatagre() {
+    wx.cloud.callFunction({
+      name: "upd_gre",
+      data: {
+        _id: db_id,
+        _memory_num: db_m_n,
+        _userx: db_userx
+
+      },
+      success(res) {
+        console.log("修改成功", res)
+      },
+      fail(res) {
+        console.log("修改失败", res)
+      }
+    })
+
+  },
+
+  //修改单词库toefl的记忆指数
+  updDatatoefl() {
+    wx.cloud.callFunction({
+      name: "upd_toefl",
+      data: {
+        _id: db_id,
+        _memory_num: db_m_n,
+        _userx: db_userx
+
+      },
+      success(res) {
+        console.log("修改成功", res)
+      },
+      fail(res) {
+        console.log("修改失败", res)
+      }
+    })
+
+  },
+
+  //*********************云拉取单词****************************
+  //云拉取单词库6
+  getword6() {
+    var that = this
+    wx.cloud.callFunction({
+      name: "getword_6",
+      data: {
+        _userx: db_userx
+
+      },
+      success: res => {
+        console.log("云获取成功", res)
+        that.globalData.overallWordList = res.result.data
+        console.log("yes", that.globalData.overallWordList)
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+    })
+  },
+
+  //云拉取单词库gre
+  getwordgre() {
+    var that = this
+    wx.cloud.callFunction({
+      name: "getword_gre",
+      data: {
+        _userx: db_userx
+
+      },
+      success: res => {
+        console.log("云获取成功", res)
+        that.globalData.overallWordList = res.result.data
+        console.log("yes", that.globalData.overallWordList)
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+    })
+  },
+
+  //云拉取单词库gaokao
+  getwordgaokao() {
+    var that = this
+    wx.cloud.callFunction({
+      name: "getword_gaokao",
+      data: {
+        _userx: db_userx
+
+      },
+      success: res => {
+        console.log("云获取成功", res)
+        that.globalData.overallWordList = res.result.data
+        console.log("yes", that.globalData.overallWordList)
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+    })
+  },
+
+  //云拉取单词库toefl
+  getwordtoefl() {
+    var that = this
+    wx.cloud.callFunction({
+      name: "getword_toefl",
+      data: {
+        _userx: db_userx
+
+      },
+      success: res => {
+        console.log("云获取成功", res)
+        that.globalData.overallWordList = res.result.data
+        console.log("yes", that.globalData.overallWordList)
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+    })
+  },
+
+
+
+
   //云拉取单词
   yun(){
     var that = this 
