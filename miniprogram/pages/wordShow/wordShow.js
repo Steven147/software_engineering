@@ -12,6 +12,7 @@ Page({
   timeBegin: "",
   timeEnd: "",
   data: {
+    showNum:0,
     word: {},
     id: 1,
     list: ['太简单', '难度适中', '仍需记忆'],
@@ -89,6 +90,7 @@ Page({
 
     }
     var ai=1
+    var shownumber=app.globalData.overallWordList.length
     if (that.data.word[0].id2 == undefined) {
       that.data.word.forEach(function(item, index) {
         if (that.data.word[index].isSelected==0)
@@ -97,11 +99,14 @@ Page({
           [id2]: ai
         }) 
         ai=ai+1
+        shownumber=shownumber-1
       }
-
+     
 
       })
-
+     that.setData({
+        showNum:shownumber
+      })
 
 
     }
@@ -121,12 +126,12 @@ Page({
     this.setData({
       word: app.globalData.overallWordList,
     })
+  
     this.addPropertyInListLocally(this.data.word)
     if (this.data.word[0].id2 == 1) {
       var timestamp = Date.parse(new Date());
       console.log("当前时间戳为：" + timestamp);
       var timeResult = app.getTimeforUse(timestamp);
-
       this.timeBegin = timeResult
 
 

@@ -42,7 +42,7 @@ Page({
     var timer = setInterval(function () {
       console.log("循环定时器等待循环请求结束")
      
-      if (app.globalData.overallWordList !=undefined ) {
+      if (app.globalData.overallWordList[1]._id !=undefined ) {
       
         
        
