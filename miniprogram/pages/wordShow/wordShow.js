@@ -105,7 +105,7 @@ Page({
 
       })
      that.setData({
-        showNum:shownumber
+        showNum:ai
       })
 
 
@@ -194,7 +194,7 @@ Page({
     if (this.data.flag==1){
     var that = this;
 
-    if (this.data.id == app.globalData.overallWordList.length) {
+    if (this.data.id == this.data.showNum-1) {
 
       return
 
