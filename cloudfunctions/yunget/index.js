@@ -7,7 +7,7 @@ cloud.init({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return cloud.database().collection("super").orderBy("memory_num.user1", 'asc').get(/*{
+  return cloud.database().collection("super").orderBy("memory_num", 'asc').get(/*{
     success(res){
       return res
     },
