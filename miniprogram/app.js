@@ -90,8 +90,8 @@ App({
     wx.cloud.callFunction({
       name: "updlist",
       data: {
-        _id: db_id,
-        _memory_num: db_m_n
+        _id: this.globalData.db_id,
+        _memory_num: this.globalData.db_m_n
       },
       success(res) {
         console.log("修改成功", res)
@@ -109,9 +109,9 @@ App({
     wx.cloud.callFunction({
       name: "upd_6",
       data: {
-        _id: db_id,
-        _memory_num: db_m_n,
-        _userx: db_userx
+        _id: this.globalData.db_id,
+        _memory_num: this.globalData.db_m_n,
+        _userx: this.globalData.db_userx
 
       },
       success(res) {
@@ -129,9 +129,9 @@ App({
     wx.cloud.callFunction({
       name: "upd_gaokao",
       data: {
-        _id: db_id,
-        _memory_num: db_m_n,
-        _userx: db_userx
+        _id: this.globalData.db_id,
+        _memory_num: this.globalData.db_m_n,
+        _userx: this.globalData.db_userx
 
       },
       success(res) {
@@ -149,9 +149,9 @@ App({
     wx.cloud.callFunction({
       name: "upd_gre",
       data: {
-        _id: db_id,
-        _memory_num: db_m_n,
-        _userx: db_userx
+        _id: this.globalData.db_id,
+        _memory_num: this.globalData.db_m_n,
+        _userx: this.globalData.db_userx
 
       },
       success(res) {
@@ -169,9 +169,9 @@ App({
     wx.cloud.callFunction({
       name: "upd_toefl",
       data: {
-        _id: db_id,
-        _memory_num: db_m_n,
-        _userx: db_userx
+        _id: this.globalData.db_id,
+        _memory_num: this.globalData.db_m_n,
+        _userx: this.globalData.db_userx
 
       },
       success(res) {
@@ -191,7 +191,7 @@ App({
     wx.cloud.callFunction({
       name: "getword_6",
       data: {
-        _userx: db_userx
+        _userx: this.globalData.db_userx
 
       },
       success: res => {
@@ -211,7 +211,7 @@ App({
     wx.cloud.callFunction({
       name: "getword_gre",
       data: {
-        _userx: db_userx
+        _userx: this.globalData.db_userx
 
       },
       success: res => {
@@ -231,7 +231,7 @@ App({
     wx.cloud.callFunction({
       name: "getword_gaokao",
       data: {
-        _userx: db_userx
+        _userx: this.globalData.db_userx
 
       },
       success: res => {
@@ -251,7 +251,7 @@ App({
     wx.cloud.callFunction({
       name: "getword_toefl",
       data: {
-        _userx: db_userx
+        _userx: this.globalData.db_userx
 
       },
       success: res => {
@@ -283,6 +283,90 @@ App({
         }
     })
   },
+
+  //*******************************用户信息库操作函数*********************************
+  //更新用户背诵记录
+  updUsersmry() {
+    wx.cloud.callFunction({
+      name: "Users_Mry",
+      data: {
+        _openid: this.globalData.db_userx,
+        _word: this.globalData.db_id,
+        _memory_num: this.globalData.db_m_n
+      },
+      success(res) {
+        console.log("更新用户成功")
+      },
+      fail(res) {
+        console.log("更新用户失败")
+      }
+    })
+  },
+
+  //增加users的背诵时间
+  Time_Inc() {
+    wx.cloud.callFunction({
+      name: "time_inc",
+      data: {
+        _id: this.globalData.db_userx,
+        _inc_time: this.globalData.db_m_n
+      },
+      success(res) {
+        console.log("自增成功", res)
+      },
+      fail(res) {
+        console.log("自增失败", res)
+      }
+    })
+
+  },
+
+  //增加该用户
+  addUsers() {
+    console.log("调用成功")
+    wx.cloud.callFunction({
+      name: "AddUsers",
+      data: {
+        _userx: this.globalData.db_userx
+      },
+      success(res) {
+        console.log("添加用户成功", res)
+      },
+      fail(res) {
+        console.log("添加用户失败", res)
+      }
+    })
+  },
+
+  //表中是否存在用户
+  IfUsers() {
+    let that = this;
+    wx.cloud.callFunction({
+      name: "UsersFile",
+      data: {
+        _userx: this.globalData.db_userx
+      },
+      success(res) {
+        console.log(res)
+        wordfetch = res.result.data
+        console.log(wordfetch)
+        console.log(res.result.data.length)
+        if (res.result.data.length == 0) {
+          console.log("用户不存在")
+          that.addUsers()
+        }
+        else {
+          console.log("用户已存在")
+        }
+
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+    })
+  },
+
+
     //记忆指数初次确定函数
     //k1:音频点击次数权值（负相关）
     //k2:单词熟悉程度权值（太简单：0,下一个：1,仍需记忆：2）(负相关)

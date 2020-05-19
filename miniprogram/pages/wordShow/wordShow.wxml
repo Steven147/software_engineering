@@ -24,7 +24,7 @@
           <button wx:else type="default"> {{item}}</button>
         </view>
       </view>
-      <button wx:if="{{id==showNum+1}}" type="primary" bindtap="endShow">完成学习</button>
+      <button wx:if="{{id==showNum-1}}" type="primary" bindtap="endShow">完成学习</button>
     </view>
   </view>
 </view>
