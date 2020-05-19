@@ -1,4 +1,7 @@
 //app.js
+var fetchWechat = require('fetch-wechat');
+var tf = require('@tensorflow/tfjs-core');
+var plugin = requirePlugin('tfjsPlugin');
 
 var app = getApp()
 
@@ -8,6 +11,15 @@ App({
       env: "cloud-14ij5"
     })
     
+    //神经网络tensorflow插件
+    plugin.configPlugin({
+      // polyfill fetch function
+      fetchFunc: fetchWechat.fetchFunc(),
+      // inject tfjs runtime
+      tf,
+      // provide webgl canvas
+      canvas: wx.createOffscreenCanvas()
+    });
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -53,7 +65,8 @@ App({
       db_id:"",
       db_m_n:0,
       db_userx:"",
-      wordfetch:[]
+      wordfetch:[],
+      localStorageIO: plugin.localStorageIO
     },
   //拉取单词
   getlist() {

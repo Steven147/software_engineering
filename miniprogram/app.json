@@ -15,6 +15,11 @@
     "navigationBarTitleText": "magic_word",
     "navigationBarTextStyle": "white"
   },
-  
+  "plugins": {
+    "tfjsPlugin": {
+      "version": "0.0.8",
+      "provider": "wx6afed118d9e81df9"
+    }
+  },
   "sitemapLocation": "sitemap.json"
 }
