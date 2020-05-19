@@ -2,32 +2,9 @@
 //获取应用实例
 
 const app = getApp()
-const regeneratorRuntime = require('regenerator-runtime')
-const tf = require('@tensorflow/tfjs-core')
-const tfl = require('@tensorflow/tfjs-layers')
 
 Page({
-  async onReady() {
-    const net = await this.loadModel()
-    const net2 = await this.loadModel2()
-  },
-  async loadModel() {
-    const net = await tfl.loadLayersModel('https://faderer-1301664148.cos.ap-shanghai.myqcloud.com/old/model.json')
-    net.summary() 
-    var result = await net.predict(tf.tensor([[1, 2, 3, 4]])).data()
-    console.log(result)
-    return net
 
-  },
-  //预测
-  async loadModel2() {
-    const net = await tfl.loadLayersModel('https://faderer-1301664148.cos.ap-shanghai.myqcloud.com/new/model.json')
-    net.summary()
-    var result = await net.predict(tf.tensor([[4, 3, 5, 3]])).data()
-    console.log(result)
-    return net
-
-  },
   data: {
     motto: 'Cheers for all who move forward',
     userInfo: {},
