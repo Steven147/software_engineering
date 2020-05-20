@@ -16,17 +16,21 @@ Page({
     word: {},
     id: 1,
     list: ['易', '中', '难'],
-    flag:0
+    flag:0,
+    slider: 0
   },
 
-  click: function(e) {
-    var index = e.currentTarget.dataset.index;
-    app.globalData.overallWordList[index].theDifficultyByUser = index;
+  changeSlider(e) {
+    var index=e.currentTarget.dataset.index;
+    var theDifficultyByUser = e.detail.value/50;
+    app.globalData.overallWordList[index].theDifficultyByUser = theDifficultyByUser;
     this.setData({
-      flag:1,
-      selectedindex:index
+      slider: e.detail.value,
+      flag:1
     });
   },
+
+  
 
 
   timecalculate: function(e) {
@@ -205,7 +209,7 @@ Page({
       console.log(that.data.id);
       that.setData({
         flag:0,
-        selectedindex:-1,
+        slider:0,
         id: idm + 1
       })
     }
@@ -220,9 +224,7 @@ Page({
   },
 
   endShow() {
-    /*this.setData({
-      id:1
-    })*/
+    
     wx.navigateTo({
       url: '../endShow/endShow',
     })

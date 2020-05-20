@@ -2,38 +2,44 @@
 <view wx:for="{{word}}" wx:key="word" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
   <view wx:if="{{item.id2==id}}">
 
-<view class="word">{{item.word}}</view>
+    <view class="word">{{item.word}}</view>
 
-<view class="IPA">
-<text class="IPAwords">美{{item.yinbiao_AE}}</text>
-<button class='button' plain="true" bindtap="sound_AE" data-index="{{index}}">
-<image class='icon' src="icon2.jpg"></image>
-</button>
-</view>
-<view class="IPA">
-<text class="IPAwords">英{{item.yinbiao_BE}}</text>
-<button class='button' plain="true" bindtap="sound_BE" data-index="{{index}}">
-<image class='icon' src="icon2.jpg"></image>
-</button>
-</view>
+    <view class="IPA">
+      <text class="IPAwords">美{{item.yinbiao_AE}}</text>
+      <button class='button' plain="true" bindtap="sound_AE" data-index="{{index}}">
+        <image class='icon' src="icon2.jpg"></image>
+      </button>
+    </view>
+    <view class="IPA">
+      <text class="IPAwords">英{{item.yinbiao_BE}}</text>
+      <button class='button' plain="true" bindtap="sound_BE" data-index="{{index}}">
+        <image class='icon' src="icon2.jpg"></image>
+      </button>
+    </view>
 
-<view class="paraphrase">{{item.yisi}}</view>
+    <view class="paraphrase">{{item.yisi}}</view>
 
-<view class="phrase">例句</view>
-<view class="phrasewords">{{item.liju_e}}</view>
-<view class="phrasewords">{{item.liju_cn}}</view>
+    <view class="phrase">例句</view>
+    <view class="phrasewords">{{item.liju_e}}</view>
+    <view class="phrasewords">{{item.liju_cn}}</view>
 
 
-<view bindtap="timecalculate" data-index="{{index}}">
-        <view wx:for="{{list}}" wx:key="item" class="buttons" bindtap="click" data-index="{{index}}">
-          <button wx:if="{{index==selectedindex}}" type="primary"> {{item}}</button>
-          <button wx:else type="default"> {{item}}</button>
-        </view>
+    <view bindtap="timecalculate" data-index="{{index}}">
 
+      <view class="phrase">
+        选择难易程度
       </view>
+      <view class="slider">
+        <view class="difficulty">
+          {{list[slider/50]}}
+        </view>
+        <view style="overflow:hidden">
+          <slider bindchanging="changeSlider" step="50" data-index="{{index}}" value="{{slider}}" />
+        </view>
+      </view>
+    </view>
+    <button wx:if="{{id==showNum-1}}" type="default" bindtap="endShow">完成学习</button>
 
-      <button wx:if="{{id==showNum-1}}" type="default" bindtap="endShow">完成学习</button>
-   
 
-</view>
+  </view>
 </view>
