@@ -4,14 +4,12 @@ Page({
   /**
    * 页面的初始数据
    */
-  arr:[],
 
   data: {
     word: {},
     timeBegin :"",
     timeEnd:"",
-    id:2,
-    newid:[6],
+    id:1,
     ap:Math.floor(Math.random() * 2400)+1
   },
  
@@ -30,9 +28,7 @@ Page({
   },
 
   true(e){
-    this.setData({
-      ap:Math.floor(Math.random() * 2400) + 1,
-    })
+
     var that=this;
     var idm=that.data.id;
     if (idm < app.globalData.overallWordList.length) {
@@ -67,10 +63,11 @@ Page({
         "时间是", app.globalData.overallWordList)
       console.log(
         "时刻是", app.globalData.overallWordList)
+
       that.setData({
-        id: idm + 1
-      })
-      
+        id: idm + 1,
+        ap:Math.floor(Math.random() * 2400) + 1,
+    })
     }
     
     if (idm==app.globalData.overallWordList.length) {
@@ -98,13 +95,13 @@ Page({
       console.log(app.globalData.overallWordList)
       app.calc_memory_num(0.2,0.3,0.1,0.1,0.3)
       wx.navigateTo({
-          url: '../wordTest/tstend',
+          url: '../index/index',
         })
       
     } 
 
   },
-//  (newid){
+  
     // for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
       // this.arr[i] = i
   // }
@@ -138,6 +135,19 @@ Page({
         app.globalData.overallWordList = that.data.word
     })
     console.log(that.data.word[1].numOfWrongClick)
+
+   //修复_id不连续导致的显示问题 
+    var nw=1
+    var num=app.globalData.overallWordList.length
+    if (that.data.word[0].newid == undefined) {
+      that.data.word.forEach(function(item, index) {
+        var newid = "word[" + index + "].newid";
+        that.setData({
+          [newid]: nw
+        }) 
+        nw=nw+1
+        num=num-1
+      })}
   },
   /**
    * 生命周期函数--监听页面加载
@@ -194,21 +204,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
-      this.arr[i] = i
-  }
-      var len = this.arr.length;
-      for(var i=0;i<len;i++) {
-      var index = Math.floor(Math.random()*(len-i));
-      var tem = this.arr[index];
-      this.arr[index] = this.arr[len-i-1];
-      this.arr[len-i-1] = tem;}
-        console.log(this.arr);//乱序函数
-
-    for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
-      this.data.newid[i]=this.arr[i]
-     }
-     console.log(this.data.newid);
+    
   },
 
   /**

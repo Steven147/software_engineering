@@ -1,60 +1,31 @@
 /* pages/wordShow/wordShow.wxss */
-.container {
-  height: 100%;
-  width: 100%;
+page{
+  background-color: rgb(237, 230, 230);
+}
+.yisi {
+  height: 200rpx;
+  color: #000000;
+  margin-left:10%;
+  margin-right:10%;
+  margin-top:10%;
+  margin-bottom:20%;
+  font-size: 15pt;
 }
 
 .word {
-  color: rgb(3, 7, 6);
- border-radius: 2rpx;
-  margin: 2rpx;
-  font-size: 20px;
+  color: #000000;
   display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
-.detail {
-  line-height: 10vh;
-  width: 80%;
-  margin: 10rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.11);
-}
-
-.IPA {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10rpx;
-  line-height: 5vh;
-  font-size: 15px;
-  color: black;
-  background-color: rgba(0, 0, 0, 0.11);
-  width: 80%;
-}
-
-.icon {
-  width: 40rpx;
-  height: 40rpx;
-  margin-right: 20rpx;
-}
-
-.button1[plain] {
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  width: 40rpx;
-  height: 70rpx;
-}
-.button2{
-  width: 20vh;
-  display: inline-block
-}
-.btn 
-{ 
-width:100%; 
-color:green; 
-position:fixed; 
-bottom:0; 
-} 
+.button {
+  height: 135rpx;
+  width: 500rpx;
+  margin-left:125rpx;
+  margin-right:125rpx;
+  margin-top:5%;
+  margin-bottom:5%;
+  font-size: 20pt;
+  letter-spacing: 2rpx;
+  }
