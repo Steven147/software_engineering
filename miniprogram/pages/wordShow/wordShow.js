@@ -16,17 +16,15 @@ Page({
     word: {},
     id: 1,
     list: ['易', '中', '难'],
-    flag:0,
-    slider: 0
+    slider: -1
   },
 
   changeSlider(e) {
     var index=e.currentTarget.dataset.index;
-    var theDifficultyByUser = e.detail.value/50;
+    var theDifficultyByUser = (e.detail.value/33.3)-1;
     app.globalData.overallWordList[index].theDifficultyByUser = theDifficultyByUser;
     this.setData({
-      slider: e.detail.value,
-      flag:1
+      slider: (e.detail.value/33.3)-1,
     });
   },
 
@@ -195,7 +193,6 @@ Page({
   //向左滑动操作
 
   move2left() {
-    if (this.data.flag==1){
     var that = this;
 
     if (this.data.id == this.data.showNum-1) {
@@ -208,18 +205,10 @@ Page({
     if (idm < app.globalData.overallWordList.length) {
       console.log(that.data.id);
       that.setData({
-        flag:0,
-        slider:0,
+        slider:-1,
         id: idm + 1
       })
     }
-    } else {
-      wx.showToast({
-        title: '还未选择难度',
-        icon: 'none',
-        duration: 1500
-      })
-}
 
   },
 

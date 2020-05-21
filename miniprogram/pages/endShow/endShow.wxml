@@ -1,8 +1,25 @@
 <!--pages/endShow/endShow.wxml-->
-<view class="container">
-<text>你已完成所有单词背诵</text>
+<view class="title">你已完成所有单词背诵</view>
+<view class="container1">
+
+<view class="block:vertical-align:top;">
+<image  class="picture" mode="widthFix" src="finishlearning.jpg"></image>
+<button class="button" style="width:300rpx"  bindtap="goIndex">结束学习</button>
 </view>
 
-<button class="button" type="primary" bindtap="goIndex">结束学习</button>
-<button class="button" type="primary" bindtap="goTest">开始测试</button>
-<button class="button" type="primary" bindtap="gowordShow">重新学习</button>
+<view class="block:vertical-align:top;">
+<image  class="picture" mode="widthFix" src="test.jpg"></image>
+<button class="button" style="width:300rpx"  bindtap="goIndex">开始测试</button>
+</view>
+
+<view class="block:vertical-align:top;">
+<image  class="picture" mode="widthFix" src="review.jpg"></image>
+<button class="button" style="width:300rpx"  bindtap="goIndex">重新学习</button>
+</view>
+
+<view class="block:vertical-align:top;">
+<image  class="picture" mode="widthFix" src="keeplearning.jpg"></image>
+<button class="button" style="width:300rpx"  bindtap="goIndex">继续学习</button>
+</view>
+
+</view>

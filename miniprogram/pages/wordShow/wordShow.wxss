@@ -24,13 +24,13 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  width: 50rpx;
-  height: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 
 .icon {
-  width: 50rpx;
-  height: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
   margin-right: 40rpx;
 }
 
@@ -79,8 +79,10 @@
 }
 
 .difficulty{
+  
   font-size: 15pt;
   margin-left: 40rpx;
   margin-right: 40rpx;
   color: rgba(0, 0, 0, 0.6);
 }
+

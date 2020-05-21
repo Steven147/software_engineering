@@ -31,10 +31,10 @@
       </view>
       <view class="slider">
         <view class="difficulty">
-          {{list[slider/50]}}
+          {{list[slider]}}
         </view>
         <view style="overflow:hidden">
-          <slider bindchanging="changeSlider" step="50" data-index="{{index}}" value="{{slider}}" />
+          <slider bindchange="changeSlider" step="33.3" data-index="{{index}}" value="{{slider}}" />
         </view>
       </view>
     </view>

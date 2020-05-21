@@ -79,6 +79,11 @@ goTest() {
       url: '../wordShow/wordShow',
     })
   },
+  goselect(){
+    wx.navigateTo({
+      url: '../remeberList/remeberList',
+    })
+  },
 
 
   /**

@@ -1,16 +1,42 @@
 /* pages/endShow/endShow.wxss */
-.container{
-  margin: 2rpx;
+.title {
+  color: rgb(0, 128, 0);
+  border-bottom: 1rpx solid rgb(159, 159, 189);
   font-size: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   width: 100%;
   height: 100%;
-   text-align: center;
-   vertical-align: center;
+  text-align: center;
+  vertical-align: center;
+  display: -webkit-inline-flex;
+  font-weight: 400;
+  margin-bottom: 30rpx;
+  margin-top: 20rpx;
 }
 
-.button{
-  margin: 5px
+.container1{
+
+  margin-top: 30rpx;
+  
+}
+
+.block {
+  display: inline-block;
+  width: 40%;
+  margin: 37rpx;
+}
+
+.picture {
+width: 300rpx;
+border-radius: 40rpx;
+}
+
+.button {
+  height: 80rpx;
+  margin-top: 20rpx;
+  border-radius: 80rpx;
+  background-color: green;
+  color: white;
 }
