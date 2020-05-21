@@ -14,7 +14,7 @@ Page({
     this.addPropertyInList(this.data.word, this.data.isSelected,this.data.isSelectedList)
     console.log(2);
     wx.navigateTo({
-      url: '../test/test',
+      url: '../wordShow/wordShow',
     
     })
   },
