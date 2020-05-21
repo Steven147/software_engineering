@@ -7,10 +7,31 @@ const tfl = require('@tensorflow/tfjs-layers')
 
 Page({
   async onLoad() {
-    //如果记忆指数没有初始化，则运行预测模型
-    //lqx。。。。。。
-  
-    //已经背诵过，运行记忆指数调整模型
+    //运行预测模型初始化未初始化过的单词
+    var mat2 = []//参数矩阵
+    for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
+      var singleMat = []
+      var word_len = app.globalData.overallWordList[i].word.length
+      var word_char_count = new Set(app.globalData.overallWordList[i].word).size
+      var pronounce_len = app.globalData.overallWordList[i].yinbiao_AE.length
+      var pron_char_count = new Set(app.globalData.overallWordList[i].yinbiao_AE).size
+      singleMat.push(word_len)
+      singleMat.push(word_char_count)
+      singleMat.push(pronounce_len)
+      singleMat.push(pron_char_count)
+      mat2.push(singleMat)
+    }
+    var result = await this.loadModel2(mat2)//模型运行
+    for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
+      if(app.globalData.overallWordList[i].memory_num === 100){
+        app.globalData.overallWordList[i].memory_num = result[i]
+        console.log(result[i])
+      }
+    }
+    console.log('overallWordList')
+    console.log(app.globalData.overallWordList)
+
+    //确保已运行过预测模型后对所有单词运行记忆指数调整模型
     var mat = []//参数矩阵
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
       var singleMat = []
@@ -22,11 +43,9 @@ Page({
       mat.push(singleMat)
     }
     var result = await this.loadModel(mat)//模型运行
-    //console.log('result')
-    //console.log(result)
-    //记忆指数储存
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
       app.globalData.overallWordList[i].memory_num = result[i]
+      console.log(result[i])
     }
     console.log('overallWordList')
     console.log(app.globalData.overallWordList)
@@ -37,7 +56,7 @@ Page({
 
   //加载模型一：记忆指数调整模型
   async loadModel(mat) {
-    const net = await tfl.loadLayersModel('https://faderer-1301664148.cos.ap-shanghai.myqcloud.com/old/model.json')
+    const net = await tfl.loadLayersModel('https://wxz-1301710654.cos.ap-shanghai.myqcloud.com/old/model.json')
     //net.summary()
     var result = await net.predict(tf.tensor(mat)).data()
     //console.log(result)
@@ -49,7 +68,7 @@ Page({
 
   //加载模型二：预测模型
   async loadModel2(mat) {
-    const net = await tfl.loadLayersModel('https://faderer-1301664148.cos.ap-shanghai.myqcloud.com/new/model.json')
+    const net = await tfl.loadLayersModel('https://wxz-1301710654.cos.ap-shanghai.myqcloud.com/new/model.json')
     //net.summary()
     var result = await net.predict(tf.tensor(mat)).data()
     //console.log(result)
@@ -77,11 +96,6 @@ goTest() {
   gowordShow() {
     wx.navigateTo({
       url: '../wordShow/wordShow',
-    })
-  },
-  goselect(){
-    wx.navigateTo({
-      url: '../remeberList/remeberList',
     })
   },
 
