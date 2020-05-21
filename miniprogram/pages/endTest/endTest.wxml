@@ -1,0 +1,3 @@
+<!--pages/endTest/endTest.wxml-->
+<text class="title">恭喜您！学习已完成</text>
+<button class="button" type="primary" bingdtap="calculateMem">轻触生成记忆指数</button>

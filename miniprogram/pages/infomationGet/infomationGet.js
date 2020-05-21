@@ -83,6 +83,7 @@ Page({
   jumptowordlist: function () {
 
     app.globalData.overallWordList= app.globalData.overallWordList.splice(0,this.data.numOfPlan)
+    
     wx.redirectTo({
       url: '../remeberList/remeberList'
 

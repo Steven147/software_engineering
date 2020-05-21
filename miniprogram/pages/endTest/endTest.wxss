@@ -1,0 +1,7 @@
+/* pages/endTest/endTest.wxss */
+.title{
+  font-size: 15pt;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  color: rgba(0, 0, 0, 0.6);
+}

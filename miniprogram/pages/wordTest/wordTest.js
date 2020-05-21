@@ -95,7 +95,7 @@ Page({
       console.log(app.globalData.overallWordList)
       app.calc_memory_num(0.2,0.3,0.1,0.1,0.3)
       wx.navigateTo({
-          url: '../index/index',
+          url: '../endTest/endTest',
         })
       
     } 

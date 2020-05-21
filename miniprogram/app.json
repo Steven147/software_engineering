@@ -7,7 +7,8 @@
     "pages/wordShow/wordShow",
     "pages/wordTest/wordTest",
     "pages/endShow/endShow",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/endTest/endTest"
    
   ],
   "window": {
