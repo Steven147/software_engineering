@@ -1,5 +1,5 @@
 <!--pages/wordShow/wordShow.wxml-->
-<view wx:for="{{word}}" wx:key="word" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+<view wx:for="{{word}}" wx:key="word" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" data-index="{{index}}">
   <view wx:if="{{item.id2==id}}">
 
     <view class="word">{{item.word}}</view>

@@ -11,12 +11,13 @@ Page({
     
   },
   goWord() {
-    this.addPropertyInList(this.data.word, this.data.isSelected,this.data.isSelectedList)
+    this.addPropertyInList(this.data.word,this.data.isSelectedList)
     console.log(2);
     wx.navigateTo({
       url: '../wordShow/wordShow',
     
     })
+    console.log(app.globalData.overallWordList)
   },
   checkIsSelected(e) {
     this.setData({
@@ -26,17 +27,21 @@ Page({
   },
 
   onLoad: function (options) {
-    setInterval
+    for(var i=0;i<app.globalData.overallWordList.length;i++){
+      app.globalData.overallWordList[i].learnTime=0;
+      app.globalData.overallWordList[i]._id=i;
+    }
+   
     this.setData({
       word: app.globalData.overallWordList,
 
     })
+    
    
   },
 
-  addPropertyInList(a, b,c) {
+  addPropertyInList(a, c) {
     var word = a
-    var isSelected=b
     var isSelectedValue=c
     var that = this
     
@@ -44,10 +49,11 @@ Page({
      
       app.globalData.overallWordList[index].isSelected=0
     })
-    for (let value of this.data.isSelectedList) {
+    console.log(that.data.isSelectedList)
+    for (let value of isSelectedValue) {
     
       that.data.word.forEach(function (item, index) {
-        if (value === item._id) {
+        if (value == item._id) {
           app.globalData.overallWordList[index].isSelected=1
         }
         
@@ -57,7 +63,7 @@ Page({
 
     
       
-      console.log(app.globalData.overallWordList)
+    
   },
 
 

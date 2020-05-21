@@ -28,30 +28,8 @@ Page({
     });
   },
 
+
   
-
-
-  timecalculate: function(e) {
-    var that = this
-    var timestamp = Date.parse(new Date());
-
-    var timeResult = app.getTimeforUse(timestamp);
-
-    that.timeEnd = timeResult
-    console.log("timeEnd", that.timeEnd)
-    console.log("timebegin", that.timeBegin)
-    var b = ((that.timeEnd - that.timeBegin) > 60) ? 60 : (that.timeEnd - that.timeBegin)
-    console.log("b", b)
-    that.timeBegin = timeResult
-
-    that.data.word.forEach(function(item, index) {
-      app.globalData.overallWordList[index].learnTime = b
-    })
-
-
-
-  },
-
   sound_AE(e) {
     console.log(1);
     var index = e.currentTarget.dataset.index;
@@ -153,16 +131,16 @@ Page({
   // 触摸移动事件
 
   touchMove: function(e) {
-
+    var that=this
     endX = e.touches[0].pageX; // 获取触摸时的原点
-
+    
     if (moveFlag) {
 
       if (endX - startX > 50) {
 
         console.log("move right");
 
-        this.move2right();
+        that.move2right();
 
         moveFlag = false;
 
@@ -172,12 +150,27 @@ Page({
 
         console.log("move left");
 
-        this.move2left();
+        that.move2left();
 
         moveFlag = false;
 
       }
+      
+      var timestamp = Date.parse(new Date());
 
+      var timeResult = app.getTimeforUse(timestamp);
+
+      that.timeEnd = timeResult
+      console.log("timeEnd", that.timeEnd)
+      console.log("timebegin", that.timeBegin)
+      var b = ((that.timeEnd - that.timeBegin) > 60) ? 60 : (that.timeEnd - that.timeBegin)
+      console.log("b", b)
+      that.timeBegin = timeResult
+
+      var localIndex=(e.currentTarget.dataset.index)
+      app.globalData.overallWordList[ localIndex].learnTime = app.globalData.overallWordList[ localIndex].learnTime+b
+    
+      console.log("序号是:",e.currentTarget.dataset.index)
     }
 
   },
