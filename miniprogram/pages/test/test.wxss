@@ -1,0 +1,8 @@
+#column-dom{
+  height: 100%;
+  width: 100%
+}
+#ff-canvas{
+ height: auto;
+ width: auto;
+}
