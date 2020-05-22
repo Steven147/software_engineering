@@ -14,11 +14,11 @@
     </view>
     <view class="tui-col-3" bindtap="choiceBook3">
       <image src="../../images/gre.png" class="swiper_head" mode="aspectFit"></image>
-      <view>托福</view>
+      <view>GRE</view>
     </view>
     <view class="tui-col-3" bindtap="choiceBook4">
       <image src="../../images/tuf.png" class="swiper_head" mode="aspectFit"></image>
-      <view>GRE</view>
+      <view>托福</view>
     </view>
    
     
