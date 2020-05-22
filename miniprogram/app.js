@@ -277,6 +277,7 @@ App({
         console.log("云获取成功",res)
           that.globalData.overallWordList = res.result.data
           console.log("yes",that.globalData.overallWordList)
+          
         },
         fail(res) {
           console.log("获取失败", res)

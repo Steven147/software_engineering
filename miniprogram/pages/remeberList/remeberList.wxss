@@ -22,7 +22,7 @@
   width: 40vh;
   display: flex;
   align-items: center;
-  font-size: 25px;
+  font-size: 15px;
   font-weight: bold;
   background-color: rgba(0,128,0, 0.1);
   border-radius: 10px;

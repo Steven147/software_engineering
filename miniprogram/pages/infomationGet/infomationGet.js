@@ -17,13 +17,6 @@ Page({
     numOfPlan:50
   },
 
-  onLoad: function (options) {
-    app.yun()
-  },
-  onReady: function (options) {
-   
-  },
-  
   
   
   inputChangeHandle: function (e) {
@@ -38,27 +31,8 @@ Page({
     that.setData({
       munOfPlan:e.detail.value
      })
-    app.yun();
-    var timer = setInterval(function () {
-      console.log("循环定时器等待循环请求结束")
-     
-      if (app.globalData.overallWordList[1]._id !=undefined ) {
-      
-        
-       
-        console.log(app.globalData.overallWordList)
-
-        console.log('轮询已完成')
-        clearInterval(timer);
-      }
-    }, 500)
     
-    
-    
-    
-    
-    
-
+   
   },
   choiceBook1: function () {
 

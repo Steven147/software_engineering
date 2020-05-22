@@ -15,7 +15,7 @@ Page({
   bindViewTap: function() {
     wx.redirectTo({
     
-      url: '../infomationGet/infomationGet'
+      url: '../endTest/endTest'
     })
   },
   onLoad: function () {

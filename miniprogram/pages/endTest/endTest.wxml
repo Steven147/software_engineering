@@ -1,3 +1,26 @@
 <!--pages/endTest/endTest.wxml-->
-<text class="title">恭喜您！学习已完成</text>
-<button class="button" type="primary" bingdtap="calculateMem">轻触生成记忆指数</button>
+  <view wx:if="{{word[0].timeOnTest!=undefined}}">
+    <text class="title">恭喜您！学习已完成</text>
+    <button class="circleButton"  bingdtap="calculateMem">轻触生成记忆指数</button>
+
+  </view>
+
+  <view wx:if="{{word[0].timeOnTest==undefined}}">
+    <text class="title">开启今天的背单词之旅吧</text>
+    <view class='imagesize'  bindtap="gotowordShow">
+      <image src="../images/start.jpg"   class="start"   >
+      </image>
+    </view>
+  </view>
+
+
+
+
+ 
+  <button class='btn1' open-type='openSetting'>
+   
+    <view>修改学习计划</view>
+ </button>
+
+
+  

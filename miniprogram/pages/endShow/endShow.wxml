@@ -9,7 +9,7 @@
 
 <view class="block:vertical-align:top;">
 <image  class="picture" mode="widthFix" src="test.jpg"></image>
-<button class="button" style="width:300rpx"  bindtap="goIndex">开始测试</button>
+<button class="button" style="width:300rpx"  bindtap="goTest">开始测试</button>
 </view>
 
 <view class="block:vertical-align:top;">
