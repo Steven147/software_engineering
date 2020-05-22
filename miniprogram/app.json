@@ -8,6 +8,7 @@
     "pages/wordTest/wordTest",
     "pages/endShow/endShow",
     "pages/test/test",
+    "pages/message/message",
     "pages/endTest/endTest"
    
   ],
@@ -23,5 +24,29 @@
       "provider": "wx6afed118d9e81df9"
     }
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color":"white",
+    "selectedColor": "#9C3461",
+    "list": [
+      {
+        "pagePath": "pages/endTest/endTest",
+        "text": "背诵单词",
+        "iconPath": "pages/images/home.png",
+        "selectedIconPath": "pages/images/home.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "开发选项",
+        "iconPath": "pages/images/message.png",
+        "selectedIconPath": "pages/images/message.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "记忆报表",
+        "iconPath": "pages/images/report.png",
+        "selectedIconPath": "pages/images/report.png"
+      }
+    ]
+  }
 }

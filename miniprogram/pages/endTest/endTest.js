@@ -14,7 +14,7 @@ Page({
       })
   },
   gotowordShow(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../infomationGet/infomationGet',
     })
   },
@@ -25,6 +25,7 @@ Page({
 
 onLoad: function () {
     app.globalData.flagForIndentify= app.globalData.flagForIndentify+1
+    console.log("第二次进入",app.globalData.flagForIndentify)
     if(app.globalData.flagForIndentify==1){
       app.yun();
       
