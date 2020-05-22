@@ -35,22 +35,22 @@ Page({
    
   },
   choiceBook1: function () {
-
+    app.getwordgaokao();
     
     console.log(1)
   },
   choiceBook2: function () {
-
+      app.getword6();
     
     console.log(2)
   },
   choiceBook3: function () {
-
+    app.getwordgre();
     
     console.log(3)
   },
   choiceBook4: function () {
-
+    app.getwordtoefl();
     
     console.log(4)
   },
