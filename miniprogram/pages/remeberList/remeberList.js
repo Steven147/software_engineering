@@ -36,6 +36,16 @@ Page({
       word: app.globalData.overallWordList,
 
     })
+    if(app.globalData.flagForIndentify==1){
+      var timestamp = Date.parse(new Date());
+      console.log("当前时间戳为：" + timestamp);
+      var timeResult = app.getTimeforUse(timestamp);
+	  
+	  
+      app.globalData.timeBegin = timeResult
+      console.log("timeEnd",  app.globalData.timeEnd)
+      console.log("timebegin",  app.globalData.timeBegin)
+    }
     
    
   },

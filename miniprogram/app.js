@@ -62,6 +62,8 @@ App({
       }],
       timeBegin:"",
       timeEnd:"",
+      totalLearnTime:'',
+      flagForIndentify:0,
       db_id:"",
       db_m_n:0,
       db_userx:"",

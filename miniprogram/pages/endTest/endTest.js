@@ -24,21 +24,38 @@ Page({
 
 
 onLoad: function () {
-    
-    if(app.globalData.overallWordList[0]._id ==undefined){
+    app.globalData.flagForIndentify= app.globalData.flagForIndentify+1
+    if(app.globalData.flagForIndentify==1){
       app.yun();
-    }
-    var timer = setInterval(function () {
-      console.log("循环定时器等待循环请求结束")
+      
+      var timer = setInterval(function () {
+        console.log("循环定时器等待循环请求结束")
+       
+      if (app.globalData.overallWordList[0]._id !=undefined ) {
      
-    if (app.globalData.overallWordList[0]._id !=undefined ) {
-   
-        console.log('轮询已完成')
-        clearInterval(timer);
-      }
-    }, 500)
+          console.log('轮询已完成')
+          clearInterval(timer);
+        }
+      }, 500)
+    }
+
+    if(app.globalData.flagForIndentify==2){
+      var timestamp = Date.parse(new Date());
+      console.log("当前时间戳为：" + timestamp);
+      var timeResult = app.getTimeforUse(timestamp);
+      app.globalData.timeEnd = timeResult
+      console.log("timeEnd", app.globalData.timeEnd)
+      console.log("timebegin", app.globalData.timeBegin)
+      var b = ((app.globalData.timeEnd - app.globalData.timeBegin) > 60) ? 60 : (app.globalData.timeEnd -app.globalData.timeBegin)
+      console.log("b", b)
+      app.globalData.timeBegin = timeResult
+
+     
+      app.globalData.totalLearnTime = app.globalData.totalLearnTime +b
+    
+    }
     this.setData({
-      word: app.globalData.overallWordList,
+      word: app.globalData.flagForIndentify
     })
 }
 })
