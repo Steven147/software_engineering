@@ -60,6 +60,8 @@ App({
       overallWordList: [{
         
       }],
+      rememberList:[],
+      rememberNow:'',
       timeBegin:"",
       timeEnd:"",
       totalLearnTime:'',

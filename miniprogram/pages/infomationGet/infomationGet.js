@@ -36,23 +36,30 @@ Page({
   },
   choiceBook1: function () {
     app.getwordgaokao();
-    
-    console.log(1)
+    app.globalData.rememberList.push("gaokao")
+    app.globalData.rememberNow="gaokao"
+    console.log(app.globalData.rememberList)
   },
   choiceBook2: function () {
       app.getword6();
     
-    console.log(2)
+      app.globalData.rememberList.push("cet6")
+      app.globalData.rememberNow="cet6"
+      console.log(app.globalData.rememberList)
   },
   choiceBook3: function () {
     app.getwordgre();
     
-    console.log(3)
+    app.globalData.rememberList.push("gre")
+    app.globalData.rememberNow="gre"
+    console.log(app.globalData.rememberList)
   },
   choiceBook4: function () {
     app.getwordtoefl();
     
-    console.log(4)
+    app.globalData.rememberList.push("toefl")
+    app.globalData.rememberNow="toefl"
+    console.log(app.globalData.rememberList)
   },
   jumptowordlist: function () {
 
@@ -62,7 +69,7 @@ Page({
       url: '../remeberList/remeberList'
 
     })
-    console.log(456)
+    
   },
 
 })

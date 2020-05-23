@@ -10,7 +10,10 @@ Page({
     timeBegin :"",
     timeEnd:"",
     id:1,
-    ap:Math.floor(Math.random() * 2400)+1
+    ap1:Math.floor(Math.random() * 2400)+1,
+    ap2:Math.floor(Math.random() * 2400)+1,
+    ap3:Math.floor(Math.random() * 2400)+1,
+    xone:0
   },
  
   wrong(e) {
@@ -64,10 +67,6 @@ Page({
       console.log(
         "时刻是", app.globalData.overallWordList)
 
-      that.setData({
-        id: idm + 1,
-        ap:Math.floor(Math.random() * 2400) + 1,
-    })
     }
     
     if (idm==app.globalData.overallWordList.length) {
@@ -92,16 +91,107 @@ Page({
         }
       })
       app.globalData.overallWordList = that.data.word;
-      //console.log(app.globalData.overallWordList)
-      //app.calc_memory_num(0.2,0.3,0.1,0.1,0.3)
-      wx.switchTab({
-        url: '../endTest/endTest',
-      })
+      console.log(app.globalData.overallWordList)
+      app.calc_memory_num(0.2,0.3,0.1,0.1,0.3)
+    
       
     } 
 
   },
   
+  truex(e){
+
+    var that=this;
+    var idm=that.data.id;
+    if (idm < app.globalData.overallWordList.length) {
+      console.log(that.data.id);
+      var timestamp = Date.parse(new Date());
+     
+      console.log("此时时间戳为：" + timestamp);
+      var timeResult = that.getTimeforUse(timestamp);
+      that.setData({
+        timeEnd: timeResult
+      })
+      //that.data.timeEnd = function formatTime(time) {
+      //  return moment.unix(time).format('YYYY/MM/DD HH:mm:ss:SSS')
+      //}
+      var b = that.data.timeEnd-this.data.timeBegin;
+      console.log(
+        "e", e.currentTarget.dataset.index,"b",b)
+      that.data.word.forEach(function (item, index) {
+        if(index==e.currentTarget.dataset.index){
+          var timeOnTest = "word[" + index + "].timeOnTest";
+          that.setData({
+            [timeOnTest]: b
+          })
+        }
+      
+      })
+      that.setData({
+        timeBegin: that.data.timeEnd
+      })
+    
+      console.log(
+        "时间是", app.globalData.overallWordList)
+      console.log(
+        "时刻是", app.globalData.overallWordList)
+
+    }
+    
+    if (idm==app.globalData.overallWordList.length) {
+      console.log("bushuchu")
+      
+      var timestamp = Date.parse(new Date());
+
+      console.log("此时时间戳为：" + timestamp);
+      var timeResult = that.getTimeforUse(timestamp);
+      that.setData({
+        timeEnd: timeResult
+      })
+      
+      var b = that.data.timeEnd - that.data.timeBegin;
+      
+      that.data.word.forEach(function (item, index) {
+        if (index == e.currentTarget.dataset.index) {
+          var timeOnTest = "word[" + index + "].timeOnTest";
+          that.setData({
+            [timeOnTest]: b
+          })
+        }
+      })
+      app.globalData.overallWordList = that.data.word;
+      console.log(app.globalData.overallWordList)
+      app.calc_memory_num(0.2,0.3,0.1,0.1,0.3)
+    
+      
+    } 
+      that.setData({
+        xone:1,
+      })
+  },
+    
+
+  Turning(){
+    var that=this
+    var idm=that.data.id;
+    if (idm < app.globalData.overallWordList.length) {
+      console.log(that.data.id)}
+      if (idm + 3 > app.globalData.overallWordList.length) {
+        console.log("bushuchu")
+          wx.navigateTo({
+          url: '../index/index',
+        })}
+   setTimeout(function() {
+     that.setData({
+        id: idm + 3,
+        ap1:Math.floor(Math.random() * 2400) + 1,
+        ap2:Math.floor(Math.random() * 2400) + 1,
+        ap3:Math.floor(Math.random() * 2400) + 1,
+        xone:0
+    })
+   }, 1000);     
+    },
+      
     // for (var i = 0, len = app.globalData.overallWordList.length; i < len ; i++) {
       // this.arr[i] = i
   // }

@@ -1,15 +1,17 @@
 /* pages/wordShow/wordShow.wxss */
 page{
-  background-color: rgb(237, 230, 230);
+  background-color: rgb(255, 255, 255);
 }
 .yisi {
-  height: 200rpx;
+  height: 100rpx;
   color: #000000;
-  margin-left:10%;
-  margin-right:10%;
-  margin-top:10%;
-  margin-bottom:20%;
-  font-size: 15pt;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:5%;
+  margin-bottom:1%;
+  font-size: 10pt;
+  padding-top: 10rpx;
+  border-top: 1px rgba(0, 0, 0, 0.6) solid;
 }
 
 .word {
@@ -20,12 +22,35 @@ page{
 }
 
 .button {
-  height: 135rpx;
-  width: 500rpx;
-  margin-left:125rpx;
-  margin-right:125rpx;
-  margin-top:5%;
-  margin-bottom:5%;
-  font-size: 20pt;
-  letter-spacing: 2rpx;
+  height: 80rpx;
+  width: 325rpx;
+  margin-left:25rpx;
+  margin-right:25rpx;
+  margin-top:0.5%;
+  margin-bottom:0.5%;
+  font-size: 12pt;
+  letter-spacing: 0.5rpx;
+  background-color: rgb(200, 201, 171);
+  color: rgb(29, 26, 26);
+  float: right;
+
+  }
+  .hover_right{
+    opacity: 0.8;
+    background-color: green;
+    color: green;
+  }
+  .hover_wrong{
+    opacity: 0.8;
+    background-color: red;
+    color: red;
+  }
+  .turning_bottom{
+    height: 100rpx;
+    margin-left:25%;
+    margin-right:25%;
+    margin-top:5%;
+    font-size: 14pt;
+    background-color: rgb(20, 172, 45);
+    color: rgb(255, 255, 255);
   }
