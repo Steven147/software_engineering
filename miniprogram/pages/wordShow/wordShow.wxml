@@ -34,7 +34,7 @@
           {{list[slider]}}
         </view>
         <view style="overflow:hidden">
-          <slider bindchange="changeSlider" step="33.3" data-index="{{index}}" value="{{slider}}" />
+          <slider bindchanging="changeSlider" step="33.3" data-index="{{index}}" value="{{slider}}" />
         </view>
       </view>
     </view>
