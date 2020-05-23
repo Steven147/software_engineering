@@ -7,8 +7,7 @@ page{
   color: #000000;
   margin-left:5%;
   margin-right:5%;
-  margin-top:5%;
-  margin-bottom:1%;
+  margin-top:7.5%;
   font-size: 10pt;
   padding-top: 10rpx;
   border-top: 1px rgba(0, 0, 0, 0.6) solid;
@@ -22,13 +21,13 @@ page{
 }
 
 .button {
-  height: 80rpx;
-  width: 325rpx;
-  margin-left:25rpx;
-  margin-right:25rpx;
+  height: 75rpx;
+  width: 240rpx;
+  margin-left:5rpx;
+  margin-right:5rpx;
   margin-top:0.5%;
   margin-bottom:0.5%;
-  font-size: 12pt;
+  font-size: 10pt;
   letter-spacing: 0.5rpx;
   background-color: rgb(200, 201, 171);
   color: rgb(29, 26, 26);

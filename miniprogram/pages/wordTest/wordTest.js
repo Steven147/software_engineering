@@ -10,9 +10,10 @@ Page({
     timeBegin :"",
     timeEnd:"",
     id:1,
-    ap1:Math.floor(Math.random() * 2400)+1,
-    ap2:Math.floor(Math.random() * 2400)+1,
-    ap3:Math.floor(Math.random() * 2400)+1,
+    ap1:Math.floor(Math.random() * 600)+1,
+    ap2:Math.floor(Math.random() * 600)+1,
+    ap3:Math.floor(Math.random() * 600)+1,
+    ap4:Math.floor(Math.random() * 600)+1,
     xone:0
   },
  
@@ -176,17 +177,18 @@ Page({
     var idm=that.data.id;
     if (idm < app.globalData.overallWordList.length) {
       console.log(that.data.id)}
-      if (idm + 3 > app.globalData.overallWordList.length) {
+      if (idm + 4 > app.globalData.overallWordList.length) {
         console.log("bushuchu")
           wx.navigateTo({
           url: '../index/index',
         })}
    setTimeout(function() {
      that.setData({
-        id: idm + 3,
-        ap1:Math.floor(Math.random() * 2400) + 1,
-        ap2:Math.floor(Math.random() * 2400) + 1,
-        ap3:Math.floor(Math.random() * 2400) + 1,
+        id: idm + 4,
+        ap1:Math.floor(Math.random() * 600) + 1,
+        ap2:Math.floor(Math.random() * 600) + 1,
+        ap3:Math.floor(Math.random() * 600) + 1,
+        ap4:Math.floor(Math.random() * 600) + 1,
         xone:0
     })
    }, 1000);     
