@@ -1,5 +1,9 @@
 // pages/endTest/endTest.js
 const app = getApp()
+const regeneratorRuntime = require('regenerator-runtime')
+const tf = require('@tensorflow/tfjs-core')
+const tfl = require('@tensorflow/tfjs-layers')
+
 Page({
 
   /**
@@ -18,12 +22,31 @@ Page({
       url: '../infomationGet/infomationGet',
     })
   },
-  calculateMem:function(){
-    //放入记忆指数计算
+  async calculateMem(){
+    //打印记忆指数
   },
 
 
-onLoad: function () {
+async onLoad() {
+  //确保已运行过预测模型和测试后对所有单词运行记忆指数调整模型
+  var mat = []//参数矩阵
+  for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
+    var singleMat = []
+    singleMat.push(app.globalData.overallWordList[i].isSelected)
+    singleMat.push(app.globalData.overallWordList[i].numclick)
+    singleMat.push(app.globalData.overallWordList[i].theDifficultyByUser)
+    //singleMat.push(app.globalData.overallWordList[i].isSelected)
+    singleMat.push(app.globalData.overallWordList[i].numOfWrongClick)//在读取不到测试数据时，默认最坏情况（选了四次才选到）
+    mat.push(singleMat)
+  }
+  var result = await this.loadModel(mat)//模型运行
+  for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
+    app.globalData.overallWordList[i].memory_num = result[i]
+    console.log(result[i])
+  }
+  console.log('overallWordList')
+  console.log(app.globalData.overallWordList)
+
     app.globalData.flagForIndentify= app.globalData.flagForIndentify+1
     console.log("第二次进入",app.globalData.flagForIndentify)
     if(app.globalData.flagForIndentify==1){
@@ -58,5 +81,24 @@ onLoad: function () {
     this.setData({
       word: app.globalData.flagForIndentify
     })
-}
+},
+
+  //加载模型一：记忆指数调整模型
+  async loadModel(mat) {
+    const net = await tfl.loadLayersModel('https://wxz-1301710654.cos.ap-shanghai.myqcloud.com/old/model.json')
+    //net.summary()
+    var result = await net.predict(tf.tensor(mat)).data()
+    //console.log(result)
+    return result
+
+  },
+  //加载模型二：预测模型
+  async loadModel2(mat) {
+    const net = await tfl.loadLayersModel('https://wxz-1301710654.cos.ap-shanghai.myqcloud.com/new/model.json')
+    //net.summary()
+    var result = await net.predict(tf.tensor(mat)).data()
+    //console.log(result)
+    return result
+
+  }
 })

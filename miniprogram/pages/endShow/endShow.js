@@ -37,7 +37,7 @@ Page({
       var singleMat = []
       singleMat.push(app.globalData.overallWordList[i].isSelected)
       singleMat.push(app.globalData.overallWordList[i].numclick)
-      singleMat.push(-app.globalData.overallWordList[i].theDifficultyByUser)
+      singleMat.push(app.globalData.overallWordList[i].theDifficultyByUser)
       //singleMat.push(app.globalData.overallWordList[i].isSelected)
       singleMat.push(4)//在读取不到测试数据时，默认最坏情况（选了四次才选到）
       mat.push(singleMat)
@@ -103,9 +103,9 @@ goTest() {
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log(app.globalData.overallWordList)
-  },
+  // onLoad: function (options) {
+  //   console.log(app.globalData.overallWordList)
+  // },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
