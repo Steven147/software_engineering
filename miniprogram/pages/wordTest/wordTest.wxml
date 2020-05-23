@@ -3,198 +3,595 @@
 <view wx:if="{{item.newid==id}}">
 <view class='yisi'> {{item.yisi}}</view>
 <view class='word'>
-<view wx:if="{{ap<100}}">
+  <view wx:if="{{ap1<100}}">
 
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
 
+  </view>
+  <view wx:if="{{ap1>99&&ap1<200}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap1>199&&ap1<300}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap1>299&&ap1<400}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap1>399&&ap1<500}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap1>499&&ap1<600}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap1>599&&ap1<700}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap1>699&&ap1<800}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap1>799&&ap1<900}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap1>899&&ap1<1000}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap1>999&&ap1<1100}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1099&&ap1<1200}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1199&&ap1<1300}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1299&&ap1<1400}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1399&&ap1<1500}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1499&&ap1<1600}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1599&&ap1<1700}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1699&&ap1<1800}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1799&&ap1<1900}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1899&&ap1<2000}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap1>1999&&ap1<2100}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap1>2099&&ap1<2200}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap1>2199&&ap1<2300}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap1>2299}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="truex" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
 </view>
-<view wx:if="{{ap>99&&ap<200}}">
-
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-
 </view>
-<view wx:if="{{ap>199&&ap<300}}">
+<view wx:if="{{item.newid==id+1}}">
+<view class='yisi'> {{item.yisi}}</view>
+<view class='word'>
+  <view wx:if="{{ap2<100}}">
 
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
 
+  </view>
+  <view wx:if="{{ap2>99&&ap2<200}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap2>199&&ap2<300}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap2>299&&ap2<400}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap2>399&&ap2<500}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap2>499&&ap2<600}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap2>599&&ap2<700}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap2>699&&ap2<800}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap2>799&&ap2<900}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap2>899&&ap2<1000}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap2>999&&ap2<1100}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1099&&ap2<1200}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1199&&ap2<1300}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1299&&ap2<1400}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1399&&ap2<1500}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1499&&ap2<1600}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1599&&ap2<1700}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1699&&ap2<1800}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1799&&ap2<1900}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1899&&ap2<2000}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap2>1999&&ap2<2100}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap2>2099&&ap2<2200}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap2>2199&&ap2<2300}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap2>2299}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
 </view>
-<view wx:if="{{ap>299&&ap<400}}">
-
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-
 </view>
-<view wx:if="{{ap>399&&ap<500}}">
+<view wx:if="{{item.newid==id+2}}">
+<view class='yisi'> {{item.yisi}}</view>
+<view class='word'>
+  <view wx:if="{{ap3<100}}">
 
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
 
+  </view>
+  <view wx:if="{{ap3>99&&ap3<200}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap3>199&&ap3<300}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap3>299&&ap3<400}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap3>399&&ap3<500}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap3>499&&ap3<600}}">
+
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap3>599&&ap3<700}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap3>699&&ap3<800}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap3>799&&ap3<900}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap3>899&&ap3<1000}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap3>999&&ap3<1100}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1099&&ap3<1200}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1199&&ap3<1300}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1299&&ap3<1400}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1399&&ap3<1500}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1499&&ap3<1600}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1599&&ap3<1700}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1699&&ap3<1800}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1799&&ap3<1900}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1899&&ap3<2000}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap3>1999&&ap3<2100}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap3>2099&&ap3<2200}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap3>2199&&ap3<2300}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
+  <view wx:if="{{ap3>2299}}">
+
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
+    <button class="button" hover-class='hover_wrong' hover-stay-time="500"  bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
+    <button class="button" hover-class='hover_right' hover-stay-time="500"  bindtap="true" data-index='{{index}}'>{{item.word}}</button>
+
+  </view>
 </view>
-<view wx:if="{{ap>499&&ap<600}}">
-
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-
-</view>
-<view wx:if="{{ap>599&&ap<700}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-
-</view>
-<view wx:if="{{ap>699&&ap<800}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-
-</view>
-<view wx:if="{{ap>799&&ap<900}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-
-</view>
-<view wx:if="{{ap>899&&ap<1000}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-
-</view>
-<view wx:if="{{ap>999&&ap<1100}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-
-</view>
-<view wx:if="{{ap>1099&&ap<1200}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-
-</view>
-<view wx:if="{{ap>1199&&ap<1300}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-
-</view>
-<view wx:if="{{ap>1299&&ap<1400}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-
-</view>
-<view wx:if="{{ap>1399&&ap<1500}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-
-</view>
-<view wx:if="{{ap>1499&&ap<1600}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-
-</view>
-<view wx:if="{{ap>1599&&ap<1700}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-
-</view>
-<view wx:if="{{ap>1699&&ap<1800}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-
-</view>
-<view wx:if="{{ap>1799&&ap<1900}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-
-</view>
-<view wx:if="{{ap>1899&&ap<2000}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-
-</view>
-<view wx:if="{{ap>1999&&ap<2100}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-
-</view>
-<view wx:if="{{ap>2099&&ap<2200}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-
-</view>
-<view wx:if="{{ap>2199&&ap<2300}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-
-</view>
-<view wx:if="{{ap>2299}}">
-
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction3}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction2}}</button>
-  <button class="button" bindtap="wrong" data-index='{{index}}'>{{item.distraction1}}</button>
-  <button class="button" bindtap="true" data-index='{{index}}'>{{item.word}}</button>
-
 </view>
 </view>
-</view>
+<view wx:if='{{xone==1}}'>
+<button class="turning_bottom" bindtap="Turning">Next Group</button>
 </view>
