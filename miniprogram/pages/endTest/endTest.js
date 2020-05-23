@@ -46,6 +46,34 @@ async onLoad() {
   }
   console.log('overallWordList')
   console.log(app.globalData.overallWordList)
+  //推送记忆指数给云端数据库
+  for (var i = 0; i < app.globalData.overallWordList.length; ++i){
+    app.globalData.db_id = app.globalData.overallWordList[i].id2
+    app.globalData.db_m_n = app.globalData.overallWordList[i].memory_num
+    app.globalData.db_userx = app.globalData.overallWordList[i].word
+    console.log()
+    console.log(app.globalData.rememberNow)
+    if (app.globalData.rememberNow == "gaokao"){
+      app.updDatagaokao()
+      app.updUsersmry()
+      console.log('更新成功')
+    }
+    if (app.globalData.rememberNow == "cet6") {
+      app.updData6()
+      app.updUsersmry()
+      console.log('更新成功')
+    }
+    if (app.globalData.rememberNow == "gre") {
+      app.updDatagre()
+      app.updUsersmry()
+      console.log('更新成功')
+    }
+    if (app.globalData.rememberNow == "toefl") {
+      app.updDatatoefl()
+      app.updUsersmry()
+      console.log('更新成功')
+    }
+  }
 
     app.globalData.flagForIndentify= app.globalData.flagForIndentify+1
     console.log("第二次进入",app.globalData.flagForIndentify)
