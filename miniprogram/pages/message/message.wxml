@@ -1,15 +1,13 @@
 <!--pages/message/message.wxml-->
-<view>
+<view class="sou">
     <input class="souborder" type="text" maxlength="45" bindinput="inputLetter" placeholder="输入想要查询的单词"/>
-        <button class="soubutton" bindtap="sou">
+        <button class="soubutton" bindtap="onQuery">
         <icon class="search_in_box" type="search" size="25"></icon>
         </button>
   </view>
 
-  <button bindtap='onQuery' type='primary'>查询单词</button>
-
-  <view wx:for="{{word}}" wx:key="word" data-index="{{index}}">
-  <view wx:if="{{item.word==souword}}">
+  <view wx:for="{{queryResult}}" wx:key="word" data-index="{{index}}">
+  
 
     <view class="word">{{item.word}}</view>
 
@@ -31,5 +29,5 @@
     <view class="phrase">例句</view>
     <view class="phrasewords">{{item.liju_e}}</view>
     <view class="phrasewords">{{item.liju_cn}}</view>
-</view>
+
 </view>

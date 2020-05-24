@@ -10,29 +10,13 @@ Page({
    */
   data: {
   word:{},
-  souword:'a'
+  queryResult:{},
   },
   //搜索框中只能输入字母
   inputLetter: function(e) {
     myword=e.detail.value
     var pwd = e.detail.value
     return pwd.replace(/[^a-zA-Z]/g,'')
-},
-  sou: function () {
-    this.setData({
-      souword:'abandon'
-    })
-    console.log("单词"+this.data.word)
-},
-addPropertyInList(a) {
-
-  var word = a
-  var that = this
-
-  that.data.word.forEach(function (item, index) {
-      app.globalData.overallWordList = that.data.word
-  })
-
 },
 
   onQuery: function () {

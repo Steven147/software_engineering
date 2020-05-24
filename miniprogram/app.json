@@ -37,7 +37,7 @@
       },
       {
         "pagePath": "pages/message/message",
-        "text": "开发选项",
+        "text": "查询单词",
         "iconPath": "pages/images/message.png",
         "selectedIconPath": "pages/images/message.png"
       },

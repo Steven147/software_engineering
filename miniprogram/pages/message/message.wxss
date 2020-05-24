@@ -1,6 +1,11 @@
 /* pages/message/message.wxss */
 page{
-  background-color: lightskyblue;
+  background-color: white;
+}
+.sou{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .souborder{
   background-color: white;
@@ -31,7 +36,7 @@ page{
   font-weight: bold;
   font-size: 28pt;
   margin-left: 40rpx;
-  margin-top: 150rpx;
+  margin-top: 80rpx;
   margin-bottom: 20rpx;
 }
 
