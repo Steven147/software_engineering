@@ -1,18 +1,42 @@
 // pages/message/message.js
+var app =getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+  word:{},
+  souword:'a'
   },
+  //搜索框中只能输入字母
+  inputLetter: function(e) {
+    var pwd = e.detail.value
+    return pwd.replace(/[^a-zA-Z]/g,'')
+},
+  sou: function () {
+    this.setData({
+      souword:'abandon'
+    })
+    console.log("单词"+this.data.word)
+},
+addPropertyInList(a) {
 
+  var word = a
+  var that = this
+
+  that.data.word.forEach(function (item, index) {
+      app.globalData.overallWordList = that.data.word
+  })
+
+},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      word: app.globalData.overallWordList,
+    })
   },
 
   /**

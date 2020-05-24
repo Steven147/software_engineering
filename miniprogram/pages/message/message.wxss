@@ -1,1 +1,116 @@
 /* pages/message/message.wxss */
+page{
+  background-color: lightskyblue;
+}
+.souborder{
+  background-color: white;
+  height: 60rpx;
+  width: 470rpx;
+  border-width: 5rpx;
+  border-color: darkcyan;
+  border-style: solid;
+  position: absolute;
+  top: 50rpx;
+  left: 75rpx;
+}
+.soubutton{
+  height: 70rpx;
+  width: 100rpx;
+  margin-right:75rpx;
+  margin-top: 50rpx;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  float: right;
+}
+.search_in_box {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.word {
+  font-weight: bold;
+  font-size: 28pt;
+  margin-left: 40rpx;
+  margin-top: 150rpx;
+  margin-bottom: 20rpx;
+}
+
+.IPA {
+  display: flex;
+  align-content: center;
+  margin-bottom: 20rpx;
+}
+
+.IPAwords {
+  font-size: 15pt;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.button[plain] {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 40rpx;
+}
+
+.paraphrase {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-top: 12rpx;
+  margin-bottom: 40rpx;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  font-size: 15pt;
+  border-top: 2px rgba(0, 0, 0, 0.2) solid;
+  border-bottom: 2px rgba(0, 0, 0, 0.2) solid;
+  letter-spacing: 2rpx;
+}
+
+.phrase {
+  margin-left: 40rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  color:#06ae56;
+  font-size: 15pt;
+}
+
+.phrasewords {
+  font-size: 15pt;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 20rpx;
+  color: black;
+  letter-spacing: 2rpx;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  margin-bottom: 20rpx;
+  font-size: 5rpx;
+}
+
+.slider{
+  margin-left:80rpx;
+  margin-right: 80rpx;
+}
+
+.difficulty{
+  
+  font-size: 15pt;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  color: rgba(0, 0, 0, 0.6);
+}
+

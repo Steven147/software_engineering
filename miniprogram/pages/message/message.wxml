@@ -1,2 +1,33 @@
 <!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<view>
+    <input class="souborder" type="text" maxlength="45" bindinput="inputLetter" placeholder="输入想要查询的单词"/>
+        <button class="soubutton" bindtap="sou">
+        <icon class="search_in_box" type="search" size="25"></icon>
+        </button>
+  </view>
+
+  <view wx:for="{{word}}" wx:key="word" data-index="{{index}}">
+  <view wx:if="{{item.word==souword}}">
+
+    <view class="word">{{item.word}}</view>
+
+    <view class="IPA">
+      <text class="IPAwords">{{item.yinbiao_AE}}</text>
+      <button class='button' plain="true" bindtap="sound_AE" data-index="{{index}}">
+        <image class='icon' src="icon2.jpg"></image>
+      </button>
+    </view>
+    <view class="IPA">
+      <text class="IPAwords">{{item.yinbiao_BE}}</text>
+      <button class='button' plain="true" bindtap="sound_BE" data-index="{{index}}">
+        <image class='icon' src="icon2.jpg"></image>
+      </button>
+    </view>
+
+    <view class="paraphrase">{{item.yisi}}</view>
+
+    <view class="phrase">例句</view>
+    <view class="phrasewords">{{item.liju_e}}</view>
+    <view class="phrasewords">{{item.liju_cn}}</view>
+</view>
+</view>
