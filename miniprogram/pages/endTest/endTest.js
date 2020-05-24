@@ -92,6 +92,7 @@ async onLoad() {
           clearInterval(timer);
         }
       }, 500)
+      //ifuser 函数位置
     }
 
     if(app.globalData.flagForIndentify==2){
@@ -108,6 +109,9 @@ async onLoad() {
      
       app.globalData.totalLearnTime = app.globalData.totalLearnTime +b
     
+    }
+    if(app.globalData.flagForIndentify>=2 || app.globalData.flagForIndentify==1){
+        //拉下来user的背诵过的所有单词
     }
     this.setData({
       word: app.globalData.flagForIndentify
