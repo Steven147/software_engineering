@@ -68,6 +68,7 @@ App({
       flagForIndentify:0,
       db_id:"",
       db_m_n:0,
+      db_word:"",
       db_userx:"",
       wordfetch:[],
       localStorageIO: plugin.localStorageIO
@@ -296,9 +297,9 @@ App({
       name: "Users_Mry",
       data: {
         _openid: this.globalData.db_userx,
-        _word: this.globalData.db_id,
+        _word: this.globalData.db_word,
         _memory_num: this.globalData.db_m_n,
-        // _dic: this.globalData.rememberNow
+        _dic: this.globalData.rememberNow
       },
       success(res) {
         console.log("更新用户成功")

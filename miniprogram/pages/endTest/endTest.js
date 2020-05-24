@@ -48,13 +48,16 @@ async onLoad() {
   console.log(app.globalData.overallWordList)
   //推送记忆指数给云端数据库
   for (var i = 0; i < app.globalData.overallWordList.length; ++i){
-    app.globalData.db_id = app.globalData.overallWordList[i].id2
+    app.globalData.db_id = app.globalData.overallWordList[i].id2 + ""
     app.globalData.db_m_n = app.globalData.overallWordList[i].memory_num
     app.globalData.db_userx = app.globalData.overallWordList[i].word
-    console.log()
+    app.globalData.db_word = app.globalData.overallWordList[i].word
+    console.log(app.globalData.overallWordList[i].memory_num)
+    console.log(app.globalData.db_m_n)
     console.log(app.globalData.rememberNow)
     if (app.globalData.rememberNow == "gaokao"){
       app.updDatagaokao()
+      app.globalData.db_userx = "1"
       app.updUsersmry()
       console.log('更新成功')
     }
