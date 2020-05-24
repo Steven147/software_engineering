@@ -1,6 +1,8 @@
 // pages/message/message.js
 var app =getApp()
+//query_word
 var myword=""
+
 Page({
 
   /**
