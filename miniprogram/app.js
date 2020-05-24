@@ -60,6 +60,8 @@ App({
       overallWordList: [{
         
       }],
+      rememberList:[],
+      rememberNow:'',
       timeBegin:"",
       timeEnd:"",
       totalLearnTime:'',
@@ -295,7 +297,8 @@ App({
       data: {
         _openid: this.globalData.db_userx,
         _word: this.globalData.db_id,
-        _memory_num: this.globalData.db_m_n
+        _memory_num: this.globalData.db_m_n,
+        // _dic: this.globalData.rememberNow
       },
       success(res) {
         console.log("更新用户成功")
