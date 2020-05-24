@@ -6,6 +6,8 @@
         </button>
   </view>
 
+  <button bindtap='onQuery' type='primary'>查询单词</button>
+
   <view wx:for="{{word}}" wx:key="word" data-index="{{index}}">
   <view wx:if="{{item.word==souword}}">
 

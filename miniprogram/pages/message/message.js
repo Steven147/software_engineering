@@ -1,5 +1,6 @@
 // pages/message/message.js
 var app =getApp()
+var myword=""
 Page({
 
   /**
@@ -11,6 +12,7 @@ Page({
   },
   //搜索框中只能输入字母
   inputLetter: function(e) {
+    myword=e.detail.value
     var pwd = e.detail.value
     return pwd.replace(/[^a-zA-Z]/g,'')
 },
@@ -30,6 +32,27 @@ addPropertyInList(a) {
   })
 
 },
+
+  onQuery: function () {
+    let that = this
+    wx.cloud.callFunction({
+      name: "query",
+      data: {
+        _word: myword
+      },
+      success: res => {
+        that.setData({
+          queryResult: res.result.data
+        })
+        console.log("yes", that.data.queryResult)
+
+      },
+      fail(res) {
+        console.log("获取失败", res)
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
