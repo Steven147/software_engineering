@@ -28,7 +28,44 @@ Page({
 
 
 async onLoad() {
-  //确保已运行过预测模型和测试后对所有单词运行记忆指数调整模型
+  
+
+    app.globalData.flagForIndentify= app.globalData.flagForIndentify+1
+    console.log("第二次进入",app.globalData.flagForIndentify)
+    if(app.globalData.flagForIndentify==1){
+      app.yun();
+      
+      var timer = setInterval(function () {
+        console.log("循环定时器等待循环请求结束")
+       
+      if (app.globalData.overallWordList[0]._id !=undefined ) {
+     
+          console.log('轮询已完成')
+          clearInterval(timer);
+        }
+      }, 500)
+      //ifuser 函数位置
+      
+      console.log("用户注册了吗？")
+      console.log("用户名",app.globalData.db_userx)
+      
+      app.IfUsers()
+    }
+
+    if(app.globalData.flagForIndentify==2){
+      var timestamp = Date.parse(new Date());
+      console.log("当前时间戳为：" + timestamp);
+      var timeResult = app.getTimeforUse(timestamp);
+      app.globalData.timeEnd = timeResult
+      console.log("timeEnd", app.globalData.timeEnd)
+      console.log("timebegin", app.globalData.timeBegin)
+      var b = ((app.globalData.timeEnd - app.globalData.timeBegin) > 60) ? 60 : (app.globalData.timeEnd -app.globalData.timeBegin)
+      console.log("b", b)
+      app.globalData.timeBegin = timeResult
+
+     
+      app.globalData.totalLearnTime = app.globalData.totalLearnTime +b
+      //确保已运行过预测模型和测试后对所有单词运行记忆指数调整模型
   var mat = []//参数矩阵
   for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
     var singleMat = []
@@ -80,43 +117,6 @@ async onLoad() {
     }
   }
   app.Time_Inc()
-
-    app.globalData.flagForIndentify= app.globalData.flagForIndentify+1
-    console.log("第二次进入",app.globalData.flagForIndentify)
-    if(app.globalData.flagForIndentify==1){
-      app.yun();
-      
-      var timer = setInterval(function () {
-        console.log("循环定时器等待循环请求结束")
-       
-      if (app.globalData.overallWordList[0]._id !=undefined ) {
-     
-          console.log('轮询已完成')
-          clearInterval(timer);
-        }
-      }, 500)
-      //ifuser 函数位置
-      
-      console.log("用户注册了吗？")
-      console.log("用户名",app.globalData.db_userx)
-      
-      app.IfUsers()
-    }
-
-    if(app.globalData.flagForIndentify==2){
-      var timestamp = Date.parse(new Date());
-      console.log("当前时间戳为：" + timestamp);
-      var timeResult = app.getTimeforUse(timestamp);
-      app.globalData.timeEnd = timeResult
-      console.log("timeEnd", app.globalData.timeEnd)
-      console.log("timebegin", app.globalData.timeBegin)
-      var b = ((app.globalData.timeEnd - app.globalData.timeBegin) > 60) ? 60 : (app.globalData.timeEnd -app.globalData.timeBegin)
-      console.log("b", b)
-      app.globalData.timeBegin = timeResult
-
-     
-      app.globalData.totalLearnTime = app.globalData.totalLearnTime +b
-    
     }
     if(app.globalData.flagForIndentify>=2 || app.globalData.flagForIndentify==1){
         //拉下来user的背诵过的所有单词
