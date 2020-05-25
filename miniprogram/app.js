@@ -63,6 +63,7 @@ App({
       recommendWordList:[{
 
       }],
+      orderFinished:false,
       rememberList:[],
       rememberNow:'',
       timeBegin:"",

@@ -1,13 +1,16 @@
 // pages/infoget/infoget.js
-
 var app = getApp()
+const regeneratorRuntime = require('regenerator-runtime')
+const tf = require('@tensorflow/tfjs-core')
+const tfl = require('@tensorflow/tfjs-layers')
+
 Page({
   
   /**
    * 页面的初始数据
    */
   data: {
-
+    isSelected:0,
     defaultSize: 'default',
     primarySize: 'default',
     warnSize: 'default',
@@ -35,7 +38,21 @@ Page({
    
   },
   async preCalculate(){
-    //如果要用计划数：用 this.data.numOfPlan
+   //如果要用计划数：用 this.data.numOfPlan
+   var timer = setInterval(function () {
+    console.log("循环定时器等待排序")
+    wx.showLoading({
+
+     title: '数据加载中。。。',
+     
+     });
+    if (app.globalData.orderFinished ==true ) {
+     clearInterval(timer);     
+   }
+  }, 500)
+  this.setData({
+    isSelected:5
+  })
     //拉取单词
     app.globalData.recommendWordList = app.globalData.overallWordList
     //运行预测模型初始化未初始化过的单词
@@ -73,37 +90,46 @@ Page({
   var num_kuai = Math.floor(app.globalData.recommendWordList.length / this.data.numOfPlan) //每块的单词数
   for (var i = 0; i < app.globalData.recommendWordList.length - num_kuai; i += num_kuai){
     //将单词按照分块，在每块随机选出一个单词推荐给用户
-    index = Math.floor((Math.random() * num_kuai)) + i
+    var index = Math.floor((Math.random() * num_kuai)) + i
     temp.push(app.globalData.recommendWordList[index])
   }
-  app.globalData.recommendWordList = temp
+  app.globalData.recommendWordList = temp   
   },
   choiceBook1: function () {
+    this.setData({
+      isSelected:1
+    })
     app.getwordgaokao();
     app.globalData.rememberList.push("gaokao")
     app.globalData.rememberNow="gaokao"
-    console.log(app.globalData.rememberList)
+    console.log(this.data.isSelected)
   },
   choiceBook2: function () {
       app.getword6();
-    
+      this.setData({
+        isSelected:2
+      })
       app.globalData.rememberList.push("cet6")
       app.globalData.rememberNow="cet6"
-      console.log(app.globalData.rememberList)
+      console.log(this.data.isSelected)
   },
   choiceBook3: function () {
     app.getwordgre();
-    
+    this.setData({
+      isSelected:3
+    })
     app.globalData.rememberList.push("gre")
     app.globalData.rememberNow="gre"
-    console.log(app.globalData.rememberList)
+    console.log(this.data.isSelected)
   },
   choiceBook4: function () {
     app.getwordtoefl();
-    
+    this.setData({
+      isSelected:4
+    })
     app.globalData.rememberList.push("toefl")
     app.globalData.rememberNow="toefl"
-    console.log(app.globalData.rememberList)
+    console.log(this.data.isSelected)
   },
   jumptowordlist: function () {
 
