@@ -27,11 +27,8 @@ Page({
   },
 
   onLoad: function (options) {
-    for(var i=0;i<app.globalData.overallWordList.length;i++){
-      app.globalData.overallWordList[i].learnTime=0;
-      app.globalData.overallWordList[i]._id=i;
-    }
-   
+    
+     
     this.setData({
       word: app.globalData.overallWordList,
 

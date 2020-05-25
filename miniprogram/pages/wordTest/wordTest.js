@@ -179,9 +179,9 @@ Page({
       console.log(that.data.id)}
       if (idm + 4 > app.globalData.overallWordList.length) {
         console.log("bushuchu")
-          wx.navigateTo({
-          url: '../index/index',
-        })}
+          wx.switchTab({
+            url: '../endTest/endTest',
+          })}
    setTimeout(function() {
      that.setData({
         id: idm + 4,
