@@ -20,8 +20,7 @@ Page({
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
-      app.globalData.userInfo = res.userInfo
-          app.globalData.db_userx=res.userInfo.nickName
+      
           console.log(" app.globalData.userInfo", app.globalData.userInfo,app.globalData.db_userx)
       this.setData({
         userInfo: app.globalData.userInfo,

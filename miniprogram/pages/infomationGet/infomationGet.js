@@ -34,6 +34,9 @@ Page({
     
    
   },
+  preCalculate(){
+   //如果要用计划数：用 this.data.numOfPlan
+  },
   choiceBook1: function () {
     app.getwordgaokao();
     app.globalData.rememberList.push("gaokao")
