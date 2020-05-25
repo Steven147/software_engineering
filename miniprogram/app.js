@@ -60,6 +60,7 @@ App({
       overallWordList: [{
         
       }],
+      orderFinished:false,
       rememberList:[],
       rememberNow:'',
       timeBegin:"",

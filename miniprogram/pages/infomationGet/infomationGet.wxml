@@ -1,7 +1,7 @@
 <!--pages/infoget/infoget.wxml-->
 <view class="first_title"><text >兴趣选择</text></view>
 
- 
+<view wx:if="{{isSelected==0}}">
   <view class="tui-table-view">
     <view class="tui-col-3" bindtap="choiceBook1">
      
@@ -21,20 +21,46 @@
       <view>托福</view>
     </view>
    
-    
   </view>
-
-
-
-
-<view class="userdefine">
-  <view class="secondtitle"><text>计划制定</text></view>
-  <view class="thechoicebox">
+  
     
-    <text>每天记忆</text>
-    <input  value="{{ input }}" bindtap="storeindatabase" placeholder="an interger" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"></input><text>个单词       </text>
+</view>
+
+
+<view wx:if="{{isSelected!=0}}">
+  <view class="tui-table-view">
+    <view  wx:if="{{isSelected==1}}">
+     
+      
+      <view>您已选择 高考 词汇</view>
+    </view>
+    <view wx:if="{{isSelected==2}}">
+      <view>您已选择 六级 词汇</view>
+    </view>
+    <view class="tui-col-3" wx:if="{{isSelected==3}}">
+      <view>您已选择 GRE 词汇</view>
+    </view>
+    <view class="tui-col-3"  wx:if="{{isSelected==4}}">
+      <view>您已选择 托 福 词汇</view>
+    </view>
+   
   </view>
-   <button class='btn1' type="primary" size="{{defaultSize}}"  loading="{{loading}}" plain="{{plain}}"
+    <button class="bt1" bindtap="preCalculate">一键生成单词智能推荐列表</button>
+  <view class="userdefine">
+    <view class="secondtitle"><text>计划制定</text></view>
+    <view class="thechoicebox">
+    
+      <text>每天记忆</text>
+      <input  value="{{ input }}" bindtap="storeindatabase" placeholder="an interger" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"></input><text>个单词       </text>
+    </view>
+   
+
+  </view>
+</view>
+
+<view>
+  <view wx:if="{{isSelected==5}}">
+    <button class='btn1' type="primary" size="{{defaultSize}}"  loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}"  hover-class="other-button-hover" bindtap="jumptowordlist">next</button>
-
+  </view>
 </view>
