@@ -5,72 +5,68 @@ function initChart(canvas, width, height, F2)  {
   chart = new F2.Chart({
     el: canvas,
     width,
-    height
+    height,
+    id: 'container',
+    
+    padding: [ 20, 'auto' ]
   });
-  const data = [
-    { value: 63.4, city: 'New York', date: '2011-10-01' },
-    { value: 62.7, city: 'Alaska', date: '2011-10-01' },
-    { value: 72.2, city: 'Austin', date: '2011-10-01' },
-    { value: 58, city: 'New York', date: '2011-10-02' },
-    { value: 59.9, city: 'Alaska', date: '2011-10-02' },
-    { value: 67.7, city: 'Austin', date: '2011-10-02' },
-    { value: 53.3, city: 'New York', date: '2011-10-03' },
-    { value: 59.1, city: 'Alaska', date: '2011-10-03' },
-    { value: 69.4, city: 'Austin', date: '2011-10-03' },
-  ];
+  const data = [{
+    name: '股票类',
+    percent: 83.59,
+    a: '1'
+  }, {
+    name: '债券类',
+    percent: 2.17,
+    a: '1'
+  }, {
+    name: '现金类',
+    percent: 14.24,
+    a: '1'
+  }];
+  
+  const map = {};
+  data.forEach(function(obj) {
+    map[obj.name] = obj.percent + '%';
+  });
+  
+  
   chart.source(data, {
-    date: {
-      range: [0, 1],
-      type: 'timeCat',
-      mask: 'MM-DD'
-    },
-    value: {
-      max: 300,
-      tickCount: 4
+    percent: {
+      formatter: function formatter(val) {
+        return val + '%';
+      }
     }
   });
-  chart.area().position('date*value').color('city').adjust('stack');
-  chart.line().position('date*value').color('city').adjust('stack');
-  chart.render();
-  // 注意：需要把chart return 出来
-  return chart;
-}
-/*function initChart(canvas, width, height, F2) { // 使用 F2 绘制图表
-  const data = [
-    { year: '1951 年', sales: 38 },
-    { year: '1952 年', sales: 52 },
-    { year: '1956 年', sales: 61 },
-    { year: '1957 年', sales: 145 },
-    { year: '1958 年', sales: 48 },
-    { year: '1959 年', sales: 38 },
-    { year: '1960 年', sales: 38 },
-    { year: '1962 年', sales: 38 },
-  ];
-  chart = new F2.Chart({
-    el: canvas,
-    width,
-    height
+  chart.tooltip(false);
+  chart.legend({
+    position: 'right',
+    itemFormatter: function itemFormatter(val) {
+      return val + '    ' + map[val];
+    }
   });
+  chart.coord('polar', {
+    transposed: true,
+    innerRadius: 0.7,
+    radius: 0.85
+  });
+  chart.axis(false);
+  chart.interval()
+    .position('a*percent')
+    .color('name', [ '#FE5D4D', '#3BA4FF', '#737DDE' ])
+    .adjust('stack');
+  
+  /*chart.guide().html({
+    position: [ '50%', '45%' ],
+    html: `<div style="width: 250px;height: 40px;text-align: center;">
+        <div style="font-size: 16px">总资产</div>
+        <div style="font-size: 24px">133.08 亿</div>
+      </div>`
+  });*/
+  chart.render();
 
-  chart.source(data, {
-    sales: {
-      tickCount: 5
-    }
-  });
-  chart.tooltip({
-    showItemMarker: false,
-    onShow(ev) {
-      const { items } = ev;
-      items[0].name = null;
-      items[0].name = items[0].title;
-      items[0].value = '¥ ' + items[0].value;
-    }
-  });
-  chart.interval().position('year*sales');
-  chart.render();
-  return chart;
+  return chart;
 }
-*/
+
 Page({
   data: {
     opts: {
