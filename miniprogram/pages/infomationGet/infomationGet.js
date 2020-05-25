@@ -39,20 +39,6 @@ Page({
   },
   async preCalculate(){
    //如果要用计划数：用 this.data.numOfPlan
-   var timer = setInterval(function () {
-    console.log("循环定时器等待排序")
-    wx.showLoading({
-
-     title: '数据加载中。。。',
-     
-     });
-    if (app.globalData.orderFinished ==true ) {
-     clearInterval(timer);     
-   }
-  }, 500)
-  this.setData({
-    isSelected:5
-  })
     //拉取单词
     app.globalData.recommendWordList = app.globalData.overallWordList
     //运行预测模型初始化未初始化过的单词
@@ -71,10 +57,12 @@ Page({
     }
     var result = await this.loadModel2(mat2)//模型运行
     for (var i = 0; i < app.globalData.recommendWordList.length; ++i) {
-      if(app.globalData.recommendWordList[i].memory_num === 100){
-        app.globalData.recommendWordList[i].memory_num = result[i]
-        console.log(result[i])
-      }
+      // if(app.globalData.overallWordList[i].memory_num === 100){
+      //   app.globalData.overallWordList[i].memory_num = result[i]
+      //   console.log(result[i])      
+      // }
+      app.globalData.overallWordList[i].memory_num = result[i]
+      console.log(result[i])
   }
   console.log('recommendWordList')
   console.log(app.globalData.recommendWordList)
@@ -88,12 +76,14 @@ Page({
   //单词推荐
   var temp = []
   var num_kuai = Math.floor(app.globalData.recommendWordList.length / this.data.numOfPlan) //每块的单词数
-  for (var i = 0; i < app.globalData.recommendWordList.length - num_kuai; i += num_kuai){
+  for (var i = 0; i <= num_kuai * (this.data.numOfPlan-1); i += num_kuai){
     //将单词按照分块，在每块随机选出一个单词推荐给用户
     var index = Math.floor((Math.random() * num_kuai)) + i
     temp.push(app.globalData.recommendWordList[index])
   }
-  app.globalData.recommendWordList = temp   
+  app.globalData.recommendWordList = temp
+  console.log('recommendWordList最终排序')
+  console.log(app.globalData.recommendWordList)
   },
   choiceBook1: function () {
     this.setData({

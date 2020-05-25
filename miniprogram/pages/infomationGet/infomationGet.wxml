@@ -59,7 +59,7 @@
 </view>
 
 <view>
-  <view wx:if="{{isSelected==5}}">
+  <view >
     <button class='btn1' type="primary" size="{{defaultSize}}"  loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}"  hover-class="other-button-hover" bindtap="jumptowordlist">next</button>
   </view>
