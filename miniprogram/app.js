@@ -60,6 +60,9 @@ App({
       overallWordList: [{
         
       }],
+      recommendWordList:[{
+
+      }],
       rememberList:[],
       rememberNow:'',
       timeBegin:"",
