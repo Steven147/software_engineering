@@ -12,10 +12,10 @@ exports.main = async (event, context) => {
     return await db.collection('Users').add({
       data: {
         "_id":userx,
-        "6_mry":obj,
-        "gaokao_mry":obj,
-        "gre_mry":obj,
-        "toefl_mry":obj,
+        "cet6":obj,
+        "gaokao":obj,
+        "gre":obj,
+        "toefl":obj,
         "sum_time":sum_time,
       }
     })

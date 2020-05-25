@@ -48,33 +48,33 @@ async onLoad() {
   console.log(app.globalData.overallWordList)
   //推送记忆指数给云端数据库
   for (var i = 0; i < app.globalData.overallWordList.length; ++i){
-    app.globalData.db_id = app.globalData.overallWordList[i].id2 + ""
+    app.globalData.db_id = app.globalData.overallWordList[i]._id + ""
     app.globalData.db_m_n = app.globalData.overallWordList[i].memory_num
-    app.globalData.db_userx = app.globalData.overallWordList[i].word
+    //app.globalData.db_userx = app.globalData.overallWordList[i].word
     app.globalData.db_word = app.globalData.overallWordList[i].word
     console.log(app.globalData.overallWordList[i].memory_num)
     console.log(app.globalData.db_m_n)
     console.log(app.globalData.rememberNow)
     if (app.globalData.rememberNow == "gaokao"){
       app.updDatagaokao()
-      app.globalData.db_userx = "1"
+      //app.globalData.db_userx = "1"
       app.updUsersmry()
-      console.log('更新成功')
+      console.log('更新gaokao成功')
     }
     if (app.globalData.rememberNow == "cet6") {
       app.updData6()
       app.updUsersmry()
-      console.log('更新成功')
+      console.log('更新cet6成功')
     }
     if (app.globalData.rememberNow == "gre") {
       app.updDatagre()
       app.updUsersmry()
-      console.log('更新成功')
+      console.log('更新gre成功')
     }
     if (app.globalData.rememberNow == "toefl") {
       app.updDatatoefl()
       app.updUsersmry()
-      console.log('更新成功')
+      console.log('更新toefl成功')
     }
   }
 
@@ -93,6 +93,11 @@ async onLoad() {
         }
       }, 500)
       //ifuser 函数位置
+      
+      console.log("用户注册了吗？")
+      console.log("用户名",app.globalData.db_userx)
+      
+      app.IfUsers()
     }
 
     if(app.globalData.flagForIndentify==2){
@@ -112,6 +117,10 @@ async onLoad() {
     }
     if(app.globalData.flagForIndentify>=2 || app.globalData.flagForIndentify==1){
         //拉下来user的背诵过的所有单词
+        console.log("用户背过哪些单词呢？")
+        app.IfUsers()
+        console.log("wordfetch:",app.globalData.wordfetch)
+        
     }
     this.setData({
       word: app.globalData.flagForIndentify

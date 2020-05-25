@@ -70,7 +70,8 @@ App({
       db_m_n:0,
       db_word:"",
       db_userx:"",
-      wordfetch:[],
+      db_inc_time:0,
+      wordfetch:[{}],
       localStorageIO: plugin.localStorageIO
     },
   //拉取单词
@@ -316,7 +317,7 @@ App({
       name: "time_inc",
       data: {
         _id: this.globalData.db_userx,
-        _inc_time: this.globalData.db_m_n
+        _inc_time: this.globalData.db_inc_time
       },
       success(res) {
         console.log("自增成功", res)
@@ -355,9 +356,9 @@ App({
       },
       success(res) {
         console.log(res)
-        wordfetch = res.result.data
-        console.log(wordfetch)
-        console.log(res.result.data.length)
+        that.globalData.wordfetch = res.result.data
+        console.log(that.globalData.wordfetch)
+        //console.log(res.result.data.length)
         if (res.result.data.length == 0) {
           console.log("用户不存在")
           that.addUsers()
