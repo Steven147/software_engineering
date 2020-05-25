@@ -64,7 +64,7 @@ App({
       rememberNow:'',
       timeBegin:"",
       timeEnd:"",
-      totalLearnTime:'',
+      totalLearnTime:0,
       flagForIndentify:0,
       db_id:"",
       db_m_n:0,
