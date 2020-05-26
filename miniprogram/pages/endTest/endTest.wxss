@@ -1,41 +1,51 @@
 /* pages/endTest/endTest.wxss */
-.title{
+
+.title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   margin-top: 90rpx;
   font-size: 33rpx;
   margin-bottom: 30rpx;
-  align-items: center;
   vertical-align: text-top;
   color: rgba(0, 0, 0, 0.6);
-
 }
 
-.imagesize{
- display:flex;                
- justify-content: center;         
+.imagesize {
+  display: flex;
+  justify-content: center;
 }
-.start { 
-  width:160rpx;
-  height:160rpx;
+
+.start {
+  width: 160rpx;
+  height: 160rpx;
 }
-.circleButton{
+
+.circleButton {
   height: auto;
   width: auto;
 }
 
 .btn1 {
   width: 80%;
-  margin-top: 20rpx;
-  background-color: burlywood;
-  color: white;
   border-radius: 98rpx;
+  background-color: #06ae56;
+  color: white;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 320px;
+  margin-top: 160rpx;
+}
+
+.picture {
+  position: fixed;
+  bottom:0px;
+  width: 600rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  margin-left: 80rpx;
+  margin-right: 40rpx
 }

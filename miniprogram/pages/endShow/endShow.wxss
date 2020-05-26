@@ -1,6 +1,6 @@
 /* pages/endShow/endShow.wxss */
 .title {
-  color: rgb(0, 128, 0);
+  color: #06ae56;
   border-bottom: 1rpx solid rgb(159, 159, 189);
   font-size: 20px;
   display: flex;
@@ -35,8 +35,10 @@ border-radius: 40rpx;
 
 .button {
   height: 80rpx;
+  line-height: 80rpx;
   margin-top: 20rpx;
   border-radius: 80rpx;
-  background-color: green;
+  background-color: #06ae56;
   color: white;
+  text-align: center;
 }

@@ -11,8 +11,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
   margin-top: 90rpx;
   font-size: 33rpx;
   margin-bottom: 30rpx;
@@ -29,7 +27,6 @@
   font-weight: bold;
   color:#06ae56;
   font-size: 15pt;
-  align-items: center;
   vertical-align: text-top;
 }
 .tui-table-view{
@@ -57,7 +54,7 @@
 
 
 .first_title{
-  color: rgb(16, 209, 145);
+  color: #06ae56;
   border-bottom: 1rpx solid rgb(159, 159, 189);
  border-radius: 2rpx;
   margin: 2rpx;
@@ -76,7 +73,7 @@
    border-bottom:1rpx solid rgb(159, 159, 189);
    border-radius: 2rpx;
   margin: 2rpx;
-  color:  rgb(16, 209, 145);
+  color:  #06ae56;
   
   font-size: 20px;
   display: flex;
