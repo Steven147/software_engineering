@@ -18,6 +18,7 @@
 }
 
 .start {
+  margin-top: 20rpx;
   width: 160rpx;
   height: 160rpx;
 }

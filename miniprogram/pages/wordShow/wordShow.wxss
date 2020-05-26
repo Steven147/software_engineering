@@ -86,3 +86,15 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
+.btn{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  border-radius: 80rpx;
+  background-color: #06ae56;
+  color: white;
+  text-align: center;
+
+}

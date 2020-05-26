@@ -38,7 +38,7 @@
         </view>
       </view>
     </view>
-    <button wx:if="{{id==showNum-1}}" type="default" bindtap="endShow">完成学习</button>
+    <button wx:if="{{id==showNum-1}}" class="btn" bindtap="endShow">完成学习</button>
 
 
   </view>
