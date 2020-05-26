@@ -39,7 +39,7 @@ Page({
       singleMat.push(app.globalData.overallWordList[i].isSelected)
       singleMat.push(app.globalData.overallWordList[i].numclick)
       singleMat.push(app.globalData.overallWordList[i].theDifficultyByUser)
-      singleMat.push(3)
+      singleMat.push(app.globalData.overallWordList[i].learnTime)
       singleMat.push(0)//在读取不到测试数据时，0为默认情况
       singleMat.push(0)//在读取不到测试数据时，0为默认情况
       mat.push(singleMat)
