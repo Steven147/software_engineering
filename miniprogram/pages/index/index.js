@@ -6,7 +6,9 @@ const app = getApp()
 Page({
 
   data: {
-    motto: 'Cheers for all who move forward',
+    
+    info1: '云端存储，智能推荐',
+    info2: '一键开启轻松单词之旅',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')

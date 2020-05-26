@@ -1,7 +1,7 @@
 <!--pages/endTest/endTest.wxml-->
   <view wx:if="{{word>1}}">
     <text class="title">恭喜您！学习已完成</text>
-    <button class="circleButton"  bingdtap="calculateMem">轻触生成记忆指数</button>
+    <button class="circleButton"  bindtap="calculateMem">轻触生成记忆指数</button>
 
   </view>
 
