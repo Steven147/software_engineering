@@ -1,7 +1,7 @@
 /* pages/selectwords/selectwords.wxss */
 
 .title {
-  color: rgb(16, 209, 145);
+  color:#06ae56;
   border-bottom: 1rpx solid rgb(159, 159, 189);
   font-size: 20px;
   display: flex;
@@ -24,7 +24,7 @@
   align-items: center;
   font-size: 15px;
   font-weight: bold;
-  background-color: rgba(0,128,0, 0.1);
+  background-color: #06ae573a;
   border-radius: 10px;
   margin-left: 40rpx;
   margin-top: 10rpx;
@@ -34,7 +34,7 @@
 
 .btn {
   width: 100%;
-  color: green;
+  color: #06ae56;
   position: fixed;
   bottom: 0;
 }
