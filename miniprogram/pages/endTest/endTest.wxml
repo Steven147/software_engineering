@@ -3,8 +3,11 @@
 <view wx:if="{{word>1}}">
   <text class="title">恭喜您！学习已完成</text>
   <image class="picture" mode="widthFix" src="data.png"></image>
-  <button class="btn1" bingdtap="calculateMem">轻触生成记忆指数</button>
+  <button class="btn1" bindtap="calculateMem">轻触生成记忆指数</button>
+  <button class='btn1' bindtap='gotoword'>
 
+  <view>再次背诵</view>
+</button>
 </view>
 
 <view wx:if="{{word==1}}">
@@ -12,15 +15,19 @@
   <view class='imagesize' bindtap="gotowordShow">
     <image src="../images/start.jpg" class="start">
     </image>
-
   </view>
+
+  <image class="picture" mode="widthFix" src="start.png"></image>
+
+
+  <button class='btn1' open-type='openSetting'>
+
+
+  <view>修改学习计划</view>
+</button>
 </view>
 
 
 
 
 
-<button class='btn1' open-type='openSetting'>
-
-  <view>修改学习计划</view>
-</button>

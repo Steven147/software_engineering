@@ -96,7 +96,7 @@
 .btn1 {
   width: 80%;
   margin-top: 20rpx;
-  background-color: rgb(135, 222, 215);
+  background-color: #06ae56;
   color: white;
   border-radius: 98rpx;
   display: flex;
@@ -111,7 +111,7 @@
 .bt1 {
   width: 80%;
   margin-top: 20rpx;
-  background-color: burlywood;
+  background-color:#06ae56;
   color: white;
   border-radius: 98rpx;
   display: flex;
