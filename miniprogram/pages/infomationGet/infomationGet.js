@@ -109,17 +109,18 @@ Page({
   app.globalData.recommendWordList = temp
   console.log('recommendWordList最终排序')
   console.log(app.globalData.recommendWordList)
-  //获取用户已经背过的单词
-  app.IfUsers()
-  var timer = setInterval(function () {
-    console.log("循环定时器等待循环请求结束")   
-  if (app.globalData.wordfetch != undefined ) {
- 
-      console.log('轮询已完成')
-      clearInterval(timer);
+  //获取用户已经背过的单词  
+  var temp1 = []
+  temp1 = app.globalData.wordfetch[0].cet6
+  console.log(temp1)
+  console.log("字典元素按key值排序: ");
+    var res = Object.keys(temp1).sort(); 
+    for(var key in res){
+        console.log("key: " + res[key] + " ,value: " + temp1[res[key]]);
     }
-  }, 500)
-  
+  app.globalData.rememberList = app.globalData.rememberList.contact(temp1.splice(0,this.data.numOfReview))
+  console.log('app.globalData.rememberList',app.globalData.rememberList)
+
   wx.hideLoading();
   this.setData({
     isOkay:5
