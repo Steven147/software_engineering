@@ -43,6 +43,9 @@ Page({
       console.log("timeEnd",  app.globalData.timeEnd)
       console.log("timebegin",  app.globalData.timeBegin)
     }
+    for(var i=0;i< app.globalData.overallWordList.length;i++){
+      app.globalData.overallWordList[i].learnTime=0
+    }
     
    
   },
