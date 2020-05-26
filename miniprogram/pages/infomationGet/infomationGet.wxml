@@ -54,12 +54,14 @@
       <text>每天记忆</text>
       <input  value="{{ input }}" bindtap="storeindatabase" placeholder="an interger" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"></input><text>个单词       </text>
     </view>
+    
+    
     <view class="thechoicebox">
     
       <text>复习</text>
       <input  value="{{ input }}" bindtap="review" placeholder="an interger" auto-focus bindinput="reviewinputChangeHandle" bindconfirm="reviewaddTodoHandle"></input><text>个单词       </text>
     </view>
-   
+    
 
   </view>
   
