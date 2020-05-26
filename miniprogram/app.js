@@ -76,6 +76,7 @@ App({
       db_userx:"",
       db_inc_time:0,
       wordfetch:[{}],
+      wordfetch_flag:false,
       localStorageIO: plugin.localStorageIO
     },
   //拉取单词

@@ -10,28 +10,37 @@ page{
   position:fixed; 
   background-size:100% 100%;
   z-index: -1;
-   opacity: 0.72;
+   opacity: 1;
 }
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+  margin: 0rpx;
+  border-radius:50%;
+  margin-bottom:0rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+
+.name {
+  color:white;
+  margin-top: 0rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
-  flood-color:  rgb(145, 50, 50);
+.user-motto2 {
+  margin-top:100rpx;
+ 
+  font: x-large;
+  color: aliceblue;
+  
+  font-style: italic;
+  font-weight: 880;
+} 
+.user-motto1 {
+  margin-top:180rpx;
+ 
+  color: azure;
   font: x-large;
   font-style: italic;
   font-weight: 880;

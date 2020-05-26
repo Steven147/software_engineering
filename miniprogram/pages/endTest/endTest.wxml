@@ -1,4 +1,5 @@
 <!--pages/endTest/endTest.wxml-->
+
 <view wx:if="{{word>1}}">
   <text class="title">恭喜您！学习已完成</text>
   <image class="picture" mode="widthFix" src="data.png"></image>
@@ -9,7 +10,8 @@
 <view wx:if="{{word==1}}">
   <text class="title">开启今天的背单词之旅吧</text>
   <view class='imagesize' bindtap="gotowordShow">
-    <image src="../images/start.jpg" class="start"></image>
+    <image src="../images/start.jpg" class="start">
+    </image>
   </view>
   <image class="picture" mode="widthFix" src="start.png"></image>
 </view>
