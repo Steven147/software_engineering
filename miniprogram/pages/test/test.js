@@ -9,18 +9,16 @@ function initChart(canvas, width, height, F2)  {
     id: 'container',
   });
   const data = [
-    { name: '芳华', percent: 0.4, type: '1' },
-    { name: '妖猫传', percent: 0.2, type: '1' },
-    { name: '机器之血', percent: 0.18, type: '1' },
-    { name: '心理罪', percent: 0.15, type: '1' },
-    { name: '寻梦环游记', percent: 0.05, type: '1' },
+    { name: '>90', percent:app.globalData.wordfetch.length/ app.globalData.overallWordList.length, type: '1' }, 
+    { name: '75-90', percent: 0.18, type: '1' },
+    { name: '60-75', percent: 0.15, type: '1' },
+    { name: '<60', percent: 0.05, type: '1' },
     { name: '其他', percent: 0.12, type: '1' },
-    { name: '芳华', percent: 0.4, type: '2' },
-    { name: '妖猫传', percent: 0.2, type: '2' },
-    { name: '机器之血', percent: 0.18, type: '2' },
-    { name: '心理罪', percent: 0.15, type: '2' },
-    { name: '寻梦环游记', percent: 0.05, type: '2' },
-    { name: '其他', percent: 0.12, type: '2' }
+    { name: '>90', percent:app.globalData.wordfetch.length/ app.globalData.overallWordList.length, type: '2' },
+    { name: '75-90', percent: 0.18, type: '2' },
+    { name: '60-75', percent: 0.15, type: '2' },
+    { name: '<60', percent: 0.05, type: '2' },
+    { name: '其他', percent: 0.12, type: '2' },
   ];
   
   
@@ -74,6 +72,9 @@ Page({
 
   onReady() {
     
+  },
+  onload(){
+    console.log("app.globalData.wordfetch.length",app.globalData.wordfetch.length)
   }
 });
 function change(){
@@ -88,55 +89,42 @@ function initChart2(canvas, width, height, F2)  {
     height,
     id: 'container',
   });
-  const data = [
-    { name: '芳华', percent: 0.4, type: '1' },
-   
-    { name: '机器之血', percent: 0.18, type: '1' },
-    { name: '心理罪', percent: 0.15, type: '1' },
-    { name: '寻梦环游记', percent: 0.05, type: '1' },
-    { name: '其他', percent: 0.12, type: '1' },
-    { name: '芳华', percent: 0.4, type: '2' },
-   
-    { name: '机器之血', percent: 0.18, type: '2' },
-    { name: '心理罪', percent: 0.15, type: '2' },
-    { name: '寻梦环游记', percent: 0.05, type: '2' },
-    { name: '其他', percent: 0.12, type: '2' }
+  const data = [{
+    year: '高考',
+    sales: 38
+  }, {
+    year: '托福',
+    sales: 52
+  }, {
+    year: 'CET6',
+    sales: 2000
+  }, {
+    year: 'GRE',
+    sales: 145
+  }
   ];
   
   
-  chart.source(data);
-  chart.legend({
-    position: 'right'
+  chart.source(data, {
+    sales: {
+      tickCount:5
+    }
   });
-  chart.tooltip(false);
-  chart.coord('polar', {
-    transposed: true,
-    radius: 0.8,
-    inner: 0.5
+  chart.coord({
+    transposed: true
   });
-  chart.axis(false);
-  chart.interval()
-    .position('type*percent')
-    .color('name', [
-      '#1890FF',
-      '#13C2C2',
-      '#2FC25B',
-      '#FACC14',
-      '#F04864',
-      '#8543E0'
-    ])
-    .adjust('stack');
-  
-  chart.interaction('pie-select', {
-    startEvent: 'tap',
-    animate: {
-      duration: 300,
-      easing: 'backOut'
-    },
-    cancelable: true
+  chart.tooltip({
+    showItemMarker: false,
+    onShow: function onShow(ev) {
+      const items = ev.items;
+      items[0].name = null;
+      items[0].name = items[0].title;
+      items[0].value = '已背诵词汇数' + items[0].value;
+    }
   });
-  
+  chart.interval().position('year*sales');
   chart.render();
+  
   
 
   return chart;
