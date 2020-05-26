@@ -7,7 +7,7 @@ const tfl = require('@tensorflow/tfjs-layers')
 
 Page({
   async onLoad() {
-    //运行预测模型初始化未初始化过的单词
+    //运行预测模型初始化单词
     var mat2 = []//参数矩阵
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
       var singleMat = []
@@ -24,32 +24,32 @@ Page({
     var result = await this.loadModel2(mat2)//模型运行
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
       // if(app.globalData.overallWordList[i].memory_num === 100){
-      //   app.globalData.overallWordList[i].memory_num = result[i]
-      //   console.log(result[i])      
+      //   app.globalData.overallWordList[i].memory_num = result[i]   
       // }
       app.globalData.overallWordList[i].memory_num = result[i]
-      console.log(result[i])
     }
-    console.log('overallWordList')
+    console.log('预测单词记忆指数：')
     console.log(app.globalData.overallWordList)
 
-    //确保已运行过预测模型后对所有单词运行记忆指数调整模型
+    //确保已运行过预测模型后
+    //运行记忆指数调整模型
     var mat = []//参数矩阵
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
       var singleMat = []
       singleMat.push(app.globalData.overallWordList[i].isSelected)
       singleMat.push(app.globalData.overallWordList[i].numclick)
       singleMat.push(app.globalData.overallWordList[i].theDifficultyByUser)
-      //singleMat.push(app.globalData.overallWordList[i].isSelected)
-      singleMat.push(4)//在读取不到测试数据时，默认最坏情况（选了四次才选到）
+      singleMat.push(3)
+      singleMat.push(0)//在读取不到测试数据时，0为默认情况
+      singleMat.push(0)//在读取不到测试数据时，0为默认情况
       mat.push(singleMat)
     }
     var result = await this.loadModel(mat)//模型运行
+    console.log(result)
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
-      app.globalData.overallWordList[i].memory_num = result[i]
-      console.log(result[i])
+      app.globalData.overallWordList[i].memory_num += result[i]
     }
-    console.log('overallWordList')
+    console.log('调整记忆指数：')
     console.log(app.globalData.overallWordList)
   },
 
@@ -59,9 +59,7 @@ Page({
   //加载模型一：记忆指数调整模型
   async loadModel(mat) {
     const net = await tfl.loadLayersModel('https://wxz-1301710654.cos.ap-shanghai.myqcloud.com/old/model.json')
-    //net.summary()
     var result = await net.predict(tf.tensor(mat)).data()
-    //console.log(result)
     return result
 
   },
@@ -71,9 +69,7 @@ Page({
   //加载模型二：预测模型
   async loadModel2(mat) {
     const net = await tfl.loadLayersModel('https://wxz-1301710654.cos.ap-shanghai.myqcloud.com/new/model.json')
-    //net.summary()
     var result = await net.predict(tf.tensor(mat)).data()
-    //console.log(result)
     return result
 
   },
