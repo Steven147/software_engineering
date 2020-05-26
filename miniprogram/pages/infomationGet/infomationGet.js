@@ -19,6 +19,7 @@ Page({
     plain: false,
     loading: false,
     numOfPlan:50,
+    numOfReview:0,
     isOkay:0
   },
 
@@ -34,11 +35,24 @@ Page({
     })
    
   },
-
+  reviewinputChangeHandle: function (e) {
+    this.setData({
+     numOfReview:e.detail.value
+    })
+   
+  },
   addTodoHandle: function (e) {
     var that=this
     that.setData({
       munOfPlan:e.detail.value
+     })
+    
+   
+  },
+  reviewaddTodoHandle: function (e) {
+    var that=this
+    that.setData({
+      munOfReview:e.detail.value
      })
     
    
