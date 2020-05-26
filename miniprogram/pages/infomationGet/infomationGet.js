@@ -10,6 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    allIsSelected:false,
     isSelected:0,
     defaultSize: 'default',
     primarySize: 'default',
@@ -17,11 +18,16 @@ Page({
     disabled: false,
     plain: false,
     loading: false,
-    numOfPlan:50
+    numOfPlan:50,
+    isOkay:0
   },
 
   
-  
+  confirm :function(e){
+    this.setData({
+      allIsSelected:true
+    })
+  },
   inputChangeHandle: function (e) {
     this.setData({
      numOfPlan:e.detail.value
@@ -40,6 +46,11 @@ Page({
   async preCalculate(){
    //如果要用计划数：用 this.data.numOfPlan
     //拉取单词
+    wx.showLoading({
+
+      title: '数据加载中。。。',
+      
+      });
     app.globalData.recommendWordList = app.globalData.overallWordList
     //运行预测模型初始化未初始化过的单词
     var mat2 = []//参数矩阵
@@ -84,7 +95,12 @@ Page({
   app.globalData.recommendWordList = temp
   console.log('recommendWordList最终排序')
   console.log(app.globalData.recommendWordList)
+  wx.hideLoading();
+  this.setData({
+    isOkay:5
+  })
   },
+
   choiceBook1: function () {
     this.setData({
       isSelected:1
@@ -130,6 +146,14 @@ Page({
 
     })
     
+  },
+  jumptowordlist2: function () {
+    app.globalData.overallWordList= app.globalData.recommendWordList
+    
+    wx.redirectTo({
+      url: '../remeberList/remeberList'
+
+    })
   },
   //加载模型二：预测模型
   async loadModel2(mat) {

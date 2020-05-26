@@ -7,7 +7,31 @@
    
     vertical-align: center;
 }
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
+  margin-top: 90rpx;
+  font-size: 33rpx;
+  margin-bottom: 30rpx;
+  align-items: center;
+  vertical-align: text-top;
+  color: rgba(0, 0, 0, 0.6);
+
+}
+.high{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color:#06ae56;
+  font-size: 15pt;
+  align-items: center;
+  vertical-align: text-top;
+}
 .tui-table-view{
   display: flex;
   flex-wrap: wrap;
@@ -73,12 +97,19 @@
   background-color: blue;
 }
 .btn1 {
-  margin: 10px;
-  background-color: rgb(22, 114, 145);
-  color: #7f8389;
-   vertical-align: center;
-   
- margin-top: 80px;
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: rgb(135, 222, 215);
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.bg_red{
+  background-color: mediumspringgreen;
 }
 .bt1 {
   width: 80%;
@@ -90,5 +121,5 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 320px;
+  margin-top: 100px;
 }
