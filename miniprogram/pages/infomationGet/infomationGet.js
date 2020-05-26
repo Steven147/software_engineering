@@ -95,6 +95,17 @@ Page({
   app.globalData.recommendWordList = temp
   console.log('recommendWordList最终排序')
   console.log(app.globalData.recommendWordList)
+  //获取用户已经背过的单词
+  app.IfUsers()
+  var timer = setInterval(function () {
+    console.log("循环定时器等待循环请求结束")   
+  if (app.globalData.wordfetch != undefined ) {
+ 
+      console.log('轮询已完成')
+      clearInterval(timer);
+    }
+  }, 500)
+  
   wx.hideLoading();
   this.setData({
     isOkay:5
