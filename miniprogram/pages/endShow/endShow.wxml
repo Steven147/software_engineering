@@ -3,22 +3,22 @@
 <view class="container1">
 
 <view class="block:vertical-align:top;">
-<image  class="picture" mode="widthFix" src="finishlearning.jpg"></image>
+<image  class="picture" mode="widthFix" src="finishlearning.png"></image>
 <button class="button" style="width:300rpx"  bindtap="goIndex">结束学习</button>
 </view>
 
 <view class="block:vertical-align:top;">
-<image  class="picture" mode="widthFix" src="test.jpg"></image>
+<image  class="picture" mode="widthFix" src="test.png"></image>
 <button class="button" style="width:300rpx"  bindtap="goTest">开始测试</button>
 </view>
 
 <view class="block:vertical-align:top;">
-<image  class="picture" mode="widthFix" src="review.jpg"></image>
+<image  class="picture" mode="widthFix" src="review.png"></image>
 <button class="button" style="width:300rpx"  bindtap="goIndex">重新学习</button>
 </view>
 
 <view class="block:vertical-align:top;">
-<image  class="picture" mode="widthFix" src="keeplearning.jpg"></image>
+<image  class="picture" mode="widthFix" src="keeplearning.png"></image>
 <button class="button" style="width:300rpx"  bindtap="goIndex">继续学习</button>
 </view>
 

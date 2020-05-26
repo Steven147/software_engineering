@@ -28,7 +28,7 @@ exports.main = async (event, context) => {
   }
   else if(dic == "cet6"){
     var cet6 = {};
-    cdt6[word] = m_n * 1;
+    cet6[word] = m_n * 1;
     try {
       return await db.collection("Users").doc(openid).update({
         data: {
