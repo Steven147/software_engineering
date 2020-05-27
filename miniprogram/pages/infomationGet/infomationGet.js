@@ -23,11 +23,23 @@ Page({
     isOkay:0
   },
 
-  
-  confirm :function(e){
+  reSelected:function(e){
     this.setData({
-      allIsSelected:true
+      isSelected:0
     })
+  },
+  confirm :function(e){
+    if(this.data.isSelected==0){
+      wx.showModal({
+        title: '请先选择词书',
+      })
+    }
+    else{
+      this.setData({
+        allIsSelected:true
+      })
+    }
+    
   },
   inputChangeHandle: function (e) {
     this.setData({

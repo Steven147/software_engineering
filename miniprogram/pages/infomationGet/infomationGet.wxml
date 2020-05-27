@@ -41,7 +41,7 @@
     <view  wx:if="{{isSelected==4}}">
       <view class="main">您已选择 托福 词汇</view>
     </view>
-    
+    <view class="sys" bindtap="reSelected">点击重新选择词书</view>
    <view class="first_title"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计划制定</text></view>
 </view>
 
@@ -52,14 +52,15 @@
     <view class="thechoicebox">
     
       <text>每天记忆</text>
-      <input  value="{{ input }}" bindtap="storeindatabase" placeholder="an interger" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"></input><text>个单词       </text>
+      <input  value="{{ input }}" bindtap="storeindatabase" placeholder="50" auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"></input><text>个单词</text>
     </view>
     
     
     <view class="thechoicebox">
     
       <text>   每日复习</text>
-      <input  value="{{ input }}" bindtap="review" placeholder="an interger" auto-focus bindinput="reviewinputChangeHandle" bindconfirm="reviewaddTodoHandle"></input><text>个单词       </text>
+      <input  value="{{ input }}" bindtap="review" placeholder="0" auto-focus bindinput="reviewinputChangeHandle" bindconfirm="reviewaddTodoHandle"></input><text>个单词
+      </text>
     </view>
     
 
@@ -89,11 +90,9 @@
   <view wx:if="{{isOkay==5}}">
   
     <text class="main">每天记忆</text>
-      <view class="high">{{numOfPlan}}</view><text class="main">个单词      
-       
-    </text>
+      <view class="high">{{numOfPlan}}</view><text class="main">个单词  </text>
     <text class="main">每天记忆</text>
-      <view class="high">{{numOfReview}}</view><text class="main">个单词       </text>
+      <view class="high">{{numOfReview}}</view><text class="main">个单词   </text>
     <button class='bt1'  bindtap="jumptowordlist">顺序背诵</button>
      <button class='btn1'  bindtap="jumptowordlist2">体验智能推荐</button>
   </view>

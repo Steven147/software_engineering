@@ -80,7 +80,7 @@
 
 
 .first_title{
-  color: #06ae56;
+  color: #006633;
   border-bottom: 1rpx solid #00FF99;
   
   
@@ -128,4 +128,19 @@
   align-items: center;
   justify-content: center;
   margin-top: 100px;
+}
+.sys{
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 2mm;
+  margin-bottom: 2mm;
+  margin: 35px;
+   display: -webkit-flex;
+   text-align: center;
+   font-weight: bold;
+  color:#9e0c13;
+  
+  font-size: 35rpx;
+   
+   vertical-align: center;
+
 }

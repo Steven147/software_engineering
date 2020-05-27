@@ -1,4 +1,4 @@
-<text class='title'>选择以删去熟记的单词</text>
+<text class='title' decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选择以删去熟记的单词</text>
 <checkbox-group bindchange="checkIsSelected">
 <checkbox class='list'  value="{{item._id}}" style="display:block" wx:for="{{word}}" wx:key="wordName">
 {{item.word}}</checkbox>
