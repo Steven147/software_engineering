@@ -70,6 +70,14 @@ App({
       timeEnd:"",
       totalLearnTime:0,
       flagForIndentify:0,
+      gaokao:0,
+      cet6:0,
+      toefl:0,
+      gre:0,
+      nine_more:0,
+      sevenTonine:0,
+      sixToseven:0,
+      six_less:0,
       db_id:"",
       db_m_n:0,
       db_word:"",
@@ -305,13 +313,14 @@ App({
         console.log("云获取成功1",res)
           that.globalData.overallWordList = res.result.data
           console.log("yes",that.globalData.overallWordList)
-          
         },
         fail(res) {
           console.log("获取失败1", res)
         }
     })
   },
+
+  
 
   //拉背过的高考单词
   yun2(){

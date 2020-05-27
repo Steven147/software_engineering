@@ -29,8 +29,11 @@ Page({
     })
      
   },
-  async calculateMem(){
+  calculateMem(){
     //这个位置，处理下拉的全局变量wordFetch,把他根据记忆指数分成四个区间，可以只统计每一组的个数，而忽略单词内容，并存储到全局变量
+    app.IfUsers()
+    app.globalData.cet6 = app.globalData.wordfetch[0].cet6.length
+    console.log(app.globalData.cet6)
   },
 
 
