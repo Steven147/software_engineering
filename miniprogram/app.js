@@ -313,13 +313,14 @@ App({
         console.log("云获取成功1",res)
           that.globalData.overallWordList = res.result.data
           console.log("yes",that.globalData.overallWordList)
-          
         },
         fail(res) {
           console.log("获取失败1", res)
         }
     })
   },
+
+  
 
   //拉背过的高考单词
   yun2(){

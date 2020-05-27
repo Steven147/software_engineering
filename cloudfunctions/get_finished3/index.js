@@ -6,11 +6,13 @@ cloud.init({
 })
 
 // 云函数入口函数
+const db = cloud.database()
+const _ = db.command
 exports.main = async (event, context) => {
   let word3 = event._word;
   return cloud.database().collection("gre").where({
-    "memory_num": {
-      "夏里宾":  "_.neq(0)"
+    memory_num: {
+      夏里宾: _.neq(null)
     }
   })
   .get(/*{
