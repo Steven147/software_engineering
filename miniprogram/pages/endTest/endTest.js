@@ -40,17 +40,7 @@ async onLoad() {
     app.globalData.flagForIndentify= app.globalData.flagForIndentify+1
     console.log("第二次进入",app.globalData.flagForIndentify)
     if(app.globalData.flagForIndentify==1){
-      
-      
-      var timer = setInterval(function () {
-        console.log("循环定时器等待循环请求结束")
-       
-      if (app.globalData.overallWordList[0]._id !=undefined ) {
      
-          console.log('轮询已完成')
-          clearInterval(timer);
-        }
-      }, 500)
       //ifuser 函数位置
       
       console.log("用户注册了吗？")
