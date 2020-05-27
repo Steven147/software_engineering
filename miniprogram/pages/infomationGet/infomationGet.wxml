@@ -1,29 +1,29 @@
 <!--pages/infoget/infoget.wxml-->
-<view class="first_title"><text >兴趣选择</text></view>
+<view class="first_title" ><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;兴趣选择</text></view>
 
 <view wx:if="{{isSelected==0}}">
   <view class="tui-table-view">
     <view class="tui-col-3" bindtap="choiceBook1" hover-class="bg_red">
      
     <image src="../../images/gaokao.png" class="swiper_head" mode="aspectFit" > </image>
-      <view>高考</view>
+      <view class="little">高考</view>
     </view>
     <view class="tui-col-3" bindtap="choiceBook2" hover-class="bg_red">
       <image src="../../images/cet6.png" class="swiper_head" mode="aspectFit"></image>
-      <view>六级</view>
+      <view class="little">六级</view>
     </view>
     <view class="tui-col-3" bindtap="choiceBook3" hover-class="bg_red">
       <image src="../../images/gre.png" class="swiper_head" mode="aspectFit"></image>
-      <view>GRE</view>
+      <view class="little">GRE</view>
     </view>
     <view class="tui-col-3" bindtap="choiceBook4" hover-class="bg_red">
       <image src="../../images/tuf.png" class="swiper_head" mode="aspectFit"></image>
-      <view>托福</view>
+      <view class="little">托福</view>
     </view>
    
   </view>
   
-  
+<view class="first_title"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计划制定</text></view>
 
 </view>
 
@@ -42,7 +42,7 @@
       <view class="main">您已选择 托福 词汇</view>
     </view>
     
-   <view class="secondtitle"><text>计划制定</text></view>
+   <view class="first_title"><text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计划制定</text></view>
 </view>
 
 
@@ -58,7 +58,7 @@
     
     <view class="thechoicebox">
     
-      <text>复习</text>
+      <text>   每日复习</text>
       <input  value="{{ input }}" bindtap="review" placeholder="an interger" auto-focus bindinput="reviewinputChangeHandle" bindconfirm="reviewaddTodoHandle"></input><text>个单词       </text>
     </view>
     
