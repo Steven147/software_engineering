@@ -18,13 +18,6 @@
   </view>
 
   <image class="picture" mode="widthFix" src="start.png"></image>
-
-
-  <button class='btn1' open-type='openSetting'>
-
-
-  <view>修改学习计划</view>
-</button>
 </view>
 
 

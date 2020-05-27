@@ -1,6 +1,6 @@
 /* pages/endTest/endTest.wxss */
 
-.title {
+.title2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,14 +11,27 @@
   vertical-align: text-top;
   color: rgba(0, 0, 0, 0.6);
 }
-
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90rpx;
+  font-size: 33rpx;
+  margin-top:180rpx;
+ 
+  color: #006600;
+  font: x-large;
+  font-style: italic;
+  font-weight: 880;
+} 
 .imagesize {
   display: flex;
   justify-content: center;
 }
 
 .start {
-  margin-top: 20rpx;
+  margin-top: 50rpx;
   width: 160rpx;
   height: 160rpx;
 }

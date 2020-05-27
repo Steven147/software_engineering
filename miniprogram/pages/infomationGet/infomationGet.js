@@ -122,11 +122,12 @@ Page({
   
  
   var temp1 = []
-  temp1 = app.globalData.wordfetch[0].toefl
+  temp1 = app.globalData.wordfetch[0].cet6
   console.log(temp1)
   console.log("字典元素按value值排序: ");
   var res2 = Object.keys(temp1).sort(function(a,b){ return temp1[a]["score"]-temp1[b]["score"];});
   for(var key in res2){
+    app.yun1(res2[key])
       console.log("key: " + res2[key] + " ,value: " + temp1[res2[key]]);
   }
   app.globalData.rememberList = app.globalData.rememberList.contact(temp1.splice(0,this.data.numOfReview))
