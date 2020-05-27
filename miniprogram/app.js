@@ -283,7 +283,7 @@ App({
   yun(){
     var that = this 
     wx.cloud.callFunction({
-      name:"yunget",
+      name:"get_finished1",
       success: res => {
         console.log("云获取成功",res)
           that.globalData.overallWordList = res.result.data
