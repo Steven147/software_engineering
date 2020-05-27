@@ -41,6 +41,7 @@ async onLoad() {
     console.log("第二次进入",app.globalData.flagForIndentify)
     if(app.globalData.flagForIndentify==1){
       
+      
       var timer = setInterval(function () {
         console.log("循环定时器等待循环请求结束")
        
@@ -56,6 +57,7 @@ async onLoad() {
       console.log("用户名",app.globalData.db_userx)
       
       app.IfUsers()
+      app.yun()
     
     }
 
