@@ -110,7 +110,11 @@ Page({
   console.log('recommendWordList最终排序')
   console.log(app.globalData.recommendWordList)
   //获取用户已经背过的单词 
-  app.yun() 
+  for (var k in app.globalData.wordfetch[0].cet6)
+  {
+    app.yun1() 
+  }
+ 
   var temp1 = []
   temp1 = app.globalData.wordfetch[0].cet6
   console.log(temp1)

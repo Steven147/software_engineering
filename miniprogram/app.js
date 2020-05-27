@@ -291,10 +291,30 @@ App({
           
         },
         fail(res) {
-          console.log("获取失败", res)
+          console.log("获取失败wuwuwu", res)
         }
     })
   },
+
+  yun1(){
+    var that = this 
+    wx.cloud.callFunction({
+      name:"get_finished1",
+      data: {
+        _word : k
+      },
+      success: res => {
+        console.log("云获取成功",res)
+          that.globalData.overallWordList = res.result.data
+          console.log("yes",that.globalData.overallWordList)
+          
+        },
+        fail(res) {
+          console.log("获取失败wuwuwu", res)
+        }
+    })
+  },
+  
 
   //*******************************用户信息库操作函数*********************************
   //更新用户背诵记录
