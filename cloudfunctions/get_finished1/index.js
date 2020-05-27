@@ -10,7 +10,7 @@ exports.main = async (event, context) => {
   let word1 = event._word;
   return cloud.database().collection("6").where({
     "memory_num": {
-      "名":  "_.neq(0)"
+      "夏里宾":  "_.neq(0)"
     }
   })
   .get(/*{
