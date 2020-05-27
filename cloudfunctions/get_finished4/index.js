@@ -9,7 +9,9 @@ cloud.init({
 exports.main = async (event, context) => {
   let word4 = event._word;
   return cloud.database().collection("toefl").where({
-    word: word4
+    "memory_num": {
+      "名":  "_.neq(0)"
+    }
   })
   .get(/*{
     success(res){

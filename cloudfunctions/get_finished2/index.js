@@ -9,7 +9,9 @@ cloud.init({
 exports.main = async (event, context) => {
   let word2 = event._word;
   return cloud.database().collection("gaokao").where({
-    word: word2
+    "memory_num": {
+      "名":  "_.neq(0)"
+    }
   })
   .get(/*{
     success(res){
