@@ -357,7 +357,7 @@ App({
   },
 
   //拉背过的托福单词
-  yun4(){
+  yun4(k){
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished4",
