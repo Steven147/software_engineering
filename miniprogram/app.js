@@ -297,7 +297,7 @@ App({
   },
  //*******************************拉取用户背过的单词*********************************
   //拉背过的六级单词
-  yun1(){
+  yun1(k){
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished1",
