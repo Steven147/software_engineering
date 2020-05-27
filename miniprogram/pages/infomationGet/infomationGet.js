@@ -132,11 +132,11 @@ Page({
   app.yun3()
   app.yun4()
 
-  var temp1 = []
-  temp1 = app.globalData.wordfetch[0].cet6
-  console.log(temp1)
-  app.globalData.rememberList = app.globalData.rememberList.contact(temp1.splice(0,this.data.numOfReview))
-  console.log('app.globalData.rememberList',app.globalData.rememberList)
+  // var temp1 = []
+  // temp1 = app.globalData.wordfetch[0].cet6
+  // console.log(temp1)
+  // app.globalData.rememberList = app.globalData.rememberList.contact(temp1.splice(0,this.data.numOfReview))
+  // console.log('app.globalData.rememberList',app.globalData.rememberList)
 
   wx.hideLoading();
   this.setData({
