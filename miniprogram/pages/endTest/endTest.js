@@ -58,6 +58,7 @@ async onLoad() {
       
       app.IfUsers()
       app.yun()
+    
     }
 
     if(app.globalData.flagForIndentify==2){

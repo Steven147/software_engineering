@@ -7,9 +7,9 @@ cloud.init({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  let word1 = event._word;
-  return cloud.database().collection("6").where({
-    word: word1
+  let word3 = event._word;
+  return cloud.database().collection("gre").where({
+    word: word3
   })
   .get(/*{
     success(res){
