@@ -57,7 +57,6 @@ async onLoad() {
       console.log("用户名",app.globalData.db_userx)
       
       app.IfUsers()
-      app.yun()
     
     }
 
