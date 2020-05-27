@@ -301,9 +301,6 @@ App({
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished1",
-      data: {
-        _word : k
-      },
       success: res => {
         console.log("云获取成功1",res)
           that.globalData.overallWordList = res.result.data
@@ -321,14 +318,10 @@ App({
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished2",
-      data: {
-        _word : k
-      },
       success: res => {
         console.log("云获取成功2",res)
           that.globalData.overallWordList = res.result.data
           console.log("yes",that.globalData.overallWordList)
-          
         },
         fail(res) {
           console.log("获取失败2", res)
@@ -341,9 +334,6 @@ App({
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished3",
-      data: {
-        _word : k
-      },
       success: res => {
         console.log("云获取成功3",res)
           that.globalData.overallWordList = res.result.data
@@ -357,13 +347,10 @@ App({
   },
 
   //拉背过的托福单词
-  yun4(k){
+  yun4(){
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished4",
-      data: {
-        _word : k
-      },
       success: res => {
         console.log("云获取成功4",res)
           that.globalData.overallWordList = res.result.data

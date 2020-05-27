@@ -9,7 +9,9 @@ cloud.init({
 exports.main = async (event, context) => {
   let word3 = event._word;
   return cloud.database().collection("gre").where({
-    word: word3
+    "memory_num": {
+      "名":  "_.neq(0)"
+    }
   })
   .get(/*{
     success(res){
