@@ -10,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    word:[]
+    word:[],
+    isokay:0
   },
   gotoImformationGet(){
       wx.navigateTo({
@@ -30,7 +31,119 @@ Page({
      
   },
   
+  calculateMem(){
+    wx.showLoading({
 
+      title: '数据加载中. . .',
+      
+      });
+      
+      var data
+      app.IfUsers()
+   
+      var i=0
+      var timer = setInterval(function () {
+        console.log("循环定时器等待循环请求结束")
+        
+        if (i>2 ) {
+       
+          console.log('333')
+          console.log("wordfetch:",app.globalData.wordfetch)
+           //这个位置，处理下拉的全局变量wordFetch,把他根据记忆指数分成四个区间，可以只统计每一组的个数，而忽略单词内容，并存储到全局变量
+      app.globalData.nine_more=0
+      app.globalData.sevenTonine=0
+      app.globalData.sixToseven=0
+      app.globalData.six_less= 0
+    console.log("app.globalData.wordfetch.length",app.globalData.wordfetch.length)
+    var totalNum= app.globalData.nine_more+app.globalData.sevenTonine+app.globalData.sixToseven+app.globalData.six_less
+    console.log("totalnum",totalNum)
+    //获取单词的词书区间
+    
+
+    let length= Object.keys(app.globalData.wordfetch[0].cet6).length
+    app.globalData.cet6 = length
+    let length1= Object.keys(app.globalData.wordfetch[0].gaokao).length
+    app.globalData.gaokao = length1
+    let length2= Object.keys(app.globalData.wordfetch[0].gre).length
+    app.globalData.gre = length2
+    let length3= Object.keys(app.globalData.wordfetch[0].toefl).length
+    app.globalData.toefl = length3
+    //获取单词所在的分数区间
+    var res1 = Object.keys(app.globalData.wordfetch[0].cet6).sort(function(a,b){ return app.globalData.wordfetch[0].cet6[a]["score"]-app.globalData.wordfetch[0].cet6[b]["score"]})
+    for(var key in res1){
+      if(app.globalData.wordfetch[0].cet6[res1[key]] >=90){
+        app.globalData.nine_more += 1
+      }
+      else if(app.globalData.wordfetch[0].cet6[res1[key]] >=75){
+        app.globalData.sevenTonine += 1
+      }
+      else if(app.globalData.wordfetch[0].cet6[res1[key]] >=60){
+        app.globalData.sixToseven += 1
+      }
+      else{
+        app.globalData.six_less += 1
+      }
+      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].cet6[res1[key]]);
+    }
+    var res1 = Object.keys(app.globalData.wordfetch[0].gaokao).sort(function(a,b){ return app.globalData.wordfetch[0].gaokao[a]["score"]-app.globalData.wordfetch[0].gaokao[b]["score"]})
+    for(var key in res1){
+      if(app.globalData.wordfetch[0].gaokao[res1[key]] >=90){
+        app.globalData.nine_more += 1
+      }
+      else if(app.globalData.wordfetch[0].gaokao[res1[key]] >=75){
+        app.globalData.sevenTonine += 1
+      }
+      else if(app.globalData.wordfetch[0].gaokao[res1[key]] >=60){
+        app.globalData.sixToseven += 1
+      }
+      else{
+        app.globalData.six_less += 1
+      }
+      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].gaokao[res1[key]]);
+    }
+    var res1 = Object.keys(app.globalData.wordfetch[0].gre).sort(function(a,b){ return app.globalData.wordfetch[0].gre[a]["score"]-app.globalData.wordfetch[0].gre[b]["score"]})
+    for(var key in res1){
+      if(app.globalData.wordfetch[0].gre[res1[key]] >=90){
+        app.globalData.nine_more += 1
+      }
+      else if(app.globalData.wordfetch[0].gre[res1[key]] >=75){
+        app.globalData.sevenTonine += 1
+      }
+      else if(app.globalData.wordfetch[0].gre[res1[key]] >=60){
+        app.globalData.sixToseven += 1
+      }
+      else{
+        app.globalData.six_less += 1
+      }
+      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].gre[res1[key]]);
+    }
+    var res1 = Object.keys(app.globalData.wordfetch[0].toefl).sort(function(a,b){ return app.globalData.wordfetch[0].toefl[a]["score"]-app.globalData.wordfetch[0].toefl[b]["score"]})
+    for(var key in res1){
+      if(app.globalData.wordfetch[0].toefl[res1[key]] >=90){
+        app.globalData.nine_more += 1
+      }
+      else if(app.globalData.wordfetch[0].toefl[res1[key]] >=75){
+        app.globalData.sevenTonine += 1
+      }
+      else if(app.globalData.wordfetch[0].toefl[res1[key]] >=60){
+        app.globalData.sixToseven += 1
+      }
+      else{
+        app.globalData.six_less += 1
+      }
+      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].toefl[res1[key]]);
+    }
+   
+    wx.hideLoading();
+    clearInterval(timer);
+  }
+    i=i+1
+  }, 1200)
+    this.setData({
+      isokay:1
+    })
+  
+  },
 
 async onLoad() {
   
@@ -119,8 +232,7 @@ async onLoad() {
     if(app.globalData.flagForIndentify>=2 || app.globalData.flagForIndentify==1){
         //拉下来user的背诵过的所有单词
         console.log("用户背过哪些单词呢？")
-        app.IfUsers()
-        console.log("wordfetch:",app.globalData.wordfetch)
+       
         
     }
     this.setData({

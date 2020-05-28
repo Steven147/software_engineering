@@ -3,10 +3,10 @@
   font-family: 'Times New Roman', Times, serif;
   border-style: outset;
   border-color: #CCFFFF;
-  border-bottom-right-radius: 1mm;
-  border-bottom-left-radius: 1mm;
-  border-top-left-radius: 1mm;
-  border-top-right-radius: 1mm;
+  border-bottom-right-radius:1rpx solid;
+  border-bottom-left-radius:1rpx solid;
+  border-top-left-radius: 1rpx solid;
+  border-top-right-radius: 1rpx solid;
   margin-top: 2mm;
   margin-bottom: 2mm;
   border-spacing: 10mm;
@@ -22,10 +22,10 @@
   font-family: 'Times New Roman', Times, serif;
   border-style: outset;
   border-color: #CCFFFF;
-  border-bottom-right-radius: 1mm;
-  border-bottom-left-radius: 1mm;
-  border-top-left-radius: 1mm;
-  border-top-right-radius: 1mm;
+  border-bottom-right-radius: 1rpx solid;
+  border-bottom-left-radius:1rpx solid;
+  border-top-left-radius: 1rpx solid;
+  border-top-right-radius: 1rpx solid;
   margin-top: 2mm;
   margin-bottom: 2mm;
   border-spacing: 10mm;
@@ -104,7 +104,7 @@
 }
 .btn1 {
   width: 80%;
-  margin-top: 20rpx;
+  margin-top: 10rpx;
   background-color: #06ae56;
   color: white;
   border-radius: 98rpx;
@@ -127,7 +127,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 .sys{
   font-family: 'Times New Roman', Times, serif;
