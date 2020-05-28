@@ -88,14 +88,18 @@ Page({
     console.log("totalnum",totalNum)
   },
   calculateMem(){
+    
+
+    //这个位置，处理下拉的全局变量wordFetch,把他根据记忆指数分成四个区间，可以只统计每一组的个数，而忽略单词内容，并存储到全局变量
+    //获取单词的词书区间
     wx.showLoading({
 
       title: '数据加载中. . .',
       
       });
-
-    //这个位置，处理下拉的全局变量wordFetch,把他根据记忆指数分成四个区间，可以只统计每一组的个数，而忽略单词内容，并存储到全局变量
-    //获取单词的词书区间
+      app.IfUsers()
+      console.log("wordfetch:",app.globalData.wordfetch)
+      
 
     let length= Object.keys(app.globalData.wordfetch[0].cet6).length
     app.globalData.cet6 = length
@@ -204,6 +208,7 @@ Page({
     ];
     chart.changeData(data)
     wx.hideLoading();
+    console.log(app.globalData.wordfetch)
   },
 });
 

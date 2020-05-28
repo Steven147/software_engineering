@@ -119,8 +119,7 @@ async onLoad() {
     if(app.globalData.flagForIndentify>=2 || app.globalData.flagForIndentify==1){
         //拉下来user的背诵过的所有单词
         console.log("用户背过哪些单词呢？")
-        app.IfUsers()
-        console.log("wordfetch:",app.globalData.wordfetch)
+       
         
     }
     this.setData({
