@@ -79,13 +79,7 @@ Page({
     
   },
   onload:function (options){
-    app.globalData.nine_more=0
-    app.globalData.sevenTonine=0
-    app.globalData.sixToseven=0
-    app.globalData.six_less= 0
-    console.log("app.globalData.wordfetch.length",app.globalData.wordfetch.length)
-    var totalNum= app.globalData.nine_more+app.globalData.sevenTonine+app.globalData.sixToseven+app.globalData.six_less
-    console.log("totalnum",totalNum)
+    app.IfUsers()
   },
   calculateMem(){
     wx.showLoading({
@@ -95,8 +89,15 @@ Page({
       });
 
     //这个位置，处理下拉的全局变量wordFetch,把他根据记忆指数分成四个区间，可以只统计每一组的个数，而忽略单词内容，并存储到全局变量
+    app.globalData.nine_more=0
+    app.globalData.sevenTonine=0
+    app.globalData.sixToseven=0
+    app.globalData.six_less= 0
+    console.log("app.globalData.wordfetch.length",app.globalData.wordfetch.length)
+    var totalNum= app.globalData.nine_more+app.globalData.sevenTonine+app.globalData.sixToseven+app.globalData.six_less
+    console.log("totalnum",totalNum)
     //获取单词的词书区间
-
+    
     let length= Object.keys(app.globalData.wordfetch[0].cet6).length
     app.globalData.cet6 = length
     let length1= Object.keys(app.globalData.wordfetch[0].gaokao).length
@@ -202,6 +203,7 @@ Page({
     { name: '60-75', percent: value3, type: '2' },
     { name: '<60', percent: value4, type: '2' },
     ];
+    console.log(app.globalData)
     chart.changeData(data)
     wx.hideLoading();
   },
