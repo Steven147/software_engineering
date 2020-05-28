@@ -127,16 +127,36 @@ Page({
     console.log(result[i])
 }*/
  
-  app.yun1()
-  app.yun2()
-  app.yun3()
-  app.yun4()
-
-  // var temp1 = []
-  // temp1 = app.globalData.wordfetch[0].cet6
-  // console.log(temp1)
-  // app.globalData.rememberList = app.globalData.rememberList.contact(temp1.splice(0,this.data.numOfReview))
-  // console.log('app.globalData.rememberList',app.globalData.rememberList)
+  console.log(app.globalData.db_userx)
+  var temp1 = []
+  var temp2 = []
+  temp1 = app.globalData.mryed_word
+  console.log(temp1)
+  for(var i in temp1){
+    // console.log("字典元素按value值排序: ");
+    var res2 = Object.keys(temp1[i].memory_num)
+    for(var key in res2){
+      if (res2[key] == app.globalData.db_userx){
+        temp1[i].memory_num = temp1[i].memory_num[res2[key]]
+        // temp2.push([temp1[i],temp1[i].memory_num[res2[key]]])
+      }
+      // temp2.push(temp1[i].memory_num[res2[key]])
+      // console.log("key: " + res2[key] + " ,value: " + temp1[i].memory_num[res2[key]]);
+    }
+  }
+  // console.log(temp2)
+  // function paixu(x,y){
+  //   return x[1] - y[1];  //按照数组的记忆指数升序排列
+  // }
+  // temp2.sort(paixu)
+  // var temp3 = []
+  // for (var i in temp2){
+  //   temp3.push(temp2[i][0])
+  // }
+  // console.log(temp3)
+  console.log(temp1.splice(0,this.data.numOfReview))  //复习的单词
+  // app.globalData.overallWordList = app.globalData.overallWordList.concat()
+  // console.log('app.globalData.overallwordlist',app.globalData.overallWordList)
 
   wx.hideLoading();
   this.setData({
@@ -149,12 +169,14 @@ Page({
       isSelected:1
     })
     app.getwordgaokao();
+    app.yun2()
     app.globalData.rememberList.push("gaokao")
     app.globalData.rememberNow="gaokao"
     console.log(this.data.isSelected)
   },
   choiceBook2: function () {
       app.getword6();
+      app.yun1()
       this.setData({
         isSelected:2
       })
@@ -164,6 +186,7 @@ Page({
   },
   choiceBook3: function () {
     app.getwordgre();
+    app.yun3()
     this.setData({
       isSelected:3
     })
@@ -173,6 +196,7 @@ Page({
   },
   choiceBook4: function () {
     app.getwordtoefl();
+    app.yun4()
     this.setData({
       isSelected:4
     })
