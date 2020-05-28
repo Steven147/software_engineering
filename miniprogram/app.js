@@ -85,6 +85,7 @@ App({
       db_inc_time:0,
       wordfetch:[{}],
       wordfetch_flag:false,
+      mryed_word:[{}],
       localStorageIO: plugin.localStorageIO
     },
   //拉取单词
@@ -309,13 +310,16 @@ App({
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished1",
+      data:{
+        _userx:this.globalData.db_userx
+      },
       success: res => {
-        console.log("云获取成功1",res)
-          that.globalData.overallWordList = res.result.data
-          console.log("yes",that.globalData.overallWordList)
+        console.log("六级背过的单词",res,"成功")
+        that.globalData.mryed_word = res.result.data
+        console.log("yes", that.globalData.mryed_word)
         },
         fail(res) {
-          console.log("获取失败1", res)
+          console.log("六级背过的单词", res,"失败")
         }
     })
   },
@@ -327,14 +331,17 @@ App({
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished2",
+      data: {
+        _userx: this.globalData.db_userx
+      },
       success: res => {
-        console.log("云获取成功2",res)
-          that.globalData.overallWordList = res.result.data
-          console.log("yes",that.globalData.overallWordList)
-        },
-        fail(res) {
-          console.log("获取失败2", res)
-        }
+        console.log("gaokao背过的单词", res, "成功")
+        that.globalData.mryed_word = res.result.data
+        console.log("yes", that.globalData.mryed_word)
+      },
+      fail(res) {
+        console.log("gaokao背过的单词", res, "失败")
+      }
     })
   },
 
@@ -343,15 +350,17 @@ App({
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished3",
+      data: {
+        _userx: this.globalData.db_userx
+      },
       success: res => {
-        console.log("云获取成功3",res)
-          that.globalData.overallWordList = res.result.data
-          console.log("yes",that.globalData.overallWordList)
-          
-        },
-        fail(res) {
-          console.log("获取失败3", res)
-        }
+        console.log("gre背过的单词", res, "成功")
+        that.globalData.mryed_word = res.result.data
+        console.log("yes", that.globalData.mryed_word)
+      },
+      fail(res) {
+        console.log("gre背过的单词", res, "失败")
+      }
     })
   },
 
@@ -360,15 +369,17 @@ App({
     var that = this 
     wx.cloud.callFunction({
       name:"get_finished4",
+      data: {
+        _userx: this.globalData.db_userx
+      },
       success: res => {
-        console.log("云获取成功4",res)
-          that.globalData.overallWordList = res.result.data
-          console.log("yes",that.globalData.overallWordList)
-          
-        },
-        fail(res) {
-          console.log("获取失败4", res)
-        }
+        console.log("toefl背过的单词", res, "成功")
+        that.globalData.mryed_word = res.result.data
+        console.log("yes", that.globalData.mryed_word)
+      },
+      fail(res) {
+        console.log("toefl背过的单词", res, "失败")
+      }
     })
   },
   
