@@ -22,3 +22,17 @@
   height: 100%;
   font-weight: 400;
 }
+.btn1 {
+  height: 54rpx;
+  font-size: 28rpx;
+  letter-spacing: 5rpx;
+  width: 60%;
+  border-radius: 98rpx;
+  background-color: #06ae56;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60rpx;
+}

@@ -1,7 +1,13 @@
+  
 <view class="container">
-
-<view class="title" >记忆指数分布</view>
-<ff-canvas  id="column-dom" canvas-id="column" opts="{{opts}}" bindtap="change" ></ff-canvas>
-<view class="title">词书背诵记录</view>
-<ff-canvas  id="column-dom" canvas-id="column" opts="{{opt2}}" bindtap="change" ></ff-canvas>
+  
+    
+    
+    <view class="title" >记忆指数分布</view>
+    <ff-canvas type="2d"  id="column-dom" canvas-id="column" opts="{{opts}}" bindtap="change" style="width: 740rpx;height: 740rpx;"></ff-canvas>
+    <view class="title">词书背诵记录</view>
+    
+    <ff-canvas  type="2d"  id="column-dom" canvas-id="column" opts="{{opt2}}" bindtap="change" style="width: 740rpx;height: 600rpx;" ></ff-canvas>
+    
 </view>
+<button class="btn1" bindtap="calculateMem">轻触刷新记忆指数</button>

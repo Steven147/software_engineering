@@ -29,84 +29,7 @@ Page({
     })
      
   },
-  calculateMem(){
-    //这个位置，处理下拉的全局变量wordFetch,把他根据记忆指数分成四个区间，可以只统计每一组的个数，而忽略单词内容，并存储到全局变量
-    //获取单词的词书区间
-    let length= Object.keys(app.globalData.wordfetch[0].cet6).length
-    app.globalData.cet6 = length
-    let length1= Object.keys(app.globalData.wordfetch[0].gaokao).length
-    app.globalData.gaokao = length1
-    let length2= Object.keys(app.globalData.wordfetch[0].gre).length
-    app.globalData.gre = length2
-    let length3= Object.keys(app.globalData.wordfetch[0].toefl).length
-    app.globalData.toefl = length3
-    //获取单词所在的分数区间
-    var res1 = Object.keys(app.globalData.wordfetch[0].cet6).sort(function(a,b){ return app.globalData.wordfetch[0].cet6[a]["score"]-app.globalData.wordfetch[0].cet6[b]["score"]})
-    for(var key in res1){
-      if(app.globalData.wordfetch[0].cet6[res1[key]] >=90){
-        app.globalData.nine_more += 1
-      }
-      else if(app.globalData.wordfetch[0].cet6[res1[key]] >=75){
-        app.globalData.sevenTonine += 1
-      }
-      else if(app.globalData.wordfetch[0].cet6[res1[key]] >=60){
-        app.globalData.sixToseven += 1
-      }
-      else{
-        app.globalData.six_less += 1
-      }
-      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].cet6[res1[key]]);
-    }
-    var res1 = Object.keys(app.globalData.wordfetch[0].gaokao).sort(function(a,b){ return app.globalData.wordfetch[0].gaokao[a]["score"]-app.globalData.wordfetch[0].gaokao[b]["score"]})
-    for(var key in res1){
-      if(app.globalData.wordfetch[0].gaokao[res1[key]] >=90){
-        app.globalData.nine_more += 1
-      }
-      else if(app.globalData.wordfetch[0].gaokao[res1[key]] >=75){
-        app.globalData.sevenTonine += 1
-      }
-      else if(app.globalData.wordfetch[0].gaokao[res1[key]] >=60){
-        app.globalData.sixToseven += 1
-      }
-      else{
-        app.globalData.six_less += 1
-      }
-      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].gaokao[res1[key]]);
-    }
-    var res1 = Object.keys(app.globalData.wordfetch[0].gre).sort(function(a,b){ return app.globalData.wordfetch[0].gre[a]["score"]-app.globalData.wordfetch[0].gre[b]["score"]})
-    for(var key in res1){
-      if(app.globalData.wordfetch[0].gre[res1[key]] >=90){
-        app.globalData.nine_more += 1
-      }
-      else if(app.globalData.wordfetch[0].gre[res1[key]] >=75){
-        app.globalData.sevenTonine += 1
-      }
-      else if(app.globalData.wordfetch[0].gre[res1[key]] >=60){
-        app.globalData.sixToseven += 1
-      }
-      else{
-        app.globalData.six_less += 1
-      }
-      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].gre[res1[key]]);
-    }
-    var res1 = Object.keys(app.globalData.wordfetch[0].toefl).sort(function(a,b){ return app.globalData.wordfetch[0].toefl[a]["score"]-app.globalData.wordfetch[0].toefl[b]["score"]})
-    for(var key in res1){
-      if(app.globalData.wordfetch[0].toefl[res1[key]] >=90){
-        app.globalData.nine_more += 1
-      }
-      else if(app.globalData.wordfetch[0].toefl[res1[key]] >=75){
-        app.globalData.sevenTonine += 1
-      }
-      else if(app.globalData.wordfetch[0].toefl[res1[key]] >=60){
-        app.globalData.sixToseven += 1
-      }
-      else{
-        app.globalData.six_less += 1
-      }
-      console.log("key: " + res1[key] + " ,value: " + app.globalData.wordfetch[0].toefl[res1[key]]);
-    }
-    console.log(app.globalData)
-  },
+  
 
 
 async onLoad() {
@@ -203,7 +126,7 @@ async onLoad() {
     this.setData({
       word: app.globalData.flagForIndentify
     })
-    app.IfUsers()
+    
 },
 
   //加载模型一：记忆指数调整模型

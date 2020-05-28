@@ -74,7 +74,7 @@ Page({
     //拉取单词
     wx.showLoading({
 
-      title: '数据加载中。。。',
+      title: '数据加载中. . .',
       
       });
     app.globalData.recommendWordList = app.globalData.overallWordList
