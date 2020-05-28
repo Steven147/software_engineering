@@ -3,11 +3,12 @@
 <view wx:if="{{word>1}}">
   <text class="title">恭喜您！学习已完成</text>
   <image class="picture" mode="widthFix" src="data.png"></image>
-
+  <view wx:if="{{isokay==0}}"><button class="btn1" bindtap="calculateMem">轻触分析背诵记录</button></view>
+  <view wx:if="{{isokay==1}}"><view class="title" >请在报表中查询记录</view></view>
   <button class='btn1' bindtap='gotoword'>
 
-  <view>再次背诵</view>
-</button>
+    <view>再次背诵</view>
+  </button>
 </view>
 
 <view wx:if="{{word==1}}">

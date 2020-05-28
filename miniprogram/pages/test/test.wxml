@@ -10,4 +10,6 @@
     <ff-canvas  type="2d"  id="column-dom" canvas-id="column" opts="{{opt2}}" bindtap="change" style="width: 740rpx;height: 600rpx;" ></ff-canvas>
     
 </view>
+
 <button class="btn1" bindtap="calculateMem">轻触刷新记忆指数</button>
+<button class="btn2" bindtap="calculate2">再次轻触刷新词书</button>
