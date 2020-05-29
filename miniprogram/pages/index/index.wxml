@@ -4,10 +4,11 @@
   
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <view class="frame">
+    <view class="item">
      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-     <text>\n</text>
+
       <text class="name">{{userInfo.nickName}}</text>
-      </view>
+      </view></view>
   <text class="user-motto2">{{info2}}</text>
          
     
