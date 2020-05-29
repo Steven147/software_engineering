@@ -1,7 +1,4 @@
 /**index.wxss**/
-page{
-  height:100%;
-}
 .background {
   top:0;
  left:0;
@@ -17,31 +14,47 @@ page{
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 0rpx;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  margin-right: 22rpx;
   border-radius:50%;
-  margin-bottom:0rpx;
+  display: flex;
+  align-content: center;
 }
 
 
 .name {
-  color:white;
-  margin-top: 0rpx;
+  color:black;
+  margin-left: 50rpx;
+  margin-right: 22rpx;
+  display: flex;
+  align-content: center;
 }
 
-.user-motto2 {
-  margin-top:100rpx;
- 
-  font: x-large;
-  color: aliceblue;
-  
-  font-style: italic;
-  font-weight: 880;
-} 
 .user-motto1 {
-  margin-top:180rpx;
- 
+  margin-top:125rpx;
   color: azure;
   font: x-large;
   font-style: italic;
   font-weight: 880;
 } 
+
+.user-motto2 {
+  margin-bottom:125rpx;
+  font: x-large;
+  color: azure;
+  font-style: italic;
+  font-weight: 880;
+} 
+
+.frame{
+  height: 245rpx;
+  width: 225rpx;
+  border:10rpx solid black;
+
+  margin-left: 290rpx;
+  margin-right: 250rpx;
+  margin-top: -6.5%;
+  border-radius: 50rpx;
+  background-color: azure;
+}

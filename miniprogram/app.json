@@ -14,8 +14,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#889",
-    "navigationBarTitleText": "magic_word",
+    "navigationBarBackgroundColor": "#06ae56",
+    "navigationBarTitleText": "MAGIC_WORD",
     "navigationBarTextStyle": "white"
   },
   "plugins": {
