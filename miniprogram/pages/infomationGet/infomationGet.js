@@ -99,17 +99,17 @@ Page({
       //   console.log(result[i])      
       // }
       app.globalData.overallWordList[i].memory_num = result[i]
-      console.log(result[i])
+      //console.log(result[i])
   }
-  console.log('recommendWordList')
-  console.log(app.globalData.recommendWordList)
+  //console.log('recommendWordList')
+  //console.log(app.globalData.recommendWordList)
   //数组排序
   function ascend(x,y){
     return x.memory_num - y.memory_num;  //按照数组的第4个值升序排列
   }
   app.globalData.recommendWordList.sort(ascend)
-  console.log('recommendWordList排序')
-  console.log(app.globalData.recommendWordList)
+  //console.log('recommendWordList排序')
+  //console.log(app.globalData.recommendWordList)
   //单词推荐
   var temp = []
   var num_kuai = Math.floor(app.globalData.recommendWordList.length / this.data.numOfPlan) //每块的单词数
@@ -127,12 +127,12 @@ Page({
     console.log(result[i])
 }*/
  
-  console.log(app.globalData.db_userx)
+  //console.log(app.globalData.db_userx)
   var temp1 = []
   var temp2 = []
   temp1 = app.globalData.mryed_word
   temp2 = temp1
-  console.log(temp1)
+  //console.log(temp1)
   var num = 0
   for(var i in temp1){
     // console.log("字典元素按value值排序: ");
@@ -157,12 +157,12 @@ Page({
   //   temp3.push(temp2[i][0])
   // }
   // console.log(temp3)
-  console.log(num)
+  //console.log(num)
   temp1 = temp1.splice(0,num)
   temp1.sort(ascend)
-  console.log(temp1)
+  //console.log(temp1)
   app.globalData.mryed_word=temp1.splice(0,this.data.numOfReview)
-  console.log(app.globalData.mryed_word)  //复习的单词
+  console.log('复习的单词',app.globalData.mryed_word)  //复习的单词
   
   // app.globalData.overallWordList = app.globalData.overallWordList.concat()
   // console.log('app.globalData.overallwordlist',app.globalData.overallWordList)
