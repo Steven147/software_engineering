@@ -28,7 +28,8 @@ exports.main = async (event, context) => {
   counter_toefl = Object.keys(myusers[i].toefl).length
   counter_gre = Object.keys(myusers[i].gre).length
 
-  //*****************************User表更新完毕，现在需要更新的是各个dic表 ************************//
+
+//*****************************User表更新完毕，现在需要更新的是各个dic表 ************************//
   userx = myusers[i]._id
   if (counter_cet6 != 0) {
     dic = "cet6"
@@ -130,7 +131,8 @@ exports.main = async (event, context) => {
     }
   }
 
-  //**********************************更新id为1的sum_time***************************************//
+
+//**********************************更新id为1的sum_time***************************************//
 
   var inc_time = 0
   if (i != counter - 1) {
