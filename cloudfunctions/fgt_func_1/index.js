@@ -33,10 +33,10 @@ exports.main = async (event, context) => {
   //*********************修改用户i的所有单词的记忆指数********************************//
   
 
-  var _exp1 = 0.337 ** ((counter - 1) / 100)
-  var _exp2 = 0.358 ** ((counter - 1) / 100)
-  var _exp3 = 0.442 ** ((counter - 1) / 100)
-  var _exp4 = 0.582 ** ((counter - 1) / 100)
+  var _exp1 = 0.9 ** ((counter - 1) / 100)
+  var _exp2 = 0.7 ** ((counter - 1) / 100)
+  var _exp3 = 0.5 ** ((counter - 1) / 100)
+  var _exp4 = 0.3 ** ((counter - 1) / 100)
   if (counter_cet6 != 0) {
     for (var k in myusers[i].cet6) {
       if (myusers[i].cet6[k] >= 90) {
