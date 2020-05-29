@@ -88,11 +88,11 @@
 
 <view>
   <view wx:if="{{isOkay==5}}">
-  
-    <text class="main">每天记忆</text>
-      <view class="high">{{numOfPlan}}</view><text class="main">个单词  </text>
-    <text class="main">每天记忆</text>
-      <view class="high">{{numOfReview}}</view><text class="main">个单词   </text>
+  <view class="flex"> <text class="main">每天记忆</text>
+      <view class="high">{{numOfPlan}}</view><text class="main">个单词  </text></view>
+   <view class="flex"><text class="main">每天记忆</text>
+      <view class="high">{{numOfReview}}</view><text class="main">个单词 </text></view>
+    
     <button class='bt1'  bindtap="jumptowordlist">顺序背诵</button>
      <button class='btn1'  bindtap="jumptowordlist2">体验智能推荐</button>
   </view>

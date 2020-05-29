@@ -1,16 +1,11 @@
 /* pages/infoget/infoget.wxss */
 .thechoicebox{
   font-family: 'Times New Roman', Times, serif;
-  border-style: outset;
-  border-color: #CCFFFF;
-  border-bottom-right-radius:1rpx solid;
-  border-bottom-left-radius:1rpx solid;
-  border-top-left-radius: 1rpx solid;
-  border-top-right-radius: 1rpx solid;
+ 
   margin-top: 2mm;
   margin-bottom: 2mm;
   border-spacing: 10mm;
-  mask-border-width: 0.1rpx;
+  mask-border-width:1rpx;
   margin: 35px;
    display: flex;
    margin-top: 20px;
@@ -21,14 +16,12 @@
 .main{
   font-family: 'Times New Roman', Times, serif;
   border-style: outset;
-  border-color: #CCFFFF;
-  border-bottom-right-radius: 1rpx solid;
-  border-bottom-left-radius:1rpx solid;
-  border-top-left-radius: 1rpx solid;
-  border-top-right-radius: 1rpx solid;
-  margin-top: 2mm;
-  margin-bottom: 2mm;
-  border-spacing: 10mm;
+  border-color: rgb(139, 235, 187);
+  border-bottom-right-radius: 0.1vh;
+  border-bottom-left-radius:3rpx solid;
+  border-top-left-radius: 3rpx solid;
+  border-top-right-radius: 3rpx solid;
+  border-radius: 2mm;
   margin: 35px;
    display: -webkit-flex;
    margin-top: 20px;
