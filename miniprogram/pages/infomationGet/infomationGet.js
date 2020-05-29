@@ -155,9 +155,10 @@ Page({
   // }
   // console.log(temp3)
   console.log(temp1.splice(0,this.data.numOfReview))  //复习的单词
+  app.globalData.mryed_word=temp1.splice(0,this.data.numOfReview)
   // app.globalData.overallWordList = app.globalData.overallWordList.concat()
   // console.log('app.globalData.overallwordlist',app.globalData.overallWordList)
-
+  
   wx.hideLoading();
   this.setData({
     isOkay:5
@@ -207,7 +208,7 @@ Page({
   jumptowordlist: function () {
 
     app.globalData.overallWordList= app.globalData.overallWordList.splice(0,this.data.numOfPlan)
-    
+    app.globalData.overallWordList=app.globalData.overallWordList.concat(app.globalData.mryed_word)
     wx.redirectTo({
       url: '../remeberList/remeberList'
 
@@ -216,7 +217,7 @@ Page({
   },
   jumptowordlist2: function () {
     app.globalData.overallWordList= app.globalData.recommendWordList
-    
+    app.globalData.overallWordList=app.globalData.overallWordList.concat(app.globalData.mryed_word)
     wx.redirectTo({
       url: '../remeberList/remeberList'
 
