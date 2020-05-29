@@ -5,6 +5,7 @@ cloud.init({
   env: 'cloud-14ij5'
 })
 
+const db=cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   let myword = event._word
@@ -13,7 +14,7 @@ exports.main = async (event, context) => {
 
   var memory_num = {}
   memory_num[userx] = m_n
-  return await db.collection('cet6').where({
+  return await db.collection('6').where({
     word: myword
   })
     .update({
