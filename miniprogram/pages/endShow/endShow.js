@@ -23,10 +23,10 @@ Page({
     }
     var result = await this.loadModel2(mat2)//模型运行
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
-      // if(app.globalData.overallWordList[i].memory_num === 100){
-      //   app.globalData.overallWordList[i].memory_num = result[i]
-      // }
-      app.globalData.overallWordList[i].memory_num = result[i]
+       if(app.globalData.overallWordList[i].memory_num == null){
+         app.globalData.overallWordList[i].memory_num = result[i]   
+       }
+      
     }
     console.log('预测单词记忆指数：')
     console.log(app.globalData.overallWordList)
