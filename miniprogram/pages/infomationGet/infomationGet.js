@@ -132,7 +132,6 @@ Page({
   var temp2 = []
   temp1 = app.globalData.mryed_word
   temp2 = temp1
-  //console.log(temp1)
   var num = 0
   for(var i in temp1){
     // console.log("字典元素按value值排序: ");
@@ -143,11 +142,18 @@ Page({
         num += 1
         // temp2.push([temp1[i],temp1[i].memory_num[res2[key]]])
       }
-      // temp2.push(temp1[i].memory_num[res2[key]])
-      // console.log("key: " + res2[key] + " ,value: " + temp1[i].memory_num[res2[key]]);
     }
   }
-  // console.log(temp2)
+
+  temp1 = temp1.splice(0,num)
+  temp1.sort(ascend)
+  //console.log(temp1)
+  app.globalData.mryed_word=temp1.splice(0,this.data.numOfReview)
+  console.log('复习的单词',app.globalData.mryed_word)  //复习的单词
+      // temp2.push(temp1[i].memory_num[res2[key]])
+      // console.log("key: " + res2[key] + " ,value: " + temp1[i].memory_num[res2[key]]);
+
+    // console.log(temp2)
   // function paixu(x,y){
   //   return x[1] - y[1];  //按照数组的记忆指数升序排列
   // }
@@ -158,12 +164,7 @@ Page({
   // }
   // console.log(temp3)
   //console.log(num)
-  temp1 = temp1.splice(0,num)
-  temp1.sort(ascend)
-  //console.log(temp1)
-  app.globalData.mryed_word=temp1.splice(0,this.data.numOfReview)
-  console.log('复习的单词',app.globalData.mryed_word)  //复习的单词
-  
+
   // app.globalData.overallWordList = app.globalData.overallWordList.concat()
   // console.log('app.globalData.overallwordlist',app.globalData.overallWordList)
   
