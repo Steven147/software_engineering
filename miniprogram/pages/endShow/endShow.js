@@ -23,10 +23,11 @@ Page({
     }
     var result = await this.loadModel2(mat2)//模型运行
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
-       if(app.globalData.overallWordList[i].memory_num == null){
-         app.globalData.overallWordList[i].memory_num = (result[i]/3)
+      console.log(app.globalData.overallWordList[i].memory_num,app.globalData.overallWordList[i].word)
+       if(app.globalData.overallWordList[i].memory_num == 0){
+        app.globalData.overallWordList[i].memory_num = (result[i])
+        console.log(result[i])
        }
-      
     }
     console.log('预测单词记忆指数：')
     console.log(app.globalData.overallWordList)
@@ -47,7 +48,8 @@ Page({
     var result = await this.loadModel(mat)//模型运行
     console.log(result)
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
-      app.globalData.overallWordList[i].memory_num += (result[i] / 3)
+      app.globalData.overallWordList[i].memory_num += (result[i])
+      console.log(result[i])
     }
     console.log('调整记忆指数：')
     console.log(app.globalData.overallWordList)

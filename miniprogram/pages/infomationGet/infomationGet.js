@@ -119,6 +119,9 @@ Page({
     temp.push(app.globalData.recommendWordList[index])
   }
   app.globalData.recommendWordList = temp
+  for(var i in app.globalData.recommendWordList){
+    app.globalData.recommendWordList[i].memory_num = 0
+  }
   console.log('recommendWordList最终排序')
   console.log(app.globalData.recommendWordList)
   //获取用户已经背过的单词 
