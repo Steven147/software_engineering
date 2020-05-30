@@ -48,8 +48,8 @@ Page({
     var result = await this.loadModel(mat)//模型运行
     console.log(result)
     for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
-      app.globalData.overallWordList[i].memory_num += (result[i])
-      console.log(result[i])
+      app.globalData.overallWordList[i].memory_num += (result[i]/3)
+      console.log(result[i]/3)
     }
     console.log('调整记忆指数：')
     console.log(app.globalData.overallWordList)
