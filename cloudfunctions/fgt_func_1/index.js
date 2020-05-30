@@ -33,7 +33,7 @@ exports.main = async (event, context) => {
   //*********************修改用户i的所有单词的记忆指数********************************//
   
 
-  var _exp1 = 0.83 ** ((counter - 1) / 60)
+  var _exp1 = 0.88 ** ((counter - 1) / 60)
   var _exp2 = 0.90 ** ((counter - 1) / 60)
   var _exp3 = 0.97 ** ((counter - 1) / 60)
   var _exp4 = 0.99 ** ((counter - 1) / 60)
