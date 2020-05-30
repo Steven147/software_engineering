@@ -189,7 +189,7 @@ async onLoad() {
   }
   var result = await this.loadModel(mat)//模型运行
   for (var i = 0; i < app.globalData.overallWordList.length; ++i) {
-    app.globalData.overallWordList[i].memory_num += result[i]
+    app.globalData.overallWordList[i].memory_num += (result[i] / 3)
     console.log(result[i])
   }
   console.log('再次调整记忆指数')
