@@ -6,7 +6,6 @@ const app = getApp()
 Page({
 
   data: {
-    
     info1: '云端存储，智能推荐',
     info2: '一键开启轻松单词之旅',
     userInfo: {},

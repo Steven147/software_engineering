@@ -6,7 +6,7 @@
   height: 100%;
   position:fixed; 
   background-size:100% 100%;
-  z-index: -1;
+  z-index: -2;
    opacity: 1;
 }
 
@@ -28,6 +28,7 @@
 
 
 .userinfo-avatar {
+  z-index: 0;
   width: 128rpx;
   height: 128rpx;
   margin-top: 5rpx;
@@ -49,6 +50,7 @@
 }
 
 .frame{
+
   box-sizing: border-box;
   position: relative;
   transform: rotate(45deg);
@@ -61,6 +63,7 @@
   background-color: rgb(32,33,65);
 }
 .frame .item{
+ 
   box-sizing: border-box;
   padding: 10px;
   position: absolute;
@@ -73,6 +76,7 @@
   background-color: rgb(32,33,65);
   } 
 .frame .item:after{
+
   position: absolute;
   top: -1rpx;
   left: -5rpx;
@@ -83,6 +87,7 @@
   border: 5rpx solid azure;
   }
 .frame .item:before{
+
   position: absolute;
   top: -1rpx; 
   left: -5rpx;
