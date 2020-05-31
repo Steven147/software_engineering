@@ -180,7 +180,7 @@ Page({
       if (idm + 4 > app.globalData.overallWordList.length) {
         console.log("bushuchu")
           wx.switchTab({
-            url: '../endTest/endTest',
+            url: '../home/home',
           })}
    setTimeout(function() {
      that.setData({

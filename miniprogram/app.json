@@ -7,9 +7,9 @@
     "pages/wordShow/wordShow",
     "pages/wordTest/wordTest",
     "pages/endShow/endShow",
-    "pages/test/test",
+    "pages/report/report",
     "pages/message/message",
-    "pages/endTest/endTest"
+    "pages/home/home"
    
   ],
   "window": {
@@ -30,7 +30,7 @@
     "selectedColor": "#339999",
     "list": [
       {
-        "pagePath": "pages/endTest/endTest",
+        "pagePath": "pages/home/home",
         "text": "背诵单词",
         "iconPath": "pages/images/home.png",
         "selectedIconPath": "pages/images/home.png"
@@ -42,7 +42,7 @@
         "selectedIconPath": "pages/images/message.png"
       },
       {
-        "pagePath": "pages/test/test",
+        "pagePath": "pages/report/report",
         "text": "记忆报表",
         "iconPath": "pages/images/report.png",
         "selectedIconPath": "pages/images/report.png"

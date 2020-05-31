@@ -16,7 +16,7 @@ Page({
   bindViewTap: function() {
     wx.switchTab({
     
-      url: '../endTest/endTest'
+      url: '../home/home'
     })
   },
   onLoad: function () {
