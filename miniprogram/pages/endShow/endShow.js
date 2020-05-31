@@ -63,7 +63,6 @@ Page({
     const net = await tfl.loadLayersModel('https://wxz-1301710654.cos.ap-shanghai.myqcloud.com/old/model.json')
     var result = await net.predict(tf.tensor(mat)).data()
     return result
-
   },
 
 
