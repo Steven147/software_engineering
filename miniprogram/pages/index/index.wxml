@@ -2,10 +2,10 @@
 <view class="container">
 <text class="user-motto1">{{info1}}</text>
   
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    
     <view class="frame" bindtap="bindViewTap">
     <view class="item">
-
+     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
 
 

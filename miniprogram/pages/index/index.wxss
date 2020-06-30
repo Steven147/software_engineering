@@ -87,7 +87,7 @@
   border: 5rpx solid azure;
   }
 .frame .item:before{
-
+  z-index: -1;
   position: absolute;
   top: -1rpx; 
   left: -5rpx;
