@@ -58,7 +58,7 @@ Page({
     var totalNum= app.globalData.nine_more+app.globalData.sevenTonine+app.globalData.sixToseven+app.globalData.six_less
     console.log("totalnum",totalNum)
     //获取单词的词书区间
-    
+
 
     let length= Object.keys(app.globalData.wordfetch[0].cet6).length
     app.globalData.cet6 = length

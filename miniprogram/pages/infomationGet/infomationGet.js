@@ -94,22 +94,15 @@ Page({
     }
     var result = await this.loadModel2(mat2)//模型运行
     for (var i = 0; i < app.globalData.recommendWordList.length; ++i) {
-      // if(app.globalData.overallWordList[i].memory_num === 100){
-      //   app.globalData.overallWordList[i].memory_num = result[i]
-      //   console.log(result[i])      
-      // }
       app.globalData.overallWordList[i].memory_num = result[i]
-      //console.log(result[i])
   }
-  //console.log('recommendWordList')
-  //console.log(app.globalData.recommendWordList)
+
   //数组排序
   function ascend(x,y){
-    return x.memory_num - y.memory_num;  //按照数组的第4个值升序排列
+    return x.memory_num - y.memory_num;  //按照数组的记忆指数值升序排列
   }
   app.globalData.recommendWordList.sort(ascend)
-  //console.log('recommendWordList排序')
-  //console.log(app.globalData.recommendWordList)
+
   //单词推荐
   var temp = []
   var num_kuai = Math.floor(app.globalData.recommendWordList.length / this.data.numOfPlan) //每块的单词数
@@ -124,53 +117,27 @@ Page({
   }
   console.log('recommendWordList最终排序')
   console.log(app.globalData.recommendWordList)
+
   //获取用户已经背过的单词 
-  /*for (var k = 0; i < app.globalData.wordfetch[0].cet6.length; ++i) {
-    app.globalData.overallWordList[i].memory_num = result[i]
-    console.log(result[i])
-}*/
- 
-  //console.log(app.globalData.db_userx)
   var temp1 = []
   var temp2 = []
   temp1 = app.globalData.mryed_word
   temp2 = temp1
   var num = 0
   for(var i in temp1){
-    // console.log("字典元素按value值排序: ");
     var res2 = Object.keys(temp1[i].memory_num)
     for(var key in res2){
       if (res2[key] == app.globalData.db_userx){
         temp1[i].memory_num = temp1[i].memory_num[res2[key]]
         num += 1
-        // temp2.push([temp1[i],temp1[i].memory_num[res2[key]]])
       }
     }
   }
-
   temp1 = temp1.splice(0,num)
   temp1.sort(ascend)
-  //console.log(temp1)
   app.globalData.mryed_word=temp1.splice(0,this.data.numOfReview)
   console.log('复习的单词',app.globalData.mryed_word)  //复习的单词
-      // temp2.push(temp1[i].memory_num[res2[key]])
-      // console.log("key: " + res2[key] + " ,value: " + temp1[i].memory_num[res2[key]]);
 
-    // console.log(temp2)
-  // function paixu(x,y){
-  //   return x[1] - y[1];  //按照数组的记忆指数升序排列
-  // }
-  // temp2.sort(paixu)
-  // var temp3 = []
-  // for (var i in temp2){
-  //   temp3.push(temp2[i][0])
-  // }
-  // console.log(temp3)
-  //console.log(num)
-
-  // app.globalData.overallWordList = app.globalData.overallWordList.concat()
-  // console.log('app.globalData.overallwordlist',app.globalData.overallWordList)
-  
   wx.hideLoading();
   this.setData({
     isOkay:5
