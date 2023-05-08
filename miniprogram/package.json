@@ -6,7 +6,7 @@
   "dependencies": {
     "@antv/f2-canvas": "^1.0.5",
     "@tensorflow/tfjs-converter": "^1.7.4",
-    "@tensorflow/tfjs-core": "^1.7.4",
+    "@tensorflow/tfjs-core": "^4.5.0",
     "@tensorflow/tfjs-layers": "^1.7.4",
     "fetch-wechat": "0.0.3",
     "regenerator-runtime": "^0.13.5"
